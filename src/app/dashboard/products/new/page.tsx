@@ -25,10 +25,10 @@ type Stage = 'idle' | 'thinking' | 'done' | 'publishing' | 'comparing'
 function ListingPreview({ visible }: { visible: boolean }) {
   return (
     <div
-      className={`flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-opacity duration-700 ${visible ? 'opacity-100' : 'opacity-0'}`}
+      className={`flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white p-4 pt-5 shadow-sm transition-opacity duration-700 sm:p-5 sm:pt-6 ${visible ? 'opacity-100' : 'opacity-0'}`}
     >
       {/* ML yellow bar */}
-      <div className="flex shrink-0 items-center gap-3 bg-[#fff159] px-4 py-2.5">
+      <div className="flex shrink-0 items-center gap-3 rounded-t-lg bg-[#fff159] px-4 py-2.5">
         <span className="shrink-0 text-sm font-extrabold text-[#333]">
           mercado<span style={{ color: '#3483fa' }}>libre</span>
         </span>
@@ -49,7 +49,7 @@ function ListingPreview({ visible }: { visible: boolean }) {
       {/* Product area */}
       <div className="flex flex-1">
         {/* Thumbnails */}
-        <div className="flex w-14 shrink-0 flex-col gap-1.5 border-r border-gray-100 p-2">
+        <div className="flex w-14 shrink-0 flex-col gap-1.5 border-r border-gray-100 py-2 pl-3 pr-2">
           {[0, 1, 2, 3].map((i) => (
             <div
               key={i}
@@ -880,7 +880,7 @@ export default function NewProductPage() {
   }
 
   return (
-    <div className="flex h-full flex-col">
+    <div className="flex min-h-0 flex-1 flex-col">
       <PublishOverlay phase={overlayPhase} stepIndex={publishStep} />
 
       {/* Idle view */}
@@ -900,7 +900,7 @@ export default function NewProductPage() {
       {showSplit && stage !== 'comparing' && (
         <div
           ref={splitRef}
-          className="grid flex-1 grid-cols-1 gap-6 overflow-hidden opacity-0 lg:grid-cols-2"
+          className="grid min-h-0 flex-1 grid-cols-1 gap-6 overflow-hidden opacity-0 lg:grid-cols-2"
         >
           {/* Left — AI activity log */}
           <div className="flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
@@ -978,7 +978,7 @@ export default function NewProductPage() {
           </div>
 
           {/* Right — listing preview */}
-          <div className="flex flex-col gap-4 overflow-y-auto">
+          <div className="flex flex-col gap-4 overflow-y-auto pt-1">
             <div className="flex items-center gap-2">
               <span className="text-sm font-medium text-gray-700">Listing preview</span>
               {stage === 'thinking' && !previewReady && (
@@ -1033,24 +1033,24 @@ export default function NewProductPage() {
       {showSplit && stage === 'comparing' && (
         <div
           ref={compareRef}
-          className="grid min-h-0 flex-1 grid-cols-1 gap-6 lg:grid-cols-2"
+          className="grid min-h-0 flex-1 grid-cols-1 gap-5 overflow-hidden lg:grid-cols-2 lg:gap-6"
         >
           {/* Left — optimized listing */}
-          <div className="flex min-h-0 flex-col gap-3">
-            <div className="flex shrink-0 flex-wrap items-center gap-2">
+          <div className="flex min-h-0 min-w-0 flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+            <div className="flex shrink-0 flex-wrap items-center gap-2 border-b border-gray-100 px-4 py-3 sm:px-5 sm:py-3.5">
               <span className="text-sm font-semibold text-gray-900">Optimized listing</span>
               <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700 ring-1 ring-emerald-100">
                 Live preview
               </span>
             </div>
-            <div className="min-h-0 flex-1 overflow-y-auto pr-1">
+            <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden bg-gray-50/40 px-3 py-4 sm:px-4 sm:py-5">
               <ListingPreview visible />
             </div>
           </div>
 
-          {/* Right — improvements (scrollable body, sticky actions) */}
-          <div className="flex min-h-0 min-w-0 flex-col gap-0 rounded-2xl border border-black/4 bg-gray-50/50 p-1">
-            <div className="shrink-0 rounded-t-xl bg-white px-4 pb-3 pt-4">
+          {/* Right — improvements: header + scrollable list + fixed actions */}
+          <div className="flex min-h-0 min-w-0 flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+            <div className="shrink-0 border-b border-gray-100 px-4 py-3.5 sm:px-5">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="text-sm font-semibold text-gray-900">Improvements</span>
                 <span className="rounded-full bg-brand-50 px-2 py-0.5 text-[10px] font-medium text-brand-700 ring-1 ring-brand-100">
@@ -1062,11 +1062,11 @@ export default function NewProductPage() {
               </p>
             </div>
 
-            <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden px-3 pb-3 pt-1">
+            <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain bg-gray-50/30 px-3 py-3 sm:px-4">
               <ImprovementsPanel />
             </div>
 
-            <div className="shrink-0 border-t border-gray-200/80 bg-white px-3 py-3">
+            <div className="shrink-0 border-t border-gray-200 bg-white px-3 py-3 sm:px-4">
               <div className="flex gap-3">
                 <button
                   type="button"
