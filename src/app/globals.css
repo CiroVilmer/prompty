@@ -29,8 +29,8 @@
   }
 
   body {
-    background-color: theme(--color-white);
-    color: theme(--color-gray-900);
+    background-color: white;
+    color: #111827;
     font-family: var(--font-sans);
     line-height: 1.5;
   }

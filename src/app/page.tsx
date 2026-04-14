@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-export default function LandingPage() {
+export default async function LandingPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Nav */}
