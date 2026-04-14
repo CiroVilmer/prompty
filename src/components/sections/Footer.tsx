@@ -49,11 +49,11 @@ export default function Footer() {
         <div className="flex flex-col items-center gap-6 py-16">
           <Link href="/" aria-label="Prompty home">
             <Image
-              src="/images/logo-header.png"
+              src="/images/logo-footer.png"
               alt="Prompty"
               width={2351}
               height={1348}
-              className="h-10 w-auto object-contain"
+              className="h-24 w-auto object-contain"
               priority={false}
             />
           </Link>

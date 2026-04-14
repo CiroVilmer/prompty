@@ -19,7 +19,8 @@
       "Bash(identify public/images/logo-header.png)",
       "Bash(node -e \"const l = require\\('lucide-react'\\); const keys = Object.keys\\(l\\); console.log\\('Twitter:', keys.includes\\('Twitter'\\)\\); console.log\\('Linkedin:', keys.includes\\('Linkedin'\\)\\); console.log\\('Instagram:', keys.includes\\('Instagram'\\)\\); console.log\\('Github:', keys.includes\\('Github'\\)\\); console.log\\(keys.filter\\(k => /x|twitter|social|share/i.test\\(k\\)\\).slice\\(0,10\\)\\);\")",
       "Bash(node -e \"const l = require\\('lucide-react'\\); const keys = Object.keys\\(l\\); console.log\\(keys.filter\\(k => /link|share|globe|mail|external/i.test\\(k\\) && !k.endsWith\\('Icon'\\)\\).slice\\(0,15\\)\\);\")",
-      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d.get\\('version','?'\\)\\)\")"
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d.get\\('version','?'\\)\\)\")",
+      "Bash(node -e \"const l = require\\('lucide-react'\\); ['Database','BarChart3','Layers','Workflow','TrendingUp','Target','Grid3x3','Boxes'].forEach\\(k => console.log\\(k, l[k] ? 'OK' : 'MISSING'\\)\\);\")"
     ]
   }
 }

@@ -21,6 +21,14 @@
   --color-brand-950: #121211;
 }
 
+/* ── WhyPrompty — hidden until GSAP ScrollTrigger fires ── */
+[data-why="label"],
+[data-why="title"],
+[data-why="subtitle"],
+[data-why="card"] {
+  opacity: 0;
+}
+
 /* ── WarpBackground beam animations ── */
 @keyframes warp-beam-v {
   0% {
