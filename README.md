@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/images/logo-header.png" alt="Prompty" height="80" />
+  <img src="public/images/logo-footer.png" alt="Prompty" height="80" />
   <br/><br/>
 
   [![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)](https://nextjs.org)
@@ -244,10 +244,8 @@ All routes are prefixed with `/api` on the FastAPI backend (`localhost:8000`), p
 Ciro Vilmer - FullStack Developer:  https://www.linkedin.com/in/ciro-vilmer-b4727a174/
 Luis Embon Strizzi - Backend Developer: https://www.linkedin.com/in/luis-embon-strizzi/ 
 Valentin Gonzalez - Frontend Developer: https://www.linkedin.com/in/valentin-gonzalez-6a1805276/ 
-Martina Chiappa
+Martina Chiappa - Ux Designer: https://linkedin.com/in/martinachiappa/ 
 
-
-*Fill in before submitting.*
 
 ---
 
