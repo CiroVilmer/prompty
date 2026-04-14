@@ -99,7 +99,7 @@ function BadListing() {
             />
             {/* Label */}
             <div className="absolute bottom-2 left-2 rounded bg-black/35 px-2 py-0.5 text-[10px] text-white/80 backdrop-blur-sm">
-              Foto de celular
+              Phone photo
             </div>
           </div>
         </div>
@@ -107,29 +107,29 @@ function BadListing() {
         {/* Product info */}
         <div className="flex flex-1 flex-col gap-3 p-6">
           {/* Condition — missing */}
-          <p className="text-sm italic text-gray-300">Condición no especificada</p>
+          <p className="text-sm italic text-gray-300">Condition not specified</p>
 
           {/* Title — generic & keyword-stuffed */}
           <h2 className="text-base leading-snug text-gray-600">
-            macbook usada anda perfecto vendo por upgrade acepto permuta escucho ofertas envio
+            used macbook works great selling to upgrade accepting trades open to offers free shipping
           </h2>
 
           {/* No reviews */}
           <div className="flex items-center gap-2">
             <Stars filled={0} />
-            <span className="text-sm text-gray-300">Sin calificaciones</span>
+            <span className="text-sm text-gray-300">No ratings</span>
           </div>
 
           {/* Price — no discount */}
           <div className="mt-1 space-y-0.5">
             <p className="text-3xl font-light text-[#333]">$ 1.150.000</p>
-            <p className="text-sm text-[#3483fa] cursor-pointer">Ver medios de pago</p>
+            <p className="text-sm text-[#3483fa] cursor-pointer">See payment methods</p>
           </div>
 
           {/* Shipping — basic */}
           <div>
-            <p className="text-sm text-[#00a650]">Envío gratis</p>
-            <p className="text-xs text-gray-400">Llega en 5 a 7 días hábiles</p>
+            <p className="text-sm text-[#00a650]">Free shipping</p>
+            <p className="text-xs text-gray-400">Arrives in 5 to 7 business days</p>
           </div>
 
           {/* Buy buttons — muted */}
@@ -138,24 +138,24 @@ function BadListing() {
               className="w-full rounded-lg border border-gray-200 bg-gray-100 py-2.5 text-sm text-gray-400"
               tabIndex={-1}
             >
-              Comprar ahora
+              Buy now
             </button>
             <button
               className="w-full rounded-lg border border-gray-200 bg-gray-50 py-2.5 text-sm text-gray-400"
               tabIndex={-1}
             >
-              Agregar al carrito
+              Add to cart
             </button>
           </div>
 
           {/* Seller */}
-          <p className="text-xs text-gray-400">Vendido por juan_ventas2019</p>
+          <p className="text-xs text-gray-400">Sold by juan_ventas2019</p>
 
           {/* Attributes — empty */}
           <div className="mt-2 border-t border-gray-100 pt-4">
-            <p className="mb-3 text-sm font-medium text-gray-400">Características principales</p>
+            <p className="mb-3 text-sm font-medium text-gray-400">Main features</p>
             <div className="space-y-2.5">
-              {['Marca', 'Modelo', 'Procesador', 'RAM', 'Almacenamiento', 'Pantalla'].map((label) => (
+              {['Brand', 'Model', 'Processor', 'RAM', 'Storage', 'Display'].map((label) => (
                 <div key={label} className="flex items-center gap-3">
                   <span className="w-28 shrink-0 text-sm text-gray-400">{label}</span>
                   <div className="h-4 flex-1 rounded bg-gray-100" />
@@ -218,14 +218,14 @@ function GoodListing() {
         <div className="flex flex-1 flex-col gap-3 p-6">
           {/* Condition + sales */}
           <div className="flex items-center gap-2">
-            <span className="text-sm text-gray-500">Nuevo</span>
+            <span className="text-sm text-gray-500">New</span>
             <span className="text-sm text-gray-200">|</span>
-            <span className="text-sm text-gray-500">+1.200 vendidos</span>
+            <span className="text-sm text-gray-500">+1,200 sold</span>
           </div>
 
           {/* Title — optimized */}
           <h2 className="text-base font-medium leading-snug text-[#333]">
-            Apple MacBook Air 13.6&quot; Chip M2 8 Núcleos — 8GB RAM 256GB SSD — Gris Espacial — macOS Sonoma — Teclado Español Latino
+            Apple MacBook Air 13.6&quot; M2 Chip 8-Core — 8GB RAM 256GB SSD — Space Gray — macOS Sonoma — US English Keyboard
           </h2>
 
           {/* Reviews */}
@@ -243,15 +243,15 @@ function GoodListing() {
               <span className="text-base font-semibold" style={{ color: '#00a650' }}>30% OFF</span>
             </div>
             <p className="text-sm text-gray-500">
-              en 12 cuotas de <strong>$ 79.166</strong> sin interés
+              in 12 installments of <strong>$ 79.166</strong> interest-free
             </p>
-            <p className="text-xs" style={{ color: '#3483fa' }}>Ver los medios de pago</p>
+            <p className="text-xs" style={{ color: '#3483fa' }}>See payment methods</p>
           </div>
 
           {/* Shipping */}
           <div>
-            <p className="text-sm font-medium" style={{ color: '#00a650' }}>✓ Envío gratis · Full</p>
-            <p className="text-sm" style={{ color: '#00a650' }}>Llega mañana</p>
+            <p className="text-sm font-medium" style={{ color: '#00a650' }}>✓ Free shipping · Full</p>
+            <p className="text-sm" style={{ color: '#00a650' }}>Arrives tomorrow</p>
           </div>
 
           {/* Buy buttons */}
@@ -261,28 +261,28 @@ function GoodListing() {
               style={{ backgroundColor: '#3483fa' }}
               tabIndex={-1}
             >
-              Comprar ahora
+              Buy now
             </button>
             <button
               className="w-full rounded-lg border py-2.5 text-sm font-semibold"
               style={{ borderColor: '#3483fa', color: '#3483fa' }}
               tabIndex={-1}
             >
-              Agregar al carrito
+              Add to cart
             </button>
           </div>
 
           {/* Attributes — filled */}
           <div className="mt-2 border-t border-gray-100 pt-4">
-            <p className="mb-3 text-sm font-medium text-gray-600">Características principales</p>
+            <p className="mb-3 text-sm font-medium text-gray-600">Main features</p>
             <div className="space-y-2.5">
               {[
-                ['Marca',          'Apple'],
-                ['Modelo',         'MacBook Air M2'],
-                ['Procesador',     'Apple M2'],
-                ['RAM',            '8 GB'],
-                ['Almacenamiento', '256 GB SSD'],
-                ['Pantalla',       '13.6" Liquid Retina IPS'],
+                ['Brand',    'Apple'],
+                ['Model',    'MacBook Air M2'],
+                ['Processor','Apple M2'],
+                ['RAM',      '8 GB'],
+                ['Storage',  '256 GB SSD'],
+                ['Display',  '13.6" Liquid Retina IPS'],
               ].map(([label, value]) => (
                 <div key={label} className="flex items-center gap-3">
                   <span className="w-28 shrink-0 text-sm text-gray-400">{label}</span>
@@ -307,13 +307,13 @@ export default function BeforeAfterSection() {
         {/* Section header */}
         <div className="mb-14 flex flex-col items-center gap-3 text-center sm:mb-16">
           <span className="inline-flex items-center gap-2 rounded-full border border-gray-300/60 bg-white/70 px-4 py-1.5 text-xs font-medium tracking-wide text-gray-500 backdrop-blur-sm">
-            Antes y después
+            Before &amp; after
           </span>
           <h2 className="max-w-2xl text-balance text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
-            Mismo producto, distinto resultado
+            Same product, different result
           </h2>
           <p className="max-w-xl text-base text-gray-400 sm:text-lg">
-            La diferencia entre un listing que vende y uno que pasa desapercibido
+            The difference between a listing that sells and one that goes unnoticed
           </p>
         </div>
 
@@ -321,11 +321,11 @@ export default function BeforeAfterSection() {
         <div className="mb-4 grid grid-cols-2">
           <div className="flex items-center gap-2.5 pl-1">
             <span className="size-2.5 rounded-full bg-red-400" />
-            <span className="text-sm font-medium text-gray-500">Sin Prompty</span>
+            <span className="text-sm font-medium text-gray-500">Without Prompty</span>
           </div>
           <div className="flex items-center gap-2.5 pl-1">
             <span className="size-2.5 rounded-full bg-emerald-500" />
-            <span className="text-sm font-medium text-gray-500">Con Prompty</span>
+            <span className="text-sm font-medium text-gray-500">With Prompty</span>
           </div>
         </div>
 
@@ -343,7 +343,7 @@ export default function BeforeAfterSection() {
 
         {/* Footer note */}
         <p className="mt-8 text-center font-mono text-xs tracking-wide text-gray-400">
-          Optimización entrenada con los best sellers reales de la categoría · DSPy MIPROv2
+          Optimization trained on real category best sellers · DSPy MIPROv2
         </p>
       </div>
     </section>

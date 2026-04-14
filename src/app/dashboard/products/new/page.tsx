@@ -9,6 +9,8 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
+import { apiClient } from '@/lib/api-client'
+import type { GenerateRequest, GenerateResponse } from '@/types'
 
 /* ── Types ──────────────────────────────────────────────────────────────────── */
 
@@ -22,7 +24,7 @@ type Stage = 'idle' | 'thinking' | 'done' | 'publishing' | 'comparing'
 
 /* ── Fake ML listing preview (mirrors the BeforeAfterSection "good" layout) ── */
 
-function ListingPreview({ visible }: { visible: boolean }) {
+function ListingPreview({ visible, result }: { visible: boolean; result?: GenerateResponse | null }) {
   return (
     <div
       className={`flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white p-4 pt-5 shadow-sm transition-opacity duration-700 sm:p-5 sm:pt-6 ${visible ? 'opacity-100' : 'opacity-0'}`}
@@ -83,7 +85,7 @@ function ListingPreview({ visible }: { visible: boolean }) {
           </div>
 
           <h3 className="text-sm font-medium leading-snug text-[#333]">
-            Apple MacBook Air 13.6&quot; Chip M2 8 Núcleos — 8GB RAM 256GB SSD — Gris Espacial — macOS Sonoma — Teclado Español Latino
+            {result?.title ?? 'Apple MacBook Air 13.6" Chip M2 8 Núcleos — 8GB RAM 256GB SSD — Gris Espacial — macOS Sonoma — Teclado Español Latino'}
           </h3>
 
           {/* Stars */}
@@ -119,13 +121,16 @@ function ListingPreview({ visible }: { visible: boolean }) {
           <div className="mt-auto border-t border-gray-100 pt-3">
             <p className="mb-2 text-xs font-medium text-gray-500">Características principales</p>
             <div className="space-y-1.5">
-              {[
-                ['Marca', 'Apple'],
-                ['Modelo', 'MacBook Air M2'],
-                ['Procesador', 'Apple M2'],
-                ['RAM', '8 GB'],
-                ['Almacenamiento', '256 GB SSD'],
-              ].map(([label, value]) => (
+              {(result?.attributes
+                ? Object.entries(result.attributes).slice(0, 5)
+                : [
+                    ['Marca', 'Apple'],
+                    ['Modelo', 'MacBook Air M2'],
+                    ['Procesador', 'Apple M2'],
+                    ['RAM', '8 GB'],
+                    ['Almacenamiento', '256 GB SSD'],
+                  ]
+              ).map(([label, value]) => (
                 <div key={label} className="flex items-center gap-2">
                   <span className="w-24 shrink-0 text-xs text-gray-400">{label}</span>
                   <span className="text-xs font-medium text-[#333]">{value}</span>
@@ -503,7 +508,7 @@ const SEVERITY_CONFIG = {
   },
 }
 
-function ImprovementsPanel() {
+function ImprovementsPanel({ userPrompt, result }: { userPrompt?: string; result?: GenerateResponse | null }) {
   return (
     <div className="flex flex-col gap-4 pb-1">
       {/* Score summary — compact, editorial */}
@@ -543,6 +548,9 @@ function ImprovementsPanel() {
       {/* Improvement cards — vertical before/after so nothing clips */}
       {IMPROVEMENTS.map((item, idx) => {
         const sev = SEVERITY_CONFIG[item.severity]
+        // For the title card, show the actual user prompt and generated title
+        const beforeText = idx === 0 && userPrompt ? userPrompt : item.before
+        const afterText  = idx === 0 && result?.title ? result.title : item.after
         return (
           <article
             key={item.category}
@@ -574,7 +582,7 @@ function ImprovementsPanel() {
                   Before
                 </p>
                 <p className="text-[13px] leading-relaxed text-gray-700 wrap-break-word">
-                  {item.before}
+                  {beforeText}
                 </p>
               </div>
               <div className="rounded-xl bg-emerald-50/50 px-3.5 py-3 ring-1 ring-emerald-100/90">
@@ -582,7 +590,7 @@ function ImprovementsPanel() {
                   After
                 </p>
                 <p className="text-[13px] leading-relaxed text-gray-900 wrap-break-word">
-                  {item.after}
+                  {afterText}
                 </p>
               </div>
             </div>
@@ -768,6 +776,8 @@ export default function NewProductPage() {
   const [overlayPhase, setOverlayPhase] = useState<OverlayPhase>('hidden')
   const [publishStep, setPublishStep] = useState(0)
   const [showSplit, setShowSplit] = useState(false)
+  const [generatedListing, setGeneratedListing] = useState<GenerateResponse | null>(null)
+  const [submittedPrompt, setSubmittedPrompt] = useState('')
   const chatEndRef = useRef<HTMLDivElement>(null)
   const chatMessagesRef = useRef<HTMLDivElement>(null)
   const idleRef = useRef<HTMLDivElement>(null)
@@ -783,6 +793,8 @@ export default function NewProductPage() {
     setPreviewReady(false)
     setPublishStep(0)
     setShowSplit(false)
+    setGeneratedListing(null)
+    setSubmittedPrompt('')
     animatedCount.current = 0
   }, [])
 
@@ -811,34 +823,73 @@ export default function NewProductPage() {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages, stage])
 
-  function startAiSteps(userPrompt: string) {
-    const userMsg: ChatMessage = { role: 'user', content: userPrompt }
-    setMessages([userMsg])
+  function startGeneration(userPrompt: string) {
+    setMessages([{ role: 'user', content: userPrompt }])
     setStage('thinking')
     setCurrentStep(0)
     setPreviewReady(false)
+    setGeneratedListing(null)
+
+    // Fire real API call immediately — runs in parallel with the animation
+    const apiPromise = apiClient.post<GenerateResponse, GenerateRequest>(
+      '/api/generate',
+      {
+        weak_title: userPrompt.split(/[.\n]/)[0].trim() || userPrompt,
+        weak_description: userPrompt,
+        weak_attributes: {},
+        category: '',
+        trending_keywords: [],
+        audit_diagnosis: {},
+      },
+    )
 
     let step = 0
-    const interval = setInterval(() => {
-      const msg = AI_STEPS[step]
-      if (!msg) {
-        clearInterval(interval)
+    let animationDone = false
+    // Use a ref-like object so the interval callback and the promise both
+    // read/write the same slot without stale-closure issues
+    const shared = { apiResult: null as Awaited<typeof apiPromise> | null }
+
+    const finalize = () => {
+      if (!animationDone || shared.apiResult === null) return
+      const res = shared.apiResult
+      if (res.error || !res.data) {
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: 'assistant' as const,
+            content: `Something went wrong: ${res.error ?? 'No data returned'}. Please try again.`,
+            icon: '⚠️',
+          },
+        ])
+        setStage('idle')
+        setShowSplit(false)
         return
       }
+      setGeneratedListing(res.data)
+      setStage('done')
+    }
+
+    const interval = setInterval(() => {
+      const msg = AI_STEPS[step]
+      if (!msg) { clearInterval(interval); return }
 
       setMessages((prev) => [...prev, msg])
       setCurrentStep(step + 1)
 
-      if (step === AI_STEPS.length - 2) {
-        setPreviewReady(true)
-      }
+      if (step === AI_STEPS.length - 2) setPreviewReady(true)
 
       if (step === AI_STEPS.length - 1) {
-        setStage('done')
+        animationDone = true
         clearInterval(interval)
+        finalize()
       }
       step++
     }, 1200)
+
+    apiPromise.then((result) => {
+      shared.apiResult = result
+      finalize()
+    })
   }
 
   function handleSubmit(e: React.FormEvent) {
@@ -847,6 +898,7 @@ export default function NewProductPage() {
 
     const savedPrompt = prompt
     setPrompt('')
+    setSubmittedPrompt(savedPrompt)
 
     const tl = gsap.timeline()
 
@@ -859,7 +911,7 @@ export default function NewProductPage() {
         ease: 'power2.in',
         onComplete: () => {
           setShowSplit(true)
-          startAiSteps(savedPrompt)
+          startGeneration(savedPrompt)
         },
       })
     }
@@ -927,6 +979,9 @@ export default function NewProductPage() {
         clearInterval(interval)
         setOverlayPhase('success')
         setTimeout(() => {
+          if (generatedListing) {
+            sessionStorage.setItem('prompty_listing', JSON.stringify(generatedListing))
+          }
           router.push('/dashboard/products/success')
         }, 1200)
       }
@@ -1043,7 +1098,7 @@ export default function NewProductPage() {
             </div>
 
             {previewReady ? (
-              <ListingPreview visible={previewReady} />
+              <ListingPreview visible={previewReady} result={generatedListing} />
             ) : (
               <PreviewSkeleton />
             )}
@@ -1098,7 +1153,7 @@ export default function NewProductPage() {
               </span>
             </div>
             <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden bg-gray-50/40 px-3 py-4 sm:px-4 sm:py-5">
-              <ListingPreview visible />
+              <ListingPreview visible result={generatedListing} />
             </div>
           </div>
 
@@ -1117,7 +1172,7 @@ export default function NewProductPage() {
             </div>
 
             <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain bg-gray-50/30 px-3 py-3 sm:px-4">
-              <ImprovementsPanel />
+              <ImprovementsPanel userPrompt={submittedPrompt} result={generatedListing} />
             </div>
 
             <div className="shrink-0 border-t border-gray-200 bg-white px-3 py-3 sm:px-4">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import DashboardMiniHeader from "@/components/layout/DashboardMiniHeader";
+import { Navbar } from "@/components/landing/Navbar";
+import Footer from "@/components/sections/Footer";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -17,10 +18,12 @@ export default function DashboardLayout({
 }) {
   return (
     <div className="flex min-h-dvh flex-col bg-gray-50 text-gray-900 antialiased">
-      <DashboardMiniHeader />
-      <div className="flex min-h-0 flex-1 flex-col px-4 py-4 sm:px-6 sm:py-5">
+      <Navbar />
+      {/* pt-24 clears the fixed navbar (py-4 outer + h-12 logo + buffer) */}
+      <main className="flex min-h-0 flex-1 flex-col px-4 pt-24 pb-8 sm:px-6 sm:pt-28">
         {children}
-      </div>
+      </main>
+      <Footer />
     </div>
   );
 }

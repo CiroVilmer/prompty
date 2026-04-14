@@ -21,6 +21,15 @@
   --color-brand-950: #121211;
 }
 
+/* ── Problem section — hidden until GSAP ScrollTrigger fires ── */
+[data-problem="label"],
+[data-problem="title"],
+[data-problem="body"],
+[data-problem="cards"],
+[data-problem="solution"] {
+  opacity: 0;
+}
+
 /* ── WhyPrompty — hidden until GSAP ScrollTrigger fires ── */
 [data-why="label"],
 [data-why="title"],

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import type { GenerateResponse } from '@/types'
 
 const MOCK_LISTING = {
   title:
@@ -22,9 +23,16 @@ const MOCK_LISTING = {
 
 export default function ProductSuccessPage() {
   const [show, setShow] = useState(false)
+  const [listing, setListing] = useState<GenerateResponse | null>(null)
 
   useEffect(() => {
     const t = requestAnimationFrame(() => setShow(true))
+    try {
+      const raw = sessionStorage.getItem('prompty_listing')
+      if (raw) setListing(JSON.parse(raw) as GenerateResponse)
+    } catch {
+      // sessionStorage unavailable or invalid JSON — fall back to mock
+    }
     return () => cancelAnimationFrame(t)
   }, [])
 
@@ -70,7 +78,7 @@ export default function ProductSuccessPage() {
             />
             <div className="flex flex-1 flex-col gap-1.5">
               <h2 className="text-sm font-medium leading-snug text-gray-900">
-                {MOCK_LISTING.title}
+                {listing?.title ?? MOCK_LISTING.title}
               </h2>
               <p className="text-lg font-semibold text-gray-900">
                 {MOCK_LISTING.price}
@@ -82,7 +90,10 @@ export default function ProductSuccessPage() {
           {/* Attributes */}
           <div className="border-t border-gray-100 px-5 py-4">
             <div className="grid grid-cols-2 gap-x-8 gap-y-2 sm:grid-cols-3">
-              {MOCK_LISTING.attributes.map(([label, value]) => (
+              {(listing?.attributes
+                ? Object.entries(listing.attributes)
+                : MOCK_LISTING.attributes
+              ).map(([label, value]) => (
                 <div key={label} className="flex flex-col">
                   <span className="text-[11px] text-gray-400">{label}</span>
                   <span className="text-xs font-medium text-gray-700">

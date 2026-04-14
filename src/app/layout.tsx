@@ -22,6 +22,18 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Prompty",
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+    other: [
+      { rel: 'icon', url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { rel: 'icon', url: '/favicon-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+  },
 }
 
 export default function RootLayout({

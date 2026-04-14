@@ -30,6 +30,7 @@ export default function LandingPage() {
         <Navbar />
         <main>
           <HeroSection loadingComplete={heroReady} />
+          <Problem />
           <BeforeAfterSection />
           <WhyPrompty />
         </main>

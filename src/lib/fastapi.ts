@@ -12,14 +12,27 @@ export async function proxyToFastAPI(
   init: RequestInit = {}
 ): Promise<Response> {
   const url = `${FASTAPI_URL}${path}`;
-  const res = await fetch(url, {
-    ...init,
-    headers: {
-      "Content-Type": "application/json",
-      ...init.headers,
-    },
-  });
-  // Return the FastAPI response as-is so the Next.js route can relay it
+
+  let res: Response;
+  try {
+    res = await fetch(url, {
+      ...init,
+      headers: {
+        "Content-Type": "application/json",
+        ...init.headers,
+      },
+    });
+  } catch (err) {
+    // Backend unreachable (ECONNREFUSED, timeout, etc.) — return a clean 503
+    const message =
+      err instanceof Error ? err.message : "Backend unavailable";
+    return new Response(JSON.stringify({ error: message }), {
+      status: 503,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+
+  // Relay the FastAPI response as-is
   const body = await res.text();
   return new Response(body, {
     status: res.status,

@@ -1,166 +1,262 @@
-# Prompty
+<div align="center">
+  <img src="public/images/logo-header.png" alt="Prompty" height="80" />
+  <br/><br/>
 
-**Prompty** is a prompt optimisation and distribution platform. Build, test, and automatically optimise prompts for any LLM, then distribute them across your team with full version control.
+  [![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)](https://nextjs.org)
+  [![FastAPI](https://img.shields.io/badge/FastAPI-0.110-009688?style=flat-square&logo=fastapi)](https://fastapi.tiangolo.com)
+  [![Claude](https://img.shields.io/badge/Claude-Sonnet%204.6-D97706?style=flat-square)](https://anthropic.com)
+  [![DSPy](https://img.shields.io/badge/DSPy-MIPROv2-6366F1?style=flat-square)](https://dspy.ai)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-5.4-3178C6?style=flat-square&logo=typescript)](https://typescriptlang.org)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38BDF8?style=flat-square&logo=tailwindcss)](https://tailwindcss.com)
+
+  <h3>AI-powered listing optimization for Mercado Libre sellers.</h3>
+  <p>Empirically optimized prompts. Real marketplace data. Measurably better listings.</p>
+</div>
 
 ---
 
-## Tech stack
+## What is Prompty?
 
-| Layer | Choice |
+Prompty transforms underperforming Mercado Libre listings into high-converting publications using empirically optimized AI. Sellers describe their product — or paste their current listing — and receive a fully optimized version: title, description, attributes, keywords, and image guidance, all calibrated against the best-selling products in their category.
+
+The platform runs a four-stage pipeline powered by Claude (Anthropic):
+
+- An **Auditor** that diagnoses listing quality against category benchmarks
+- A **Researcher** that queries the Mercado Libre API for real-time market data
+- A **Text Generator** that produces the optimized listing with DSPy-tuned prompts
+- An **Image Generator** that analyzes top-performing product photos via Claude Vision and creates specific prompts for professional-grade imagery
+
+What differentiates Prompty is how the system *learns*. Rather than hand-writing prompts, we use **DSPy (Stanford) with MIPROv2** to optimize them empirically against a custom training dataset of real MELI catalog products. The improvement is measurable: from a baseline mean of **64.95** to an optimized holdout score of **71.75** — a demonstrable, reproducible gain.
+
+Built for the Anthropic × Kaszek Hackathon. The MVP targets the sneakers vertical in Argentina; the pipeline is category and marketplace agnostic.
+
+---
+
+## Architecture
+
+```
+User Input (natural language description or raw listing data)
+       │
+       ▼
+┌─────────────┐     ┌──────────────┐     ┌──────────────────┐     ┌─────────────────┐
+│   Auditor   │────▶│  Researcher  │────▶│  Text Generator  │────▶│ Image Generator │
+│             │     │              │     │                  │     │                 │
+│ Diagnoses   │     │ Queries MELI │     │ Produces title,  │     │ Analyzes top    │
+│ quality vs  │     │ API: top     │     │ description,     │     │ product photos  │
+│ category    │     │ products,    │     │ attributes, and  │     │ via Claude      │
+│ benchmarks  │     │ trends,      │     │ keyword strategy │     │ Vision. Creates │
+│             │     │ attributes   │     │                  │     │ image prompts   │
+└─────────────┘     └──────────────┘     └──────────────────┘     └─────────────────┘
+                                                  │
+                                   ───────────────────────────────
+                                   DSPy MIPROv2 Optimization Layer
+                                   Empirically tuned on 70+ real
+                                   MELI products across 22 brands.
+                                   Not hand-written — measured.
+                                   ───────────────────────────────
+```
+
+The Next.js frontend proxies requests to a FastAPI backend. The backend orchestrates the pipeline, calling Claude for generation and the MELI API for market data.
+
+---
+
+## Tech Stack
+
+| Layer | Technology | Role |
+|---|---|---|
+| **Frontend** | Next.js 16 (App Router), TypeScript, Tailwind CSS v4 | Landing page & demo UI |
+| **Animations** | GSAP + ScrollTrigger, Lenis, Framer Motion | Scroll-driven & component animations |
+| **UI Libraries** | Aceternity UI, ReactBits, shadcn/ui | Pre-built animated components |
+| **Backend** | FastAPI (Python) | API server, pipeline orchestration |
+| **AI / LLM** | Claude Sonnet 4.6 (generation) · Claude Opus 4.6 (judge) | Text generation, vision analysis, quality scoring |
+| **Prompt Optimization** | DSPy (Stanford) + MIPROv2 | Empirical prompt tuning with measurable metrics |
+| **Marketplace API** | Mercado Libre API | Real-time product data, trends, required attributes |
+| **Training Data** | 70+ products, 22 brands, sneakers vertical | Custom dataset for DSPy optimization |
+| **Deployment** | Vercel (frontend), Uvicorn/FastAPI (backend) | Edge-optimized frontend, Python backend |
+
+---
+
+## The DSPy Advantage
+
+Most AI-powered listing tools ship hand-tuned prompts — someone's best guess at what produces good output. Prompty treats prompts as optimizable programs, not static strings.
+
+**What DSPy is:** A Stanford framework that lets you build LLM pipelines as composable modules with typed signatures. Instead of engineering prompts by hand, you define *what* you want and let an optimizer discover *how* to ask for it.
+
+**What MIPROv2 does:** Multi-Instruction Proposal Optimizer. It generates candidate prompt instructions, evaluates them against your training data using your metric, and selects the combination that maximizes measured quality — iteratively, empirically.
+
+**How we built the training dataset:** We collected 70+ real product listings from the Mercado Libre catalog across 22 brands in the sneakers vertical. For each, we defined what a high-quality listing looks like: title completeness, keyword coverage, attribute fill rate, and description quality. These become concrete training examples and evaluation targets.
+
+**The result:**
+
+| Split | Score |
 |---|---|
-| Framework | Next.js 16 (App Router, Turbopack) |
-| Language | TypeScript (strict) |
-| Styling | Tailwind CSS v4 |
-| Runtime | React 19.2 |
-| Deploy | Vercel |
+| Baseline (val) | 64.95 |
+| Optimized (val) | 69.30 |
+| Optimized (holdout) | **71.75** |
+| Delta | **+6.80 points** |
+
+Optimization ran for 22.4 minutes with a training set of 15 examples and 2 bootstrapped demos. The holdout improvement confirms the gains generalize — they're not overfit to the training set.
 
 ---
 
-## Getting started
+## Mercado Libre API Integration
 
-### 1. Clone & install
+Working with the MELI API at hackathon pace means navigating real permission constraints.
 
-```bash
-git clone https://github.com/your-org/prompty.git
-cd prompty
-npm install
-```
+**Active endpoints:**
+- `GET /highlights/MLA/category/{id}` — top-performing products by category (best-sellers proxy)
+- `GET /products/{id}` — full product detail including attributes and description
+- `GET /trends/MLA/{id}` — trending search keywords in a category
+- `GET /categories/{id}/attributes` — required and recommended attributes for a category path
 
-### 2. Configure environment variables
+**Blocked endpoints** (not available with current app permissions):
+- `GET /sites/MLA/search` — catalog search
+- `GET /items/{id}` — individual item detail
+- `GET /reviews` — seller/product reviews
 
-```bash
-cp .env.example .env.local
-```
-
-Then open `.env.local` and fill in each value:
-
-| Variable | Description |
-|---|---|
-| `DATABASE_URL` | PostgreSQL (or SQLite) connection string |
-| `AUTH_SECRET` | Random 32-byte secret — run `openssl rand -base64 32` |
-| `ANTHROPIC_API_KEY` | Anthropic key for the `/api/optimize` route |
-| `NEXT_PUBLIC_APP_URL` | Base URL of the app (`http://localhost:3000` locally) |
-
-### 3. Run the development server
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000). Turbopack is the default bundler in Next.js 16 — no extra flags needed.
-
-### 4. Type-check
-
-```bash
-npm run type-check
-```
+**Strategy:** We use `highlights` + `products` as a best-sellers proxy dataset, compensating for the blocked search and item endpoints. This gives us real top-performer data — the listings that the algorithm ranks highest — without requiring full catalog access. The researcher stage builds its market context entirely from this data.
 
 ---
 
-## Folder structure
+## Pipeline Detail
+
+**Auditor** — Takes the seller's raw listing and evaluates it against category-level benchmarks derived from top-performing products. Outputs a quality score across dimensions (title, attributes, keywords, description, images) and surfaces specific gaps. This diagnosis feeds directly into the generator's prompt context.
+
+**Researcher** — Queries the Mercado Libre API in real-time: top products in the category via `/highlights`, trending search terms via `/trends`, and required/recommended attribute fields via `/categories/{id}/attributes`. The result is a structured market snapshot the generator uses as its reference.
+
+**Text Generator** — Receives audit results + market research and produces an optimized title, description with sales-focused bullet points, complete attribute set, and keyword strategy. The prompt for this stage is optimized by DSPy MIPROv2 against real product quality metrics — not written by hand.
+
+**Image Generator** — Uses Claude Vision to analyze photos from the top-performing listings in the category, identifies compositional patterns (backgrounds, angles, lighting, branding), and generates a specific image brief a seller can use to produce or commission professional-grade photography.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 20+ and pnpm
+- Python 3.11+
+- `ANTHROPIC_API_KEY` (Anthropic console)
+- `MELI_ACCESS_TOKEN` (Mercado Libre developers portal)
+
+### Frontend
+
+```bash
+# From project root
+pnpm install
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+### Backend
+
+```bash
+# From project root
+pip install -r apps/api/requirements.txt
+
+# Start the FastAPI server
+python -m uvicorn apps.api.main:app --reload --port 8000
+```
+
+The API will be available at [http://localhost:8000](http://localhost:8000).  
+Interactive docs: [http://localhost:8000/docs](http://localhost:8000/docs).
+
+### Environment Variables
+
+| Variable | Where | Description |
+|---|---|---|
+| `ANTHROPIC_API_KEY` | `.env.local` + backend | Claude API key |
+| `MELI_ACCESS_TOKEN` | Backend | Mercado Libre access token |
+| `FASTAPI_URL` | `.env.local` | Backend URL (default: `http://localhost:8000`) |
+| `NEXT_PUBLIC_APP_URL` | `.env.local` | Frontend base URL |
+
+---
+
+## Project Structure
 
 ```
 prompty/
-├── src/
+├── src/                          # Next.js frontend
 │   ├── app/
-│   │   ├── layout.tsx              Root layout — fonts & metadata
-│   │   ├── page.tsx                Landing page
-│   │   ├── (auth)/
-│   │   │   ├── login/page.tsx      Sign-in page
-│   │   │   └── register/page.tsx   Registration page
-│   │   ├── dashboard/
-│   │   │   ├── layout.tsx          Dashboard shell (sidebar + header)
-│   │   │   ├── page.tsx            Overview / stats
-│   │   │   └── prompts/
-│   │   │       ├── page.tsx        List prompts
-│   │   │       ├── new/page.tsx    Create a prompt
-│   │   │       └── [id]/page.tsx   Edit / view a prompt
-│   │   └── api/
-│   │       ├── prompts/route.ts        GET list, POST create
-│   │       ├── prompts/[id]/route.ts   GET, PUT, DELETE single
-│   │       ├── optimize/route.ts       POST — run optimisation
-│   │       └── health/route.ts         GET — liveness probe
-│   ├── lib/
-│   │   ├── db.ts           Database client placeholder (Prisma / Drizzle)
-│   │   ├── auth.ts         Auth helpers — token creation & verification
-│   │   └── api-client.ts   Typed fetch wrapper for internal API calls
+│   │   ├── page.tsx              # Landing page
+│   │   ├── dashboard/            # Product creation flow
+│   │   │   ├── page.tsx          # Overview
+│   │   │   └── products/new/     # AI listing generator UI
+│   │   └── api/                  # Next.js API routes (proxy to FastAPI)
+│   │       ├── generate/
+│   │       ├── audit/
+│   │       ├── compare/
+│   │       └── image-prompt/
 │   ├── components/
-│   │   ├── ui/             Button, Input, Card
-│   │   └── layout/         Header, Sidebar, Footer
-│   └── types/
-│       └── index.ts        Shared TypeScript types
-├── proxy.ts                Next.js 16 proxy (replaces middleware.ts)
-├── next.config.ts          Next.js config — reactCompiler enabled
-├── tailwind.config.ts
-├── tsconfig.json
-└── .env.example
+│   │   ├── landing/              # Hero, Navbar
+│   │   ├── sections/             # Problem, BeforeAfter, WhyPrompty, Footer
+│   │   └── ui/                   # Button, Card, Input, BorderGlow, AnimatedTooltip
+│   └── lib/
+│       ├── api-client.ts         # Typed fetch wrapper
+│       └── fastapi.ts            # FastAPI proxy helper
+│
+├── apps/
+│   └── api/                      # FastAPI backend
+│       ├── routers/
+│       │   ├── audit.py
+│       │   ├── generate.py
+│       │   ├── compare.py
+│       │   └── image.py
+│       ├── main.py
+│       ├── schemas.py
+│       └── requirements.txt
+│
+├── dspy_pipeline/                # DSPy modules + optimization
+│   ├── modules/
+│   │   ├── auditor.py
+│   │   ├── text_generator.py
+│   │   ├── image_prompter.py
+│   │   └── pipeline.py
+│   ├── judges/                   # Quality metric definitions
+│   ├── optimize/                 # MIPROv2 optimization scripts
+│   ├── compiled/                 # Optimized prompt checkpoints
+│   │   └── generator_v1.json
+│   └── data/                     # Training dataset
+│
+├── scripts/                      # Evaluation + calibration scripts
+├── tests/
+└── package.json
 ```
 
 ---
 
-## API endpoints
+## API Reference
 
-### Prompts
-
-| Method | Path | Description |
-|---|---|---|
-| `GET` | `/api/prompts` | List all prompts |
-| `POST` | `/api/prompts` | Create a new prompt |
-| `GET` | `/api/prompts/:id` | Get a single prompt |
-| `PUT` | `/api/prompts/:id` | Update a prompt |
-| `DELETE` | `/api/prompts/:id` | Delete a prompt |
-
-**POST / PUT body**
-
-```json
-{
-  "title": "My prompt",
-  "content": "You are a helpful assistant that…",
-  "model": "claude-sonnet-4-6",
-  "variables": { "tone": "formal" },
-  "tags": ["summarisation", "rag"]
-}
-```
-
-### Optimisation
+All routes are prefixed with `/api` on the FastAPI backend (`localhost:8000`), proxied through Next.js.
 
 | Method | Path | Description |
 |---|---|---|
-| `POST` | `/api/optimize` | Run DSPy optimisation on a prompt |
-
-**POST body**
-
-```json
-{
-  "promptId": "uuid",
-  "model": "claude-sonnet-4-6",
-  "examples": [
-    { "input": "Summarise this article…", "expectedOutput": "…" }
-  ]
-}
-```
-
-### Health
-
-| Method | Path | Description |
-|---|---|---|
-| `GET` | `/api/health` | Liveness probe — returns `{ status: "ok" }` |
+| `POST` | `/api/audit` | Diagnose listing quality vs category benchmarks |
+| `POST` | `/api/generate` | Generate optimized listing (title, description, attributes) |
+| `POST` | `/api/image-prompt` | Generate image brief from category top-performer photos |
+| `POST` | `/api/compare` | Side-by-side: raw LLM vs Prompty baseline vs Prompty optimized |
+| `GET` | `/api/health` | Liveness probe — returns mode, compiled checkpoint name |
 
 ---
 
-## Deployment (Vercel)
+## Team
+Ciro Vilmer - FullStack Developer:  https://www.linkedin.com/in/ciro-vilmer-b4727a174/
+Luis Embon Strizzi - Backend Developer: https://www.linkedin.com/in/luis-embon-strizzi/ 
+Valentin Gonzalez - Frontend Developer: https://www.linkedin.com/in/valentin-gonzalez-6a1805276/ 
+Martina Chiappa
 
-1. Push to GitHub.
-2. Import the repository in [Vercel](https://vercel.com/new).
-3. Add the environment variables from `.env.example` in the Vercel project settings.
-4. Deploy — Vercel auto-detects Next.js and uses Turbopack.
+
+*Fill in before submitting.*
 
 ---
 
-## Next steps
+## Acknowledgments
 
-- [ ] Wire up a real database (Prisma or Drizzle) in `src/lib/db.ts`
-- [ ] Implement auth (Auth.js v5 / Lucia / Clerk) in `src/lib/auth.ts`
-- [ ] Integrate Anthropic SDK in `/api/optimize` for real optimisation
-- [ ] Add DSPy micro-service for multi-step teleprompter optimisation
-- [ ] Add prompt versioning and diff view
+Built for the **Anthropic × Kaszek Hackathon**.
+
+- LLM backbone: **[Claude](https://anthropic.com)** (Anthropic) — Sonnet 4.6 for generation, Opus 4.6 for judging
+- Prompt optimization: **[DSPy](https://dspy.ai)** (Stanford NLP Group)
+- Marketplace data: **[Mercado Libre API](https://developers.mercadolibre.com.ar)**
+- Frontend animations: **[GSAP](https://gsap.com)**, **[Lenis](https://lenis.darkroom.engineering)**, **[Framer Motion](https://framer.com/motion)**
+- UI components: **[Aceternity UI](https://ui.aceternity.com)**, **[ReactBits](https://reactbits.dev)**

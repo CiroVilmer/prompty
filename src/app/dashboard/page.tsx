@@ -34,20 +34,20 @@ export default function DashboardPage() {
       </div>
 
       {/* Quick actions */}
-      <div>
+      <div className="flex flex-col items-center">
         <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-400">
           Quick actions
         </h2>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap justify-center gap-3">
           <Link
             href="/dashboard/products/new"
-            className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white hover:bg-brand-700"
+            className="rounded-lg bg-brand-600 px-6 py-3 text-base font-semibold text-white hover:bg-brand-700"
           >
             + New product
           </Link>
           <Link
             href="/dashboard/products"
-            className="rounded-lg border border-gray-200 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+            className="rounded-lg border border-gray-200 px-6 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50"
           >
             View all products
           </Link>
