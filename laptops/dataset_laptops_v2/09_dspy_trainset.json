@@ -1,0 +1,372 @@
+[
+  {
+    "input": {
+      "title": "Notebook Lenovo",
+      "description": "Laptop en buen estado. Consulte disponibilidad.",
+      "attributes_shown": {
+        "BRAND": "Lenovo",
+        "MODEL": "",
+        "PROCESSOR_BRAND": "",
+        "PROCESSOR_LINE": "",
+        "RAM_MEMORY_MODULE_TOTAL_CAPACITY": "",
+        "SSD_DATA_STORAGE_CAPACITY": "",
+        "DISPLAY_RESOLUTION": "",
+        "OS_NAME": "",
+        "OS_VERSION": "",
+        "COLOR": "Luna Grey"
+      },
+      "num_photos": 1,
+      "error_types": [
+        "titulo_generico",
+        "titulo_cortado",
+        "sin_descripcion",
+        "pocos_atributos",
+        "atributos_vacios",
+        "pocas_fotos"
+      ]
+    },
+    "real_product": {
+      "id": "MLA65916147",
+      "name": "Notebook Lenovo Ideapad Slim 3 15ARP10 AMD Ryzen 7 7735hs 40GB DDR5 512 GB SSD Nvme 15.3 WUXGA IPS 1920x1200 AMD Radeon Graphics 680M Wifi 6 Camara FHD IR Teclado Español Windows 11 Home Luna Grey",
+      "brand": "Lenovo",
+      "model": "IdeaPad Slim 3 15ARP10",
+      "processor": "AMD 7735HS",
+      "ram": "",
+      "storage": "",
+      "photo_urls": [
+        "https://http2.mlstatic.com/D_NQ_NP_922063-MLA107609464105_022026-F.jpg",
+        "https://http2.mlstatic.com/D_NQ_NP_861079-MLA106837896082_022026-F.jpg",
+        "https://http2.mlstatic.com/D_NQ_NP_924511-MLA107609494057_022026-F.jpg"
+      ]
+    },
+    "profile": "novato"
+  },
+  {
+    "input": {
+      "title": "NOTEBOOK LENOVO !!! OFERTA !!! ENVÍO GRATIS !!! GAMING !!! RYZEN !!!",
+      "description": "¡¡¡ INCREÍBLE PRECIO !!! NOTEBOOK LENOVO DE ÚLTIMA GENERACIÓN !!! ENVÍO GRATIS A TODO EL PAÍS !!! ¡¡¡ NO TE LO PIERDAS !!! CONSULTE STOCK !!! PROMOCIÓN LIMITADA !!! ¡¡¡ COMPRÁ AHORA !!!",
+      "attributes_shown": {
+        "BRAND": "Lenovo",
+        "MODEL": "IdeaPad",
+        "PROCESSOR_BRAND": "AMD",
+        "PROCESSOR_LINE": "Ryzen",
+        "RAM_MEMORY_MODULE_TOTAL_CAPACITY": "Mucha RAM",
+        "SSD_DATA_STORAGE_CAPACITY": "Mucho almacenamiento",
+        "DISPLAY_RESOLUTION": "Full HD",
+        "OS_NAME": "Windows",
+        "OS_VERSION": "",
+        "COLOR": "Gris"
+      },
+      "num_photos": 2,
+      "error_types": [
+        "titulo_mayusculas",
+        "titulo_spam",
+        "descripcion_spam",
+        "atributos_genericos",
+        "pocas_fotos"
+      ]
+    },
+    "real_product": {
+      "id": "MLA65916147",
+      "name": "Notebook Lenovo Ideapad Slim 3 15ARP10 AMD Ryzen 7 7735hs 40GB DDR5 512 GB SSD Nvme 15.3 WUXGA IPS 1920x1200 AMD Radeon Graphics 680M Wifi 6 Camara FHD IR Teclado Español Windows 11 Home Luna Grey",
+      "brand": "Lenovo",
+      "model": "IdeaPad Slim 3 15ARP10",
+      "processor": "AMD 7735HS",
+      "ram": "",
+      "storage": "",
+      "photo_urls": [
+        "https://http2.mlstatic.com/D_NQ_NP_922063-MLA107609464105_022026-F.jpg",
+        "https://http2.mlstatic.com/D_NQ_NP_861079-MLA106837896082_022026-F.jpg",
+        "https://http2.mlstatic.com/D_NQ_NP_924511-MLA107609494057_022026-F.jpg"
+      ]
+    },
+    "profile": "spammer"
+  },
+  {
+    "input": {
+      "title": "Lenovo IdeaPad Slim 3 Ryzen AMD 15.3",
+      "description": "Notebook Lenovo IdeaPad Slim 3 15ARP10 con procesador AMD Ryzen 7. Pantalla 15.3 pulgadas WUXGA 1920x1200. Windows 11. DDR5. SSD Nvme.",
+      "attributes_shown": {
+        "BRAND": "Lenovo",
+        "MODEL": "IdeaPad Slim 3",
+        "PROCESSOR_BRAND": "AMD",
+        "PROCESSOR_LINE": "Ryzen 7",
+        "PROCESSOR_MODEL": "7735HS",
+        "RAM_MEMORY_MODULE_TOTAL_CAPACITY": "40GB",
+        "SSD_DATA_STORAGE_CAPACITY": "",
+        "DISPLAY_RESOLUTION": "1920 x 1200",
+        "OS_NAME": "Windows",
+        "OS_VERSION": "11",
+        "COLOR": "Gris"
+      },
+      "num_photos": 3,
+      "error_types": [
+        "titulo_sin_specs",
+        "descripcion_cortada",
+        "pocos_atributos",
+        "atributos_vacios",
+        "atributos_genericos"
+      ]
+    },
+    "real_product": {
+      "id": "MLA65916147",
+      "name": "Notebook Lenovo Ideapad Slim 3 15ARP10 AMD Ryzen 7 7735hs 40GB DDR5 512 GB SSD Nvme 15.3 WUXGA IPS 1920x1200 AMD Radeon Graphics 680M Wifi 6 Camara FHD IR Teclado Español Windows 11 Home Luna Grey",
+      "brand": "Lenovo",
+      "model": "IdeaPad Slim 3 15ARP10",
+      "processor": "AMD 7735HS",
+      "ram": "",
+      "storage": "",
+      "photo_urls": [
+        "https://http2.mlstatic.com/D_NQ_NP_922063-MLA107609464105_022026-F.jpg",
+        "https://http2.mlstatic.com/D_NQ_NP_861079-MLA106837896082_022026-F.jpg",
+        "https://http2.mlstatic.com/D_NQ_NP_924511-MLA107609494057_022026-F.jpg"
+      ]
+    },
+    "profile": "incompleto"
+  },
+  {
+    "input": {
+      "title": "Notebook Pcbox",
+      "description": "Laptop en buen estado. Consulte disponibilidad.",
+      "attributes_shown": {
+        "BRAND": "Pcbox",
+        "MODEL": "",
+        "PROCESSOR_BRAND": "",
+        "RAM_MEMORY_MODULE_TOTAL_CAPACITY": "",
+        "SSD_DATA_STORAGE_CAPACITY": "",
+        "DISPLAY_RESOLUTION": "",
+        "OS_NAME": "",
+        "COLOR": "Iron gray"
+      },
+      "num_photos": 1,
+      "error_types": [
+        "titulo_cortado",
+        "titulo_generico",
+        "sin_descripcion",
+        "pocos_atributos",
+        "atributos_vacios",
+        "pocas_fotos"
+      ]
+    },
+    "real_product": {
+      "id": "MLA65462335",
+      "name": "Notebook Pcbox Fire Pcb-glw2 Intel Celeron N4020 4gb De Ram 128gb Emmc 14.1 (35.6 Cm) 1366x768px Intel Uhd Graphics 600 Teclado Español Windows 11 Home Color Iron Gray",
+      "brand": "Pcbox",
+      "model": "Pcb-glw2",
+      "processor": "Intel N4020",
+      "ram": "",
+      "storage": "",
+      "photo_urls": [
+        "https://http2.mlstatic.com/D_NQ_NP_975466-MLA106934996057_022026-F.jpg",
+        "https://http2.mlstatic.com/D_NQ_NP_844273-MLA106303362822_022026-F.jpg",
+        "https://http2.mlstatic.com/D_NQ_NP_693628-MLA106305018266_022026-F.jpg"
+      ]
+    },
+    "profile": "novato"
+  },
+  {
+    "input": {
+      "title": "NOTEBOOK PCBOX!!! OFERTA INCREÍBLE!!! ENVÍO GRATIS!!! ¡¡¡CONSULTE!!!",
+      "description": "OFERTA EXCLUSIVA!!!! NOTEBOOK DE ÚLTIMA GENERACIÓN!!!! SUPER BARATO!!! ENVÍO GRATIS A TODO EL PAÍS!!! ¡¡¡NO TE LO PIERDAS!!! COMPRA AHORA!!! CONSULTE ANTES DE OFERTAR!!! STOCK LIMITADO!!!",
+      "attributes_shown": {
+        "BRAND": "Pcbox",
+        "MODEL": "Fire",
+        "PROCESSOR_BRAND": "Intel",
+        "RAM_MEMORY_MODULE_TOTAL_CAPACITY": "4GB",
+        "SSD_DATA_STORAGE_CAPACITY": "Memoria",
+        "DISPLAY_RESOLUTION": "Pantalla",
+        "OS_NAME": "Windows",
+        "COLOR": "Gris"
+      },
+      "num_photos": 2,
+      "error_types": [
+        "titulo_mayusculas",
+        "titulo_spam",
+        "descripcion_spam",
+        "atributos_genericos",
+        "pocas_fotos"
+      ]
+    },
+    "real_product": {
+      "id": "MLA65462335",
+      "name": "Notebook Pcbox Fire Pcb-glw2 Intel Celeron N4020 4gb De Ram 128gb Emmc 14.1 (35.6 Cm) 1366x768px Intel Uhd Graphics 600 Teclado Español Windows 11 Home Color Iron Gray",
+      "brand": "Pcbox",
+      "model": "Pcb-glw2",
+      "processor": "Intel N4020",
+      "ram": "",
+      "storage": "",
+      "photo_urls": [
+        "https://http2.mlstatic.com/D_NQ_NP_975466-MLA106934996057_022026-F.jpg",
+        "https://http2.mlstatic.com/D_NQ_NP_844273-MLA106303362822_022026-F.jpg",
+        "https://http2.mlstatic.com/D_NQ_NP_693628-MLA106305018266_022026-F.jpg"
+      ]
+    },
+    "profile": "spammer"
+  },
+  {
+    "input": {
+      "title": "Notebook Pcbox Fire Intel N4020 4GB RAM 128GB",
+      "description": "Notebook Pcbox Fire con procesador Intel Celeron N4020, 4GB de RAM LPDDR4, almacenamiento 128GB, pantalla 14.1 pulgadas. Windows 11 Home. Color iron gray. Teclado español incluido.",
+      "attributes_shown": {
+        "BRAND": "Pcbox",
+        "MODEL": "Pcb-glw2",
+        "LINE": "Fire",
+        "PROCESSOR_BRAND": "Intel",
+        "PROCESSOR_LINE": "Celeron",
+        "PROCESSOR_MODEL": "N4020",
+        "RAM_MEMORY_MODULE_TOTAL_CAPACITY": "4 GB",
+        "SSD_DATA_STORAGE_CAPACITY": "128 GB",
+        "DISPLAY_RESOLUTION": "",
+        "DISPLAY_REFRESH_RATE": "",
+        "OS_NAME": "Windows",
+        "OS_VERSION": "",
+        "COLOR": "Iron gray"
+      },
+      "num_photos": 3,
+      "error_types": [
+        "titulo_cortado",
+        "titulo_sin_specs",
+        "descripcion_cortada",
+        "pocos_atributos",
+        "atributos_vacios"
+      ]
+    },
+    "real_product": {
+      "id": "MLA65462335",
+      "name": "Notebook Pcbox Fire Pcb-glw2 Intel Celeron N4020 4gb De Ram 128gb Emmc 14.1 (35.6 Cm) 1366x768px Intel Uhd Graphics 600 Teclado Español Windows 11 Home Color Iron Gray",
+      "brand": "Pcbox",
+      "model": "Pcb-glw2",
+      "processor": "Intel N4020",
+      "ram": "",
+      "storage": "",
+      "photo_urls": [
+        "https://http2.mlstatic.com/D_NQ_NP_975466-MLA106934996057_022026-F.jpg",
+        "https://http2.mlstatic.com/D_NQ_NP_844273-MLA106303362822_022026-F.jpg",
+        "https://http2.mlstatic.com/D_NQ_NP_693628-MLA106305018266_022026-F.jpg"
+      ]
+    },
+    "profile": "incompleto"
+  },
+  {
+    "input": {
+      "title": "Notebook Asus",
+      "description": "Laptop en buen estado. Se vende porque necesito el dinero. Funciona bien.",
+      "attributes_shown": {
+        "BRAND": "Asus",
+        "MODEL": "",
+        "RAM_MEMORY_MODULE_TOTAL_CAPACITY": "",
+        "SSD_DATA_STORAGE_CAPACITY": "",
+        "PROCESSOR_LINE": "",
+        "DISPLAY_RESOLUTION": "",
+        "OS_NAME": ""
+      },
+      "num_photos": 1,
+      "error_types": [
+        "titulo_cortado",
+        "titulo_generico",
+        "sin_descripcion",
+        "pocos_atributos",
+        "atributos_vacios",
+        "pocas_fotos"
+      ]
+    },
+    "real_product": {
+      "id": "MLA63642585",
+      "name": "Notebook Asus Vivobook M1502ya-bq580 Ryzen 7 5825u 24gb De Ram Ddr4 512gb Ssd M.2 Nvme Pcie, Amd Radeon Graphics (15,6) Full Hd 1920 X 1080 Ips Wi-fi 6e (802.11ax) Windows 11 Home, Color Cool Silver.",
+      "brand": "Asus",
+      "model": "M1502-BQ580",
+      "processor": "AMD 5825U",
+      "ram": "",
+      "storage": "",
+      "photo_urls": [
+        "https://http2.mlstatic.com/D_NQ_NP_666471-MLA102967187211_122025-F.jpg",
+        "https://http2.mlstatic.com/D_NQ_NP_915412-MLA102967117611_122025-F.jpg",
+        "https://http2.mlstatic.com/D_NQ_NP_810122-MLA102966283959_122025-F.jpg"
+      ]
+    },
+    "profile": "novato"
+  },
+  {
+    "input": {
+      "title": "NOTEBOOK ASUS VIVOBOOK!!! OFERTA IMPERDIBLE!!! ENVÍO GRATIS!!!",
+      "description": "OFERTA!!!! OFERTA!!!! OFERTA!!!! SUPER PRECIO!!! ENVÍO GRATIS A TODO EL PAÍS!!! CONSULTE POR PROMOCIONES!!! NO SE PIERDA ESTA OPORTUNIDAD!!! PRODUCTO IMPORTADO DE CALIDAD!!! CONSULTE DISPONIBILIDAD!!! OFERTA LIMITADA!!! HACEMOS ENVÍOS A TODO EL PAÍS!!!",
+      "attributes_shown": {
+        "BRAND": "Asus",
+        "LINE": "VivoBook",
+        "MODEL": "Modelo Gaming",
+        "RAM_MEMORY_MODULE_TOTAL_CAPACITY": "16 GB",
+        "SSD_DATA_STORAGE_CAPACITY": "Almacenamiento Alto",
+        "PROCESSOR_LINE": "Ryzen",
+        "DISPLAY_RESOLUTION": "Full HD",
+        "COLOR": "Gris"
+      },
+      "num_photos": 2,
+      "error_types": [
+        "titulo_mayusculas",
+        "titulo_spam",
+        "descripcion_spam",
+        "atributos_genericos",
+        "pocas_fotos"
+      ]
+    },
+    "real_product": {
+      "id": "MLA63642585",
+      "name": "Notebook Asus Vivobook M1502ya-bq580 Ryzen 7 5825u 24gb De Ram Ddr4 512gb Ssd M.2 Nvme Pcie, Amd Radeon Graphics (15,6) Full Hd 1920 X 1080 Ips Wi-fi 6e (802.11ax) Windows 11 Home, Color Cool Silver.",
+      "brand": "Asus",
+      "model": "M1502-BQ580",
+      "processor": "AMD 5825U",
+      "ram": "",
+      "storage": "",
+      "photo_urls": [
+        "https://http2.mlstatic.com/D_NQ_NP_666471-MLA102967187211_122025-F.jpg",
+        "https://http2.mlstatic.com/D_NQ_NP_915412-MLA102967117611_122025-F.jpg",
+        "https://http2.mlstatic.com/D_NQ_NP_810122-MLA102966283959_122025-F.jpg"
+      ]
+    },
+    "profile": "spammer"
+  },
+  {
+    "input": {
+      "title": "Notebook Asus Ryzen 7 24GB RAM 512GB",
+      "description": "Notebook Asus VivoBook M1502 con procesador Ryzen 7 5825U, 24GB DDR4, pantalla Full HD 1920x1080. Incluye Windows 11. Radeon Graphics. Excelente para trabajo y entretenimiento. Precio competitivo.",
+      "attributes_shown": {
+        "BRAND": "Asus",
+        "LINE": "VivoBook",
+        "MODEL": "M1502",
+        "RAM_MEMORY_MODULE_TOTAL_CAPACITY": "24 GB",
+        "SSD_DATA_STORAGE_CAPACITY": "512 GB",
+        "PROCESSOR_BRAND": "AMD",
+        "PROCESSOR_LINE": "Ryzen 7",
+        "PROCESSOR_MODEL": "",
+        "DISPLAY_RESOLUTION": "1920 px x 1080 px",
+        "DISPLAY_REFRESH_RATE": "",
+        "OS_NAME": "Windows",
+        "OS_VERSION": "",
+        "COLOR": "Plata"
+      },
+      "num_photos": 3,
+      "error_types": [
+        "titulo_cortado",
+        "titulo_sin_specs",
+        "descripcion_cortada",
+        "atributos_vacios",
+        "pocos_atributos"
+      ]
+    },
+    "real_product": {
+      "id": "MLA63642585",
+      "name": "Notebook Asus Vivobook M1502ya-bq580 Ryzen 7 5825u 24gb De Ram Ddr4 512gb Ssd M.2 Nvme Pcie, Amd Radeon Graphics (15,6) Full Hd 1920 X 1080 Ips Wi-fi 6e (802.11ax) Windows 11 Home, Color Cool Silver.",
+      "brand": "Asus",
+      "model": "M1502-BQ580",
+      "processor": "AMD 5825U",
+      "ram": "",
+      "storage": "",
+      "photo_urls": [
+        "https://http2.mlstatic.com/D_NQ_NP_666471-MLA102967187211_122025-F.jpg",
+        "https://http2.mlstatic.com/D_NQ_NP_915412-MLA102967117611_122025-F.jpg",
+        "https://http2.mlstatic.com/D_NQ_NP_810122-MLA102966283959_122025-F.jpg"
+      ]
+    },
+    "profile": "incompleto"
+  }
+]

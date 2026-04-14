@@ -1,0 +1,876 @@
+{
+  "MLA430687": {
+    "name": "Notebooks y Accesorios",
+    "total": 46,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca del repuesto",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo del repuesto",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA3377": {
+    "name": "Accesorios para Notebooks",
+    "total": 46,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca del repuesto",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo del repuesto",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA3579": {
+    "name": "Bolsos Porta Notebooks",
+    "total": 46,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca del repuesto",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo del repuesto",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA9930": {
+    "name": "Cables y Adaptadores",
+    "total": 58,
+    "required_count": 3,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca del cable",
+        "value_type": "string"
+      },
+      {
+        "id": "INPUT_CONNECTOR",
+        "name": "Conector de entrada",
+        "value_type": "string"
+      },
+      {
+        "id": "OUTPUT_CONNECTOR",
+        "name": "Conector de salida",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA11878": {
+    "name": "Candados y Cables de Seguridad",
+    "total": 47,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA3577": {
+    "name": "Cargadores",
+    "total": 59,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": " Marca del cargador",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": " Modelo del cargador",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA433067": {
+    "name": "Controladores de Movimiento",
+    "total": 54,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA16555": {
+    "name": "Controles Remotos",
+    "total": 50,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA418544": {
+    "name": "Coolers Externos",
+    "total": 55,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA3581": {
+    "name": "Docking Stations y Replicators",
+    "total": 51,
+    "required_count": 3,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "POWER_SUPPLY_TYPE",
+        "name": "Tipo de alimentación",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA17957": {
+    "name": "Fundas",
+    "total": 54,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca de la funda y carcasa para notebooks",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo de la funda y carcasa para notebooks",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA3708": {
+    "name": "Grabadoras y Lectoras de CD",
+    "total": 62,
+    "required_count": 3,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "POWER_SUPPLY_TYPE",
+        "name": "Tipo de alimentación",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA9914": {
+    "name": "Hubs USB",
+    "total": 53,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA7222": {
+    "name": "Kits para Notebooks",
+    "total": 94,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA6734": {
+    "name": "Lámparas USB",
+    "total": 59,
+    "required_count": 3,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "WITH_USB",
+        "name": "Con USB",
+        "value_type": "boolean"
+      }
+    ]
+  },
+  "MLA416576": {
+    "name": "Presentadores de Diapositivas",
+    "total": 53,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA455839": {
+    "name": "Protectores de Pantalla",
+    "total": 49,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA416880": {
+    "name": "Protectores de Teclados",
+    "total": 47,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA417996": {
+    "name": "Skins",
+    "total": 50,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA63262": {
+    "name": "Soportes",
+    "total": 56,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA429609": {
+    "name": "Tokens",
+    "total": 43,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA455865": {
+    "name": "Ventiladores Portátiles",
+    "total": 69,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA3584": {
+    "name": "Otros",
+    "total": 46,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca del repuesto",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo del repuesto",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA1652": {
+    "name": "Notebooks",
+    "total": 135,
+    "required_count": 6,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "PROCESSOR_BRAND",
+        "name": "Marca del procesador",
+        "value_type": "list"
+      },
+      {
+        "id": "PROCESSOR_LINE",
+        "name": "Línea del procesador",
+        "value_type": "string"
+      },
+      {
+        "id": "PROCESSOR_MODEL",
+        "name": "Modelo del procesador",
+        "value_type": "string"
+      },
+      {
+        "id": "DISPLAY_SIZE",
+        "name": "Tamaño de la pantalla",
+        "value_type": "number_unit"
+      }
+    ]
+  },
+  "MLA82334": {
+    "name": "Repuestos",
+    "total": 46,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca del repuesto",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo del repuesto",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA432609": {
+    "name": "Antenas",
+    "total": 51,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "FREQUENCY",
+        "name": "Frecuencia",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA3578": {
+    "name": "Baterías",
+    "total": 50,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca de la batería",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo de la batería",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA38961": {
+    "name": "Bisagras",
+    "total": 42,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA72564": {
+    "name": "Cables Flex",
+    "total": 48,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA4225": {
+    "name": "Carcasas",
+    "total": 49,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA430261": {
+    "name": "Conectores",
+    "total": 56,
+    "required_count": 3,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "CONNECTOR_TYPE",
+        "name": "Tipo de conector",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA418545": {
+    "name": "Coolers Internos para Laptops",
+    "total": 43,
+    "required_count": 3,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "DEVICE_PART_NUMBER",
+        "name": "Número de pieza del dispositivo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA430764": {
+    "name": "Cámaras Internas",
+    "total": 47,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "DEVICE_PART_NUMBER",
+        "name": "Número de pieza del dispositivo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA432140": {
+    "name": "Interruptores para Teclados",
+    "total": 46,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA40781": {
+    "name": "Inverters",
+    "total": 44,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA3582": {
+    "name": "Memorias RAM para Laptops",
+    "total": 69,
+    "required_count": 4,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "RAM_MEMORY_MODULES",
+        "name": "Módulos de memoria RAM",
+        "value_type": "string"
+      },
+      {
+        "id": "RAM_MEMORY_MODULE_TOTAL_CAPACITY",
+        "name": "Capacidad total del módulo de memoria RAM",
+        "value_type": "number_unit"
+      }
+    ]
+  },
+  "MLA9933": {
+    "name": "Pantallas",
+    "total": 49,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca de la pantalla",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo de la pantalla",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA7221": {
+    "name": "Parlantes",
+    "total": 43,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA429547": {
+    "name": "Pilas BIOS y CMOS",
+    "total": 50,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA455831": {
+    "name": "Placas",
+    "total": 46,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca del repuesto",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo del repuesto",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA55218": {
+    "name": "Procesadores",
+    "total": 77,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "LINE",
+        "name": "Línea",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "ALPHANUMERIC_MODEL",
+        "name": "Modelo alfanumérico",
+        "value_type": "string"
+      },
+      {
+        "id": "COMPATIBLE_SOCKETS",
+        "name": "Zócalos compatibles",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA430176": {
+    "name": "Stencils",
+    "total": 47,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA9916": {
+    "name": "Teclados",
+    "total": 59,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca del teclado",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo del teclado",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA430765": {
+    "name": "Touchpads",
+    "total": 47,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA430766": {
+    "name": "Trackpoints",
+    "total": 46,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA82335": {
+    "name": "Otros",
+    "total": 46,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca del repuesto",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo del repuesto",
+        "value_type": "string"
+      }
+    ]
+  },
+  "MLA82486": {
+    "name": "Otros",
+    "total": 46,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca del repuesto",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo del repuesto",
+        "value_type": "string"
+      }
+    ]
+  }
+}

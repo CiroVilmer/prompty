@@ -1,0 +1,406 @@
+{
+  "total": 135,
+  "required_count": 6,
+  "required": [
+    {
+      "id": "BRAND",
+      "name": "Marca"
+    },
+    {
+      "id": "MODEL",
+      "name": "Modelo"
+    },
+    {
+      "id": "PROCESSOR_BRAND",
+      "name": "Marca del procesador"
+    },
+    {
+      "id": "PROCESSOR_LINE",
+      "name": "Línea del procesador"
+    },
+    {
+      "id": "PROCESSOR_MODEL",
+      "name": "Modelo del procesador"
+    },
+    {
+      "id": "DISPLAY_SIZE",
+      "name": "Tamaño de la pantalla"
+    }
+  ],
+  "important_optional": [
+    {
+      "id": "DISPLAY_RESOLUTION",
+      "name": "Resolución de la pantalla"
+    },
+    {
+      "id": "RAM_MEMORY_TYPE",
+      "name": "Tipo de memoria RAM"
+    },
+    {
+      "id": "WEIGHT",
+      "name": "Peso"
+    }
+  ],
+  "all_visible": [
+    {
+      "id": "BRAND",
+      "name": "Marca",
+      "required": true
+    },
+    {
+      "id": "LINE",
+      "name": "Línea",
+      "required": false
+    },
+    {
+      "id": "MODEL",
+      "name": "Modelo",
+      "required": true
+    },
+    {
+      "id": "ALPHANUMERIC_MODEL",
+      "name": "Modelo alfanumérico",
+      "required": false
+    },
+    {
+      "id": "COLOR",
+      "name": "Color",
+      "required": false
+    },
+    {
+      "id": "INTEL_OPTANE_CAPACITY",
+      "name": "Capacidad Optane Intel",
+      "required": false
+    },
+    {
+      "id": "RAM_MEMORY_MODULE_TOTAL_CAPACITY",
+      "name": "Capacidad total del módulo de memoria RAM",
+      "required": false
+    },
+    {
+      "id": "HARD_DRIVE_DATA_STORAGE_CAPACITY",
+      "name": "Capacidad del disco rígido",
+      "required": false
+    },
+    {
+      "id": "SSD_DATA_STORAGE_CAPACITY",
+      "name": "Capacidad de disco SSD",
+      "required": false
+    },
+    {
+      "id": "DISPLAY_REFRESH_RATE",
+      "name": "Frecuencia de actualización de la pantalla",
+      "required": false
+    },
+    {
+      "id": "DISPLAY_RESOLUTION",
+      "name": "Resolución de la pantalla",
+      "required": false
+    },
+    {
+      "id": "PROCESSOR_BRAND",
+      "name": "Marca del procesador",
+      "required": true
+    },
+    {
+      "id": "PROCESSOR_LINE",
+      "name": "Línea del procesador",
+      "required": true
+    },
+    {
+      "id": "PROCESSOR_MODEL",
+      "name": "Modelo del procesador",
+      "required": true
+    },
+    {
+      "id": "OS_NAME",
+      "name": "Nombre del sistema operativo",
+      "required": false
+    },
+    {
+      "id": "OS_VERSION",
+      "name": "Versión del sistema operativo",
+      "required": false
+    },
+    {
+      "id": "OS_EDITION",
+      "name": "Edición del sistema operativo",
+      "required": false
+    },
+    {
+      "id": "WITH_TOUCH_SCREEN",
+      "name": "Con pantalla táctil",
+      "required": false
+    },
+    {
+      "id": "INTEGRATED_GRAPHIC_CARD_BRAND",
+      "name": "Marca de la tarjeta gráfica integrada",
+      "required": false
+    },
+    {
+      "id": "INTEGRATED_GRAPHIC_CARD_LINE",
+      "name": "Linea  de la tarjeta gráfica integrada",
+      "required": false
+    },
+    {
+      "id": "INTEGRATED_GRAPHIC_CARD_MODEL",
+      "name": "Modelo de la tarjeta gráfica integrada",
+      "required": false
+    },
+    {
+      "id": "DEDICATED_GRAPHIC_CARD_BRAND",
+      "name": "Marca de la tarjeta gráfica dedicada",
+      "required": false
+    },
+    {
+      "id": "DEDICATED_GRAPHIC_CARD_LINE",
+      "name": "Línea de la tarjeta gráfica dedicada",
+      "required": false
+    },
+    {
+      "id": "DEDICATED_GRAPHIC_CARD_MODEL",
+      "name": "Modelo de la tarjeta gráfica dedicada",
+      "required": false
+    },
+    {
+      "id": "M2_DATA_STORAGE_CAPACITY",
+      "name": "Capacidad de almacenamiento de datos M2",
+      "required": false
+    },
+    {
+      "id": "RAM_MEMORY_SPEED",
+      "name": "Velocidad de la memoria RAM",
+      "required": false
+    },
+    {
+      "id": "MAX_PROCESSOR_SPEED",
+      "name": "Velocidad máxima del procesador",
+      "required": false
+    },
+    {
+      "id": "MIN_PROCESSOR_SPEED",
+      "name": "Velocidad mínima del procesador",
+      "required": false
+    },
+    {
+      "id": "MAIN_COLOR",
+      "name": "Color principal",
+      "required": false
+    },
+    {
+      "id": "DETAILED_MODEL",
+      "name": "Modelo detallado",
+      "required": false
+    },
+    {
+      "id": "RAM_MEMORY_TYPE",
+      "name": "Tipo de memoria RAM",
+      "required": false
+    },
+    {
+      "id": "VIDEO_MEMORY_TYPES",
+      "name": "Tipos de memoria de video",
+      "required": false
+    },
+    {
+      "id": "VIDEO_MEMORY",
+      "name": "Memoria de video",
+      "required": false
+    },
+    {
+      "id": "CORES_NUMBER",
+      "name": "Cantidad de núcleos",
+      "required": false
+    },
+    {
+      "id": "DISPLAY_RESOLUTION_TYPE",
+      "name": "Tipo de resolución de la pantalla ",
+      "required": false
+    },
+    {
+      "id": "PRODUCT_TYPE",
+      "name": "Tipo de producto",
+      "required": false
+    },
+    {
+      "id": "WITH_BLUETOOTH",
+      "name": "Con Bluetooth",
+      "required": false
+    },
+    {
+      "id": "WITH_WEBCAM",
+      "name": "Con cámara web",
+      "required": false
+    },
+    {
+      "id": "WITH_MICROPHONE",
+      "name": "Con micrófono",
+      "required": false
+    },
+    {
+      "id": "WITH_HEADPHONES_OUTPUT",
+      "name": "Con salida para auriculares",
+      "required": false
+    },
+    {
+      "id": "WITH_NUMERIC_PAD",
+      "name": "Con pad numérico",
+      "required": false
+    },
+    {
+      "id": "WITH_FINGERPRINT_READER",
+      "name": "Con lector de huella digital",
+      "required": false
+    },
+    {
+      "id": "WITH_BACKLIGHT_KEYBOARD",
+      "name": "Con teclado retroiluminado",
+      "required": false
+    },
+    {
+      "id": "WITH_RETINA_DISPLAY",
+      "name": "Con pantalla retina",
+      "required": false
+    },
+    {
+      "id": "WITH_MEMORY_CARD_READER",
+      "name": "Con lector de tarjeta de memoria",
+      "required": false
+    },
+    {
+      "id": "WITH_ANTIREFLEX_SCREEN",
+      "name": "Con pantalla antirreflejo",
+      "required": false
+    },
+    {
+      "id": "DISPLAY_TYPE",
+      "name": "Tipo de pantalla",
+      "required": false
+    },
+    {
+      "id": "SOUND_MODES",
+      "name": "Modos de sonido",
+      "required": false
+    },
+    {
+      "id": "ACCESSORIES_INCLUDED",
+      "name": "Accesorios incluidos",
+      "required": false
+    },
+    {
+      "id": "WEBCAM_VIDEO_RESOLUTION_TYPE",
+      "name": "Tipo de resolución de video de la webcam",
+      "required": false
+    },
+    {
+      "id": "WEBCAM_VIDEO_RESOLUTION",
+      "name": "Resolución de video de la webcam",
+      "required": false
+    },
+    {
+      "id": "WEBCAM_STILL_IMAGE_RESOLUTION",
+      "name": "Resolución de la imagen fija de la webcam",
+      "required": false
+    },
+    {
+      "id": "MAX_BATTERY_LIFE",
+      "name": "Duración máxima de la batería",
+      "required": false
+    },
+    {
+      "id": "RAM_SLOTS_NUMBER",
+      "name": "Cantidad de ranuras para la memoria RAM",
+      "required": false
+    },
+    {
+      "id": "CONNECTIVITY",
+      "name": "Conectividad",
+      "required": false
+    },
+    {
+      "id": "RELEASE_YEAR",
+      "name": "Año de lanzamiento",
+      "required": false
+    },
+    {
+      "id": "MATERIAL",
+      "name": "Material",
+      "required": false
+    },
+    {
+      "id": "INCLUDES_OS_TRIAL",
+      "name": "Incluye prueba de sistema operativo",
+      "required": false
+    },
+    {
+      "id": "KEYBOARD_LANGUAGE",
+      "name": "Idioma del teclado",
+      "required": false
+    },
+    {
+      "id": "BATTERY_CAPACITY",
+      "name": "Capacidad de la batería",
+      "required": false
+    },
+    {
+      "id": "DISPLAY_SIZE",
+      "name": "Tamaño de la pantalla",
+      "required": true
+    },
+    {
+      "id": "COOLING_TYPE",
+      "name": "Tipo de refrigeración",
+      "required": false
+    },
+    {
+      "id": "WIDTH",
+      "name": "Ancho",
+      "required": false
+    },
+    {
+      "id": "DEPTH",
+      "name": "Profundidad",
+      "required": false
+    },
+    {
+      "id": "HEIGHT",
+      "name": "Altura",
+      "required": false
+    },
+    {
+      "id": "WEIGHT",
+      "name": "Peso",
+      "required": false
+    },
+    {
+      "id": "OPTICAL_DRIVES",
+      "name": "Unidades ópticas",
+      "required": false
+    },
+    {
+      "id": "BATTERY_TYPE",
+      "name": "Tipo de batería",
+      "required": false
+    },
+    {
+      "id": "GTIN",
+      "name": "Código universal de producto",
+      "required": false
+    },
+    {
+      "id": "GRADING",
+      "name": "Estado del reacondicionado",
+      "required": false
+    },
+    {
+      "id": "VALUE_ADDED_TAX",
+      "name": "IVA",
+      "required": false
+    },
+    {
+      "id": "IMPORT_DUTY",
+      "name": "Impuesto interno",
+      "required": false
+    }
+  ]
+}
