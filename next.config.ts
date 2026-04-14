@@ -7,6 +7,18 @@ const nextConfig: NextConfig = {
     // Required to use the 'use cache' directive
     cacheComponents: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "media.licdn.com",
+      },
+    ],
+  },
   // Turbopack is the default bundler in Next.js 16 — no flags required
 };
 

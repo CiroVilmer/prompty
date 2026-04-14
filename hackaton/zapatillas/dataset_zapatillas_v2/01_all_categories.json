@@ -1,0 +1,217 @@
+[
+  {
+    "id": "MLA109027",
+    "name": "Zapatillas",
+    "source": "Calzado"
+  },
+  {
+    "id": "MLA1310",
+    "name": "Indumentaria y Calzado (Básquet)",
+    "source": "Deportes/Básquet"
+  },
+  {
+    "id": "MLA431092",
+    "name": "Camisetas, Remeras y Chombas (Básquet)",
+    "source": "Deportes/Básquet"
+  },
+  {
+    "id": "MLA431093",
+    "name": "Camperas y Buzos (Básquet)",
+    "source": "Deportes/Básquet"
+  },
+  {
+    "id": "MLA431094",
+    "name": "Conjuntos (Básquet)",
+    "source": "Deportes/Básquet"
+  },
+  {
+    "id": "MLA454734",
+    "name": "Zapatillas (Básquet)",
+    "source": "Deportes/Básquet"
+  },
+  {
+    "id": "MLA44256",
+    "name": "Otros (Básquet)",
+    "source": "Deportes/Básquet"
+  },
+  {
+    "id": "MLA65834",
+    "name": "Bolsos y Botineros (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA65855",
+    "name": "Bolsos (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA65856",
+    "name": "Botineros (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA65835",
+    "name": "Otros (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA65807",
+    "name": "Ropa y Calzado (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA3090",
+    "name": "Botines (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA7090",
+    "name": "Buzos (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA1286",
+    "name": "Camisetas (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA7093",
+    "name": "Camperas (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA37644",
+    "name": "Canilleras (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA12322",
+    "name": "Conjuntos (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA65862",
+    "name": "Gorras (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA7094",
+    "name": "Guantes de Arquero (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA455922",
+    "name": "Kits de Botines (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA37643",
+    "name": "Medias de Fútbol (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA22197",
+    "name": "Números, Letras y Estampados (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA431942",
+    "name": "Pecheras de Entrenamiento (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA7096",
+    "name": "Remeras y Chombas (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA79259",
+    "name": "Ropa Interior (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA7092",
+    "name": "Shorts, Bermudas y Pantalones (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA432400",
+    "name": "Tapones para Botines (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA73009",
+    "name": "Otros (Fútbol)",
+    "source": "Deportes/Fútbol"
+  },
+  {
+    "id": "MLA37859",
+    "name": "Indumentaria y Calzado (Hockey)",
+    "source": "Deportes/Hockey"
+  },
+  {
+    "id": "MLA424838",
+    "name": "Buzos (Hockey)",
+    "source": "Deportes/Hockey"
+  },
+  {
+    "id": "MLA424835",
+    "name": "Camisetas (Hockey)",
+    "source": "Deportes/Hockey"
+  },
+  {
+    "id": "MLA424837",
+    "name": "Camperas (Hockey)",
+    "source": "Deportes/Hockey"
+  },
+  {
+    "id": "MLA424839",
+    "name": "Medias (Hockey)",
+    "source": "Deportes/Hockey"
+  },
+  {
+    "id": "MLA424841",
+    "name": "Pantalones (Hockey)",
+    "source": "Deportes/Hockey"
+  },
+  {
+    "id": "MLA424858",
+    "name": "Polleras (Hockey)",
+    "source": "Deportes/Hockey"
+  },
+  {
+    "id": "MLA424836",
+    "name": "Remeras (Hockey)",
+    "source": "Deportes/Hockey"
+  },
+  {
+    "id": "MLA424842",
+    "name": "Shorts (Hockey)",
+    "source": "Deportes/Hockey"
+  },
+  {
+    "id": "MLA424840",
+    "name": "Otros (Hockey)",
+    "source": "Deportes/Hockey"
+  },
+  {
+    "id": "MLA416005",
+    "name": "Sandalias y Ojotas",
+    "source": "Calzado"
+  },
+  {
+    "id": "MLA414251",
+    "name": "Botas y Botinetas",
+    "source": "Calzado"
+  },
+  {
+    "id": "MLA414674",
+    "name": "Mocasines y Oxfords",
+    "source": "Calzado"
+  },
+  {
+    "id": "MLA414673",
+    "name": "Alpargatas",
+    "source": "Calzado"
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "baseline_val_mean": 64.95,
+  "optimized_val_mean": 69.3,
+  "optimized_holdout_mean": 71.75,
+  "delta_val": 4.349999999999994,
+  "per_example_val": [
+    {
+      "example_id": null,
+      "score": 0.8
+    },
+    {
+      "example_id": null,
+      "score": 0.8875000000000001
+    },
+    {
+      "example_id": null,
+      "score": 0.18000000000000002
+    },
+    {
+      "example_id": null,
+      "score": 0.8
+    },
+    {
+      "example_id": null,
+      "score": 0.7975
+    }
+  ],
+  "per_example_holdout": [
+    {
+      "example_id": null,
+      "score": 0.6325000000000001
+    },
+    {
+      "example_id": null,
+      "score": 0.7125
+    },
+    {
+      "example_id": null,
+      "score": 0.9125
+    },
+    {
+      "example_id": null,
+      "score": 0.7125
+    },
+    {
+      "example_id": null,
+      "score": 0.6175
+    }
+  ],
+  "preset": "light",
+  "trainset_size": 15,
+  "max_bootstrapped_demos": 2,
+  "max_labeled_demos": 2,
+  "optimization_time_minutes": 22.4,
+  "git_sha": "unknown",
+  "saved_at": "2026-04-14T15:51:07.890496+00:00"
+}

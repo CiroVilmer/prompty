@@ -1,0 +1,148 @@
+{
+  "module": "generator",
+  "optimizer": null,
+  "split": "holdout",
+  "n_examples": 5,
+  "metric_mean": 0.7385,
+  "metric_median": 0.7375,
+  "metric_stdev": 0.0815,
+  "metric_min": 0.6175,
+  "metric_max": 0.825,
+  "timestamp": "2026-04-14T16:04:18.767837+00:00",
+  "git_sha": "unknown",
+  "per_example": [
+    {
+      "example_id": "holdout_0",
+      "score": 0.7375,
+      "latency_s": 28.1,
+      "input": {
+        "weak_title": "Enova Celeron 4020 128GB 4 GB 128 GB buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes_keys": [
+          "BRAND",
+          "MODEL",
+          "WITH_RETINA_DISPLAY",
+          "IS_GAMER"
+        ],
+        "category": "notebooks"
+      },
+      "output": {
+        "title": "Notebook Enova Intel Celeron N4020 4GB RAM 128GB eMMC 14.1\" Windows 11 Computadora Portatil",
+        "description": "La Notebook Enova con procesador Intel Celeron N4020 es una computadora portatil ideal para estudiantes, trabajo remoto y tareas de oficina cotidianas. Con 4GB de RAM DDR4 y 128GB de almacenamiento eMMC, ofrece un rendimiento fluido para navegar, redactar documentos, videoconferencias y uso de aplic...",
+        "attributes_count": 22
+      },
+      "reference": {
+        "gold_title": "Notebook Enova 14 Celeron N4020 Ram 4gb Ssd 128gb Gris",
+        "gold_description": "Producto: Notebook Enova Celeron N4020 4Gb Ssd 128Gb 14\" Win11\n\nEspecificaciones técnicas: \n\n- Marca : Enova\n- P/N : C141PP-A3S1-W11H\n- UPC / EAN : 798181992346\n- Procesador : Procesador Intel Celeron...",
+        "gold_attributes_count": 56
+      }
+    },
+    {
+      "example_id": "holdout_1",
+      "score": 0.7125,
+      "latency_s": 32.1,
+      "input": {
+        "weak_title": "Lenovo Ideapad 3 8 GB 256 GB buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes_keys": [
+          "BRAND",
+          "MODEL",
+          "WITH_RETINA_DISPLAY",
+          "DISPLAY_SIZE",
+          "OPTIMIZED_FOR_AI"
+        ],
+        "category": "notebooks"
+      },
+      "output": {
+        "title": "Notebook Lenovo IdeaPad 3 Intel Core i3-1115G4 8GB RAM 256GB SSD Windows 11 15.6\" Computadora Portatil",
+        "description": "La Notebook Lenovo IdeaPad 3 es una computadora portatil diseñada para el uso diario en el hogar, la oficina y el estudio. Con procesador Intel Core i3-1115G4 de 11a generacion, 8 GB de memoria RAM DDR4 y 256 GB de almacenamiento SSD, ofrece un arranque rapido, multitarea fluida y tiempos de carga n...",
+        "attributes_count": 23
+      },
+      "reference": {
+        "gold_title": "Laptop Lenovo Ideapad Ryzen 5 8gb 256gb Ssd Win 11 82VG00WXUS D.pro",
+        "gold_description": "La Laptop Lenovo Ideapad Ryzen 5 es una herramienta potente y versátil, ideal para estudiantes y profesionales que buscan un rendimiento confiable. Con un procesador AMD Ryzen 5 7520U, esta laptop ofr...",
+        "gold_attributes_count": 63
+      }
+    },
+    {
+      "example_id": "holdout_2",
+      "score": 0.8,
+      "latency_s": 32.6,
+      "input": {
+        "weak_title": "HP A82ZVUA 16 GB 512 GB buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes_keys": [
+          "BRAND",
+          "MODEL",
+          "PROCESSOR_LINE",
+          "WITH_TOUCH_SCREEN",
+          "OPTIMIZED_FOR_AI"
+        ],
+        "category": "notebooks"
+      },
+      "output": {
+        "title": "Notebook HP Laptop 15 AMD Ryzen 7 16GB RAM 512GB SSD 15.6\" Windows 11 computadora portatil",
+        "description": "La Notebook HP Laptop 15 con procesador AMD Ryzen 7 es la computadora portatil ideal para universitarios, profesionales y usuarios que buscan rendimiento fluido en multitarea, trabajo con documentos, videollamadas y entretenimiento. Con 16 GB de RAM y 512 GB de almacenamiento SSD, el equipo arranca ...",
+        "attributes_count": 25
+      },
+      "reference": {
+        "gold_title": "Notebook HP 255 G10 Ryzen 7 7730U | 16GB RAM | 512GB SSD NVMe | 15.6” Full HD | Windows 11 Home | Laptop Empresarial",
+        "gold_description": "DESCRIPCIÓN DEL PRODUCTO\n*****************************************\nLa HP 255 G10 es una notebook confiable y potente, diseñada para trabajo profesional, estudio universitario y uso diario intensivo. O...",
+        "gold_attributes_count": 41
+      }
+    },
+    {
+      "example_id": "holdout_3",
+      "score": 0.825,
+      "latency_s": 29.3,
+      "input": {
+        "weak_title": "Lenovo 14IJL7 4 GB 128 GB buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes_keys": [
+          "BRAND",
+          "LINE",
+          "MODEL",
+          "WITH_BACKLIGHT_KEYBOARD"
+        ],
+        "category": "notebooks"
+      },
+      "output": {
+        "title": "Notebook Lenovo IdeaPad 1 14\" Intel Celeron N4500 4GB RAM 128GB eMMC Windows 11 Home",
+        "description": "La Lenovo IdeaPad 1 14IJL7 es una computadora portatil compacta y liviana, diseñada para estudiantes, teletrabajadores y usuarios que buscan una solución confiable para tareas cotidianas como navegación web, videollamadas, procesamiento de textos y uso de aplicaciones de oficina. Con procesador Inte...",
+        "attributes_count": 33
+      },
+      "reference": {
+        "gold_title": "Notebook Lenovo Ideapad 1 14IJL7 Procesador Intel Celeron N4500 4gb Ram Ddr4 128gb SSD Pantalla 14\" HD Windows 11 S Color Gris",
+        "gold_description": "Notebook Lenovo Ideapad 1 14IJL7 Procesador Intel Celeron N4500 4gb Ram Ddr4 128gb SSD Pantalla 14\" HD Windows 11 S Color Gris\n\nProcesador\nFabricante del procesador Intel\nTipo de procesador Celeron\nMo...",
+        "gold_attributes_count": 62
+      }
+    },
+    {
+      "example_id": "holdout_4",
+      "score": 0.6175,
+      "latency_s": 19.3,
+      "input": {
+        "weak_title": "Wilson 65.11110BL buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes_keys": [
+          "BRAND",
+          "MODEL",
+          "DEPTH",
+          "WITH_WAIST_STRAP",
+          "WITH_BOTTLE_POCKET"
+        ],
+        "category": "notebooks"
+      },
+      "output": {
+        "title": "Mochila Wilson 65.11110BL Para Notebook Hasta 15.6\" Negra Con Porta Laptop y Bolsillo Botella",
+        "description": "La Mochila Wilson modelo 65.11110BL es una mochila urbana diseñada para el transporte seguro y cómodo de notebooks de hasta 15.6 pulgadas. Ideal para estudiantes y profesionales que buscan una solución práctica para llevar su computadora portátil junto con sus accesorios del día a día. Su compartime...",
+        "attributes_count": 13
+      },
+      "reference": {
+        "gold_title": "Mochila Wilson Porta Notebook Reforzada Original Puerto Usb Oficina De Viaje Unisex Color Negro 65.11110BL 40 Litros",
+        "gold_description": "Realizada en tela de poliester de primera calidad, íntegramente forrada.\nLa mochila Wilson es la elección perfecta para aquellos que buscan un equilibrio entre estilo y funcionalidad. Diseñada para ad...",
+        "gold_attributes_count": 29
+      }
+    }
+  ]
+}

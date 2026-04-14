@@ -1,0 +1,4157 @@
+{
+  "MLA109027": {
+    "name": "Zapatillas",
+    "total": 90,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "FABRIC_DESIGN",
+        "name": "Diseño de la tela",
+        "required": false
+      },
+      {
+        "id": "WIDTH_TYPE",
+        "name": "Tipo de ancho",
+        "required": false
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "RECOMMENDED_USES",
+        "name": "Usos recomendados",
+        "required": false
+      },
+      {
+        "id": "SIZE_GRID_ID",
+        "name": "ID de la guía de talles",
+        "required": false
+      },
+      {
+        "id": "EXTERIOR_MATERIALS",
+        "name": "Materiales del exterior",
+        "required": false
+      },
+      {
+        "id": "INTERIOR_MATERIALS",
+        "name": "Materiales del interior",
+        "required": false
+      },
+      {
+        "id": "OUTSOLE_MATERIALS",
+        "name": "Materiales de la suela",
+        "required": false
+      },
+      {
+        "id": "FOOTWEAR_TYPE",
+        "name": "Tipo de calzado",
+        "required": false
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "ADJUSTMENT_TYPES",
+        "name": "Tipos de ajuste",
+        "required": false
+      },
+      {
+        "id": "WITH_RECYCLED_MATERIALS",
+        "name": "Con materiales reciclados",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA1310": {
+    "name": "Indumentaria y Calzado (Básquet)",
+    "total": 51,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA431092": {
+    "name": "Camisetas, Remeras y Chombas (Básquet)",
+    "total": 61,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "TEAM",
+        "name": "Equipo",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "TEAM",
+        "name": "Equipo",
+        "required": true
+      },
+      {
+        "id": "BASKETBALL_JERSEY_TYPE",
+        "name": "Tipo de camiseta",
+        "required": false
+      },
+      {
+        "id": "BASKETBALL_JERSEY_VERSION",
+        "name": "Versión de la camiseta",
+        "required": false
+      },
+      {
+        "id": "SPORT_SEASON",
+        "name": "Temporada",
+        "required": false
+      },
+      {
+        "id": "OCCASION_TYPE",
+        "name": "Tipo de ocasión",
+        "required": false
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "PLAYER",
+        "name": "Jugador",
+        "required": false
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "SIZE_GRID_ID",
+        "name": "ID de la guía de talles",
+        "required": false
+      },
+      {
+        "id": "COMPOSITION",
+        "name": "Composición",
+        "required": false
+      },
+      {
+        "id": "MAIN_MATERIAL",
+        "name": "Material principal",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA431093": {
+    "name": "Camperas y Buzos (Básquet)",
+    "total": 51,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA431094": {
+    "name": "Conjuntos (Básquet)",
+    "total": 42,
+    "required_count": 0,
+    "required_attrs": [],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": false
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "PIECES_NUMBER",
+        "name": "Cantidad de piezas",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA454734": {
+    "name": "Zapatillas (Básquet)",
+    "total": 90,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "FABRIC_DESIGN",
+        "name": "Diseño de la tela",
+        "required": false
+      },
+      {
+        "id": "WIDTH_TYPE",
+        "name": "Tipo de ancho",
+        "required": false
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "RECOMMENDED_USES",
+        "name": "Usos recomendados",
+        "required": false
+      },
+      {
+        "id": "SIZE_GRID_ID",
+        "name": "ID de la guía de talles",
+        "required": false
+      },
+      {
+        "id": "EXTERIOR_MATERIALS",
+        "name": "Materiales del exterior",
+        "required": false
+      },
+      {
+        "id": "INTERIOR_MATERIALS",
+        "name": "Materiales del interior",
+        "required": false
+      },
+      {
+        "id": "OUTSOLE_MATERIALS",
+        "name": "Materiales de la suela",
+        "required": false
+      },
+      {
+        "id": "FOOTWEAR_TYPE",
+        "name": "Tipo de calzado",
+        "required": false
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "ADJUSTMENT_TYPES",
+        "name": "Tipos de ajuste",
+        "required": false
+      },
+      {
+        "id": "WITH_RECYCLED_MATERIALS",
+        "name": "Con materiales reciclados",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA44256": {
+    "name": "Otros (Básquet)",
+    "total": 51,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA65834": {
+    "name": "Bolsos y Botineros (Fútbol)",
+    "total": 43,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": false
+      },
+      {
+        "id": "MATERIAL",
+        "name": "Material",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA65855": {
+    "name": "Bolsos (Fútbol)",
+    "total": 43,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": false
+      },
+      {
+        "id": "MATERIAL",
+        "name": "Material",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA65856": {
+    "name": "Botineros (Fútbol)",
+    "total": 53,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "SALE_FORMAT",
+        "name": "Formato de venta",
+        "required": false
+      },
+      {
+        "id": "UNITS_PER_PACK",
+        "name": "Unidades por pack",
+        "required": false
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": false
+      },
+      {
+        "id": "FABRIC_DESIGN",
+        "name": "Diseño de la tela",
+        "required": false
+      },
+      {
+        "id": "VOLUME_CAPACITY",
+        "name": "Capacidad en volumen",
+        "required": false
+      },
+      {
+        "id": "MATERIALS",
+        "name": "Materiales",
+        "required": false
+      },
+      {
+        "id": "EXTERIOR_POCKETS_NUMBER",
+        "name": "Cantidad de bolsillos exteriores",
+        "required": false
+      },
+      {
+        "id": "LENGTH",
+        "name": "Largo",
+        "required": false
+      },
+      {
+        "id": "WIDTH",
+        "name": "Ancho",
+        "required": false
+      },
+      {
+        "id": "HEIGHT",
+        "name": "Altura",
+        "required": false
+      },
+      {
+        "id": "WITH_CLOSING",
+        "name": "Con cierre",
+        "required": false
+      },
+      {
+        "id": "INCLUDES_STRAP",
+        "name": "Incluye correa",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "IS_CUSTOMIZED",
+        "name": "Es personalizado",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA65835": {
+    "name": "Otros (Fútbol)",
+    "total": 43,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": false
+      },
+      {
+        "id": "MATERIAL",
+        "name": "Material",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA65807": {
+    "name": "Ropa y Calzado (Fútbol)",
+    "total": 51,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA3090": {
+    "name": "Botines (Fútbol)",
+    "total": 66,
+    "required_count": 6,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "GROUND_TYPE",
+        "name": "Tipo de superficie",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "OUTSOLE_TYPE",
+        "name": "Tipo de suela",
+        "required": false
+      },
+      {
+        "id": "GROUND_TYPE",
+        "name": "Tipo de superficie",
+        "required": true
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "FILTRABLE_SIZE",
+        "name": "Talle filtrable",
+        "required": false
+      },
+      {
+        "id": "SIZE_GRID_ID",
+        "name": "ID de la guía de talles",
+        "required": false
+      },
+      {
+        "id": "FOOTWEAR_MATERIAL",
+        "name": "Material del calzado",
+        "required": false
+      },
+      {
+        "id": "OUTSOLE_MATERIAL",
+        "name": "Material de la suela",
+        "required": false
+      },
+      {
+        "id": "CLEATS_TYPE",
+        "name": "Tipo de tapones",
+        "required": false
+      },
+      {
+        "id": "CLEATS_MATERIAL",
+        "name": "Material de los tapones",
+        "required": false
+      },
+      {
+        "id": "CLOSURE_TYPE",
+        "name": "Tipo de cierre",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA7090": {
+    "name": "Buzos (Fútbol)",
+    "total": 56,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "TEAM",
+        "name": "Equipo",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": false
+      },
+      {
+        "id": "TEAM",
+        "name": "Equipo",
+        "required": true
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "SIZE_GRID_ID",
+        "name": "ID de la guía de talles",
+        "required": false
+      },
+      {
+        "id": "WITH_HOOD",
+        "name": "Con capucha",
+        "required": false
+      },
+      {
+        "id": "COMPOSITION",
+        "name": "Composición",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA1286": {
+    "name": "Camisetas (Fútbol)",
+    "total": 71,
+    "required_count": 8,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "TEAM",
+        "name": "Equipo",
+        "value_type": "string"
+      },
+      {
+        "id": "OCCASION_TYPE",
+        "name": "Tipo de ocasión",
+        "value_type": "list"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      },
+      {
+        "id": "TEAM_TYPE",
+        "name": "Tipo de equipo",
+        "value_type": "list"
+      },
+      {
+        "id": "TEAM_COUNTRY",
+        "name": "País del equipo",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "TEAM",
+        "name": "Equipo",
+        "required": true
+      },
+      {
+        "id": "FOOTBALL_SHIRT_TYPE",
+        "name": "Tipo de camiseta",
+        "required": false
+      },
+      {
+        "id": "OCCASION_TYPE",
+        "name": "Tipo de ocasión",
+        "required": true
+      },
+      {
+        "id": "FOOTBALL_SHIRT_VERSION",
+        "name": "Versión de la camiseta",
+        "required": false
+      },
+      {
+        "id": "SPORT_SEASON",
+        "name": "Temporada",
+        "required": false
+      },
+      {
+        "id": "IS_FOR_GOALKEEPER",
+        "name": "Es para arquero",
+        "required": false
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "PLAYER",
+        "name": "Jugador",
+        "required": false
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "FOOTBALL_SHIRT_NUMBER",
+        "name": "Número de la camiseta",
+        "required": false
+      },
+      {
+        "id": "FOOTBALL_SHIRT_EDITION",
+        "name": "Edición especial de la camiseta",
+        "required": false
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "SIZE_GRID_ID",
+        "name": "ID de la guía de talles",
+        "required": false
+      },
+      {
+        "id": "TEAM_TYPE",
+        "name": "Tipo de equipo",
+        "required": true
+      },
+      {
+        "id": "TEAM_COUNTRY",
+        "name": "País del equipo",
+        "required": true
+      },
+      {
+        "id": "FOOTBALL_SHIRT_MATERIAL",
+        "name": "Material principal",
+        "required": false
+      },
+      {
+        "id": "COMPOSITION",
+        "name": "Composición",
+        "required": false
+      },
+      {
+        "id": "SLEEVE_TYPE",
+        "name": "Tipo de manga",
+        "required": false
+      },
+      {
+        "id": "NECK_TYPE",
+        "name": "Tipo de cuello",
+        "required": false
+      },
+      {
+        "id": "WITH_SPONSORS",
+        "name": "Con sponsors",
+        "required": false
+      },
+      {
+        "id": "CREST_TYPE",
+        "name": "Tipo de escudo",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA7093": {
+    "name": "Camperas (Fútbol)",
+    "total": 63,
+    "required_count": 6,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "TEAM",
+        "name": "Equipo",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "TEAM",
+        "name": "Equipo",
+        "required": true
+      },
+      {
+        "id": "SPORT_SEASON",
+        "name": "Temporada",
+        "required": false
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "SIZE_GRID_ID",
+        "name": "ID de la guía de talles",
+        "required": false
+      },
+      {
+        "id": "FOOTBALL_CATEGORY",
+        "name": "Categoría",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA37644": {
+    "name": "Canilleras (Fútbol)",
+    "total": 52,
+    "required_count": 3,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": false
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "SHIN_GUARD_MATERIAL",
+        "name": "Material",
+        "required": false
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": false
+      },
+      {
+        "id": "AGE_GROUP",
+        "name": "Edad",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "WIDTH",
+        "name": "Ancho",
+        "required": false
+      },
+      {
+        "id": "LENGTH",
+        "name": "Largo",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA12322": {
+    "name": "Conjuntos (Fútbol)",
+    "total": 53,
+    "required_count": 4,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "TEAM",
+        "name": "Equipo",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": false
+      },
+      {
+        "id": "TEAM",
+        "name": "Equipo",
+        "required": true
+      },
+      {
+        "id": "SPORT_SEASON",
+        "name": "Temporada",
+        "required": false
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": false
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "PIECES_NUMBER",
+        "name": "Cantidad de piezas",
+        "required": false
+      },
+      {
+        "id": "LEG_LENGTH",
+        "name": "Largo de la pierna",
+        "required": false
+      },
+      {
+        "id": "CHEST_LENGTH",
+        "name": "Largo del pecho",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA65862": {
+    "name": "Gorras (Fútbol)",
+    "total": 51,
+    "required_count": 4,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "TEAM",
+        "name": "Equipo",
+        "value_type": "string"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "TEAM",
+        "name": "Equipo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "FABRIC_DESIGN",
+        "name": "Diseño de la tela",
+        "required": false
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": false
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "SPORT_SEASON",
+        "name": "Temporada",
+        "required": false
+      },
+      {
+        "id": "VISOR_SHAPE",
+        "name": "Forma de la visera",
+        "required": false
+      },
+      {
+        "id": "HAT_MATERIAL",
+        "name": "Materiales",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA7094": {
+    "name": "Guantes de Arquero (Fútbol)",
+    "total": 59,
+    "required_count": 4,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "LINE",
+        "name": "Línea",
+        "required": false
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "PALM_MATERIAL",
+        "name": "Material de la palma",
+        "required": false
+      },
+      {
+        "id": "BACKHAND_MATERIAL",
+        "name": "Material del dorso",
+        "required": false
+      },
+      {
+        "id": "RELEASE_YEAR",
+        "name": "Año de lanzamiento",
+        "required": false
+      },
+      {
+        "id": "AGE_GROUP",
+        "name": "Edad",
+        "required": false
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": false
+      },
+      {
+        "id": "GLOVE_CUT",
+        "name": "Corte del guante",
+        "required": false
+      },
+      {
+        "id": "WITH_SPINES",
+        "name": "Con varillas",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA455922": {
+    "name": "Kits de Botines (Fútbol)",
+    "total": 43,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "PIECES_INCLUDED",
+        "name": "Piezas incluidas",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "PIECES_NUMBER",
+        "name": "Cantidad de piezas",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA37643": {
+    "name": "Medias de Fútbol (Fútbol)",
+    "total": 53,
+    "required_count": 3,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": false
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "COMPOSITION",
+        "name": "Composición",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA22197": {
+    "name": "Números, Letras y Estampados (Fútbol)",
+    "total": 51,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA431942": {
+    "name": "Pecheras de Entrenamiento (Fútbol)",
+    "total": 50,
+    "required_count": 2,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": false
+      },
+      {
+        "id": "SALE_FORMAT",
+        "name": "Formato de venta",
+        "required": false
+      },
+      {
+        "id": "UNITS_PER_PACK",
+        "name": "Unidades por pack",
+        "required": false
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": false
+      },
+      {
+        "id": "WIDTH",
+        "name": "Ancho",
+        "required": false
+      },
+      {
+        "id": "LENGTH",
+        "name": "Largo",
+        "required": false
+      },
+      {
+        "id": "MATERIAL",
+        "name": "Material",
+        "required": false
+      },
+      {
+        "id": "IS_SUITABLE_FOR_SUBLIMATION",
+        "name": "Es apta para sublimación",
+        "required": false
+      },
+      {
+        "id": "WITH_LATERAL_ELASTICS",
+        "name": "Con elásticos laterales",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA7096": {
+    "name": "Remeras y Chombas (Fútbol)",
+    "total": 62,
+    "required_count": 6,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "GARMENT_TYPE",
+        "name": "Tipo de prenda",
+        "value_type": "list"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "GARMENT_TYPE",
+        "name": "Tipo de prenda",
+        "required": true
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "FABRIC_DESIGN",
+        "name": "Diseño de la tela",
+        "required": false
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "SIZE_GRID_ID",
+        "name": "ID de la guía de talles",
+        "required": false
+      },
+      {
+        "id": "RECOMMENDED_SPORTS",
+        "name": "Deportes recomendados",
+        "required": false
+      },
+      {
+        "id": "MATERIAL",
+        "name": "Material",
+        "required": false
+      },
+      {
+        "id": "SLEEVE_TYPE",
+        "name": "Tipo de manga",
+        "required": false
+      },
+      {
+        "id": "T_SHIRT_COLLAR_TYPE",
+        "name": "Tipo de cuello",
+        "required": false
+      },
+      {
+        "id": "WITH_RECYCLED_MATERIALS",
+        "name": "Con materiales reciclados",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA79259": {
+    "name": "Ropa Interior (Fútbol)",
+    "total": 51,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA7092": {
+    "name": "Shorts, Bermudas y Pantalones (Fútbol)",
+    "total": 51,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA432400": {
+    "name": "Tapones para Botines (Fútbol)",
+    "total": 40,
+    "required_count": 0,
+    "required_attrs": [],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": false
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA73009": {
+    "name": "Otros (Fútbol)",
+    "total": 51,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA37859": {
+    "name": "Indumentaria y Calzado (Hockey)",
+    "total": 51,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA424838": {
+    "name": "Buzos (Hockey)",
+    "total": 74,
+    "required_count": 7,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      },
+      {
+        "id": "GARMENT_TYPE",
+        "name": "Tipo de prenda",
+        "value_type": "list"
+      },
+      {
+        "id": "IS_SPORTIVE",
+        "name": "Es deportiva",
+        "value_type": "boolean"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "GARMENT_TYPE",
+        "name": "Tipo de prenda",
+        "required": true
+      },
+      {
+        "id": "IS_SPORTIVE",
+        "name": "Es deportiva",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "FABRIC_DESIGN",
+        "name": "Diseño de la tela",
+        "required": false
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "MAIN_MATERIAL",
+        "name": "Material principal",
+        "required": false
+      },
+      {
+        "id": "COMPOSITION",
+        "name": "Composición",
+        "required": false
+      },
+      {
+        "id": "WEDGE_SHAPE",
+        "name": "Forma del calce",
+        "required": false
+      },
+      {
+        "id": "SWEATSHIRTS_AND_HOODIES_COLLAR_TYPE",
+        "name": "Tipo de cuello",
+        "required": false
+      },
+      {
+        "id": "IS_OVERSIZE",
+        "name": "Es oversize",
+        "required": false
+      },
+      {
+        "id": "WITH_HOOD",
+        "name": "Con capucha",
+        "required": false
+      },
+      {
+        "id": "WITH_RECYCLED_MATERIALS",
+        "name": "Con materiales reciclados",
+        "required": false
+      },
+      {
+        "id": "IS_SUITABLE_FOR_PREGNANCY",
+        "name": "Es apto para embarazo",
+        "required": false
+      },
+      {
+        "id": "SIZE_GRID_ID",
+        "name": "ID de la guía de talles",
+        "required": false
+      },
+      {
+        "id": "RECOMMENDED_USES",
+        "name": "Usos recomendados",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA424835": {
+    "name": "Camisetas (Hockey)",
+    "total": 51,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA424837": {
+    "name": "Camperas (Hockey)",
+    "total": 51,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA424839": {
+    "name": "Medias (Hockey)",
+    "total": 66,
+    "required_count": 7,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      },
+      {
+        "id": "SOCKS_TYPE",
+        "name": "Tipo de medias",
+        "value_type": "list"
+      },
+      {
+        "id": "LENGTH_TYPE",
+        "name": "Tipo de largo",
+        "value_type": "list"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "FABRIC_DESIGN",
+        "name": "Diseño de la tela",
+        "required": false
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "SIZE_GRID_ROW_ID",
+        "name": "ID de la fila de la guía de talles",
+        "required": false
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "SOCKS_TYPE",
+        "name": "Tipo de medias",
+        "required": true
+      },
+      {
+        "id": "LENGTH_TYPE",
+        "name": "Tipo de largo",
+        "required": true
+      },
+      {
+        "id": "TOE_TYPE",
+        "name": "Tipo de puntera",
+        "required": false
+      },
+      {
+        "id": "MAIN_MATERIAL",
+        "name": "Material principal",
+        "required": false
+      },
+      {
+        "id": "COMPOSITION",
+        "name": "Composición",
+        "required": false
+      },
+      {
+        "id": "CHARACTER",
+        "name": "Personaje",
+        "required": false
+      },
+      {
+        "id": "WITH_RECYCLED_MATERIALS",
+        "name": "Con materiales reciclados",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "PAIRS_NUMBER",
+        "name": "Cantidad de pares",
+        "required": false
+      },
+      {
+        "id": "SIZE_GRID_ID",
+        "name": "ID de la guía de talles",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA424841": {
+    "name": "Pantalones (Hockey)",
+    "total": 61,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "FABRIC_DESIGN",
+        "name": "Diseño de la tela",
+        "required": false
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "SIZE_GRID_ID",
+        "name": "ID de la guía de talles",
+        "required": false
+      },
+      {
+        "id": "COMPOSITION",
+        "name": "Composición",
+        "required": false
+      },
+      {
+        "id": "MAIN_MATERIAL",
+        "name": "Material principal",
+        "required": false
+      },
+      {
+        "id": "PANT_RISE",
+        "name": "Tiro del pantalón",
+        "required": false
+      },
+      {
+        "id": "WITH_RECYCLED_MATERIALS",
+        "name": "Con materiales reciclados",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA424858": {
+    "name": "Polleras (Hockey)",
+    "total": 56,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "SIZE_GRID_ID",
+        "name": "ID de la guía de talles",
+        "required": false
+      },
+      {
+        "id": "COMPOSITION",
+        "name": "Composición",
+        "required": false
+      },
+      {
+        "id": "MAIN_MATERIAL",
+        "name": "Material principal",
+        "required": false
+      },
+      {
+        "id": "RECOMMENDED_SPORTS",
+        "name": "Deportes recomendados",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA424836": {
+    "name": "Remeras (Hockey)",
+    "total": 62,
+    "required_count": 6,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "GARMENT_TYPE",
+        "name": "Tipo de prenda",
+        "value_type": "list"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "GARMENT_TYPE",
+        "name": "Tipo de prenda",
+        "required": true
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "FABRIC_DESIGN",
+        "name": "Diseño de la tela",
+        "required": false
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "SIZE_GRID_ID",
+        "name": "ID de la guía de talles",
+        "required": false
+      },
+      {
+        "id": "RECOMMENDED_SPORTS",
+        "name": "Deportes recomendados",
+        "required": false
+      },
+      {
+        "id": "MATERIAL",
+        "name": "Material",
+        "required": false
+      },
+      {
+        "id": "SLEEVE_TYPE",
+        "name": "Tipo de manga",
+        "required": false
+      },
+      {
+        "id": "T_SHIRT_COLLAR_TYPE",
+        "name": "Tipo de cuello",
+        "required": false
+      },
+      {
+        "id": "WITH_RECYCLED_MATERIALS",
+        "name": "Con materiales reciclados",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA424842": {
+    "name": "Shorts (Hockey)",
+    "total": 60,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "FABRIC_DESIGN",
+        "name": "Diseño de la tela",
+        "required": false
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "MAIN_MATERIAL",
+        "name": "Material principal",
+        "required": false
+      },
+      {
+        "id": "SIZE_GRID_ID",
+        "name": "ID de la guía de talles",
+        "required": false
+      },
+      {
+        "id": "COMPOSITION",
+        "name": "Composición",
+        "required": false
+      },
+      {
+        "id": "SHORT_TYPE",
+        "name": "Tipo de short",
+        "required": false
+      },
+      {
+        "id": "WITH_RECYCLED_MATERIALS",
+        "name": "Con materiales reciclados",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA424840": {
+    "name": "Otros (Hockey)",
+    "total": 51,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA416005": {
+    "name": "Sandalias y Ojotas",
+    "total": 71,
+    "required_count": 6,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      },
+      {
+        "id": "FOOTWEAR_TYPE",
+        "name": "Tipo de calzado",
+        "value_type": "list"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "PATTERN_NAME",
+        "name": "Nombre del diseño",
+        "required": false
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "FOOTWEAR_STYLE",
+        "name": "Estilo del calzado",
+        "required": false
+      },
+      {
+        "id": "FOOTWEAR_TYPE",
+        "name": "Tipo de calzado",
+        "required": true
+      },
+      {
+        "id": "SIZE_GRID_ID",
+        "name": "ID de la guía de talles",
+        "required": false
+      },
+      {
+        "id": "FOOTWEAR_MATERIALS",
+        "name": "Materiales del calzado",
+        "required": false
+      },
+      {
+        "id": "OUTSOLE_MATERIAL",
+        "name": "Material de la suela",
+        "required": false
+      },
+      {
+        "id": "RELEASE_SEASON",
+        "name": "Temporada de lanzamiento",
+        "required": false
+      },
+      {
+        "id": "RELEASE_YEAR",
+        "name": "Año de lanzamiento",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA414251": {
+    "name": "Botas y Botinetas",
+    "total": 85,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "FABRIC_DESIGN",
+        "name": "Diseño de la tela",
+        "required": false
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "FOOTWEAR_STYLE",
+        "name": "Estilo del calzado",
+        "required": false
+      },
+      {
+        "id": "RELEASE_YEAR",
+        "name": "Año de lanzamiento",
+        "required": false
+      },
+      {
+        "id": "SHAFT_TYPE",
+        "name": "Tipo de caña",
+        "required": false
+      },
+      {
+        "id": "HEEL_TYPE",
+        "name": "Tipo de taco",
+        "required": false
+      },
+      {
+        "id": "HEEL_LEVEL",
+        "name": "Nivel del tacón",
+        "required": false
+      },
+      {
+        "id": "RELEASE_SEASON",
+        "name": "Temporada de lanzamiento",
+        "required": false
+      },
+      {
+        "id": "SIZE_GRID_ID",
+        "name": "ID de la guía de talles",
+        "required": false
+      },
+      {
+        "id": "WITH_RECYCLED_MATERIALS",
+        "name": "Con materiales reciclados",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA414674": {
+    "name": "Mocasines y Oxfords",
+    "total": 70,
+    "required_count": 7,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      },
+      {
+        "id": "FOOTWEAR_TYPE",
+        "name": "Tipo de calzado",
+        "value_type": "list"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      },
+      {
+        "id": "FOOTWEAR_STYLE",
+        "name": "Estilo del calzado",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "FOOTWEAR_TYPE",
+        "name": "Tipo de calzado",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "FABRIC_DESIGN",
+        "name": "Diseño de la tela",
+        "required": false
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "FILTRABLE_SIZE",
+        "name": "Talle filtrable",
+        "required": false
+      },
+      {
+        "id": "SIZE_GRID_ID",
+        "name": "ID de la guía de talles",
+        "required": false
+      },
+      {
+        "id": "FOOTWEAR_STYLE",
+        "name": "Estilo del calzado",
+        "required": true
+      },
+      {
+        "id": "PERFORATION_TYPE",
+        "name": "Tipo de perforación",
+        "required": false
+      },
+      {
+        "id": "TEXTURE_TYPE",
+        "name": "Tipo de textura",
+        "required": false
+      },
+      {
+        "id": "TOE_SHAPE",
+        "name": "Forma de la punta",
+        "required": false
+      },
+      {
+        "id": "ADJUSTMENT_TYPE",
+        "name": "Tipo de ajuste",
+        "required": false
+      },
+      {
+        "id": "FOOTWEAR_EXTERNAL_MATERIAL",
+        "name": "Material externo del calzado",
+        "required": false
+      },
+      {
+        "id": "FOOTWEAR_INTERNAL_MATERIAL",
+        "name": "Material interno del calzado",
+        "required": false
+      },
+      {
+        "id": "OUTSOLE_MATERIAL",
+        "name": "Material de la suela",
+        "required": false
+      },
+      {
+        "id": "WITH_FOLDING_HEEL",
+        "name": "Con talón plegable",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  },
+  "MLA414673": {
+    "name": "Alpargatas",
+    "total": 64,
+    "required_count": 5,
+    "required_attrs": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "value_type": "string"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "value_type": "string"
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "value_type": "list"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "value_type": "string"
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "value_type": "string"
+      }
+    ],
+    "all_attrs_summary": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "required": true
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "required": true
+      },
+      {
+        "id": "GENDER",
+        "name": "Género",
+        "required": true
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "required": true
+      },
+      {
+        "id": "FABRIC_DESIGN",
+        "name": "Diseño de la tela",
+        "required": false
+      },
+      {
+        "id": "SIZE",
+        "name": "Talle",
+        "required": true
+      },
+      {
+        "id": "MAIN_COLOR",
+        "name": "Color principal",
+        "required": false
+      },
+      {
+        "id": "SIZE_GRID_ID",
+        "name": "ID de la guía de talles",
+        "required": false
+      },
+      {
+        "id": "FOOTWEAR_TYPE",
+        "name": "Tipo de calzado",
+        "required": false
+      },
+      {
+        "id": "FOOTWEAR_MATERIAL",
+        "name": "Material del calzado",
+        "required": false
+      },
+      {
+        "id": "WITH_ELASTIC",
+        "name": "Con elástico",
+        "required": false
+      },
+      {
+        "id": "WITH_RECYCLED_MATERIALS",
+        "name": "Con materiales reciclados",
+        "required": false
+      },
+      {
+        "id": "GTIN",
+        "name": "Código universal de producto",
+        "required": false
+      },
+      {
+        "id": "VALUE_ADDED_TAX",
+        "name": "IVA",
+        "required": false
+      },
+      {
+        "id": "IMPORT_DUTY",
+        "name": "Impuesto interno",
+        "required": false
+      }
+    ]
+  }
+}

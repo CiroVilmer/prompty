@@ -1,0 +1,325 @@
+{
+  "module": "auditor",
+  "optimizer": null,
+  "split": "val",
+  "n_examples": 5,
+  "metric_mean": 0.885,
+  "metric_median": 1.0,
+  "metric_stdev": 0.2571,
+  "metric_min": 0.425,
+  "metric_max": 1.0,
+  "timestamp": "2026-04-14T15:04:30.332404+00:00",
+  "git_sha": "unknown",
+  "per_example": [
+    {
+      "example_id": "val_0",
+      "score": 1.0,
+      "latency_s": 27.9,
+      "input": {
+        "weak_title": "Asus M1502-BQ580 24 GB 512 GB buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes": {
+          "BRAND": "Asus",
+          "MODEL": "M1502-BQ580",
+          "INTEGRATED_GRAPHIC_CARD_LINE": "Radeon Graphics",
+          "CORES_NUMBER": "8"
+        }
+      },
+      "output": {
+        "missing_critical_attributes": [
+          "PROCESSOR_MODEL",
+          "PROCESSOR_BRAND",
+          "OPERATING_SYSTEM",
+          "SCREEN_SIZE",
+          "SCREEN_RESOLUTION",
+          "RAM_MEMORY_TYPE",
+          "SSD_DATA_STORAGE_CAPACITY",
+          "DEDICATED_GRAPHIC_CARD_MODEL",
+          "WEIGHT",
+          "BATTERY_CAPACITY",
+          "USB_PORTS_NUMBER",
+          "RAM_MEMORY_SLOTS_NUMBER"
+        ],
+        "title_issues": [
+          "'buen precio' is a promotional filler phrase that MELI penalizes and top-ranked listings never use — it occupies valuable title space without adding searchable information",
+          "The processor model (Ryzen 5 7530U) and brand (AMD) are completely absent, which is the primary search filter buyers use",
+          "The product line 'VivoBook 15' is missing — trending data shows 'marca asus vivobook 15.6 pulgadas' is actively searched",
+          "RAM and storage figures ('24 GB 512 GB') appear without labels or type context — buyers cannot tell if storage is SSD or HDD",
+          "Screen size (15.6\") is absent, a critical spec buyers filter by in the notebooks category",
+          "The word 'notebook' or 'laptop' does not appear explicitly in the title, reducing keyword match for broad searches like 'computadora portatil'"
+        ],
+        "description_issues": [
+          "Description contains zero technical specifications — processor, RAM, storage type, screen resolution, OS, battery, and connectivity are all absent",
+          "The phrase 'Consultar disponibilidad y características por mensaje' signals to buyers and MELI's algorithm that the listing is incomplete, reducing conversion and ranking",
+          "No use-case context is provided (e.g., suitable for university, home office, content creation) to help buyers self-qualify",
+          "No warranty, after-sale, or return policy information is included, which top catalog listings always specify to build buyer trust",
+          "Description does not mention key differentiators of this specific SKU such as the 24 GB RAM configuration or AMD Radeon integrated graphics"
+        ],
+        "missing_keywords": [
+          "computadora portatil",
+          "marca asus vivobook 15.6 pulgadas"
+        ],
+        "priority_fixes": [
+          "Rewrite the title to: 'Notebook Asus VivoBook 15 M1502 AMD Ryzen 5 24GB RAM 512GB SSD 15.6\" Win11' — removing 'buen precio' and adding processor, product line, screen size, and storage type",
+          "Fill in PROCESSOR_MODEL (Ryzen 5 7530U), PROCESSOR_BRAND (AMD), OPERATING_SYSTEM (Windows 11 Home), SCREEN_SIZE (15.6\"), and SCREEN_RESOLUTION (1920x1080 FHD) in the attributes panel immediately",
+          "Replace the description with a structured spec sheet covering: processor, RAM amount and type, storage capacity and type, screen size/resolution, OS, ports, weight, and battery life",
+          "Add RAM_MEMORY_TYPE (DDR4), SSD_DATA_STORAGE_CAPACITY (512 GB), and WEIGHT to attributes to match the completeness level of top-ranked VivoBook listings",
+          "Incorporate 'computadora portatil' and 'VivoBook 15.6 pulgadas' naturally into the description body to capture those trending search queries"
+        ]
+      },
+      "reference": {
+        "gold_title": "Notebook Asus Vivobook M1502ya-bq580 Ryzen 7 5825u 24gb De Ram Ddr4 512gb Ssd M.2 Nvme Pcie, Amd Radeon Graphics (15,6) Full Hd 1920 X 1080 Ips Wi-fi 6e (802.11ax) Windows 11 Home, Color Cool Silver.",
+        "gold_description": "ESPECIFICACIONES:\n\nModelo\nMarca: Asus\nLínea: Vivobook M1502-BQ580\nColor: Gris\nSKU: 90NB0X22-M01HS0\nEAN: 4711636208888\n\nSistema operativo\n* Windows 11 Home\n\nProcesador\n* Línea: AMD Ryzen 7 5825U\n* Cara...",
+        "gold_attributes_count": 64
+      }
+    },
+    {
+      "example_id": "val_1",
+      "score": 1.0,
+      "latency_s": 25.0,
+      "input": {
+        "weak_title": "HP A82ZVUA 32 GB 512 GB buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes": {
+          "BRAND": "HP",
+          "MODEL": "A82ZVUA",
+          "ALPHANUMERIC_MODEL": "A82ZVUA#ABA",
+          "SSD_DATA_STORAGE_CAPACITY": "512 GB",
+          "WITH_HEADPHONES_OUTPUT": "Sí"
+        }
+      },
+      "output": {
+        "missing_critical_attributes": [
+          "PROCESSOR_MODEL",
+          "PROCESSOR_BRAND",
+          "RAM_MEMORY",
+          "RAM_MEMORY_TYPE",
+          "SCREEN_SIZE",
+          "OPERATING_SYSTEM",
+          "GRAPHICS_CARD_MODEL",
+          "PRODUCT_LINE",
+          "SCREEN_RESOLUTION",
+          "COLOR",
+          "WEIGHT"
+        ],
+        "title_issues": [
+          "Uses internal SKU 'A82ZVUA' as the product name instead of the consumer-facing product line (e.g., 'HP EliteBook 840')",
+          "'buen precio' is promotional filler language that violates MELI title guidelines and wastes character space",
+          "RAM capacity '32 GB' appears without the label 'RAM', making it ambiguous alongside '512 GB SSD'",
+          "Processor model and generation are completely absent (e.g., 'Intel Core i7-1255U')",
+          "Screen size in inches is missing, which is a primary search filter for notebook buyers",
+          "Operating system is not mentioned, critical for business notebook buyers"
+        ],
+        "description_issues": [
+          "Description contains zero technical specifications — processor, RAM, screen size, OS, and graphics are all absent",
+          "Phrase 'Consultar disponibilidad y características por mensaje' actively redirects buyers away from the listing, harming conversion rate",
+          "No mention of the product's intended use case (business, professional, remote work) to justify the premium 32GB RAM configuration",
+          "No warranty information, condition details, or included accessories are specified",
+          "Description is effectively a placeholder and would cause MELI's algorithm to deprioritize this listing in search rankings"
+        ],
+        "missing_keywords": [
+          "computadora portatil",
+          "laptop hp"
+        ],
+        "priority_fixes": [
+          "Rewrite the title to include the product line name, processor model, screen size, RAM label, and OS — e.g., 'Notebook HP EliteBook 840 G9 Intel Core i7 32GB RAM 512GB SSD 14 Win11 Pro'",
+          "Remove 'buen precio' from the title immediately and replace with screen size or OS information",
+          "Fill in the PROCESSOR_MODEL, PROCESSOR_BRAND, RAM_MEMORY, and SCREEN_SIZE attributes in the listing form",
+          "Replace the entire description with a structured spec sheet covering: processor, RAM, storage, display, GPU, OS, battery, weight, and warranty",
+          "Add OPERATING_SYSTEM attribute (likely Windows 11 Pro for a business-class 32GB machine) to enable OS-based filtering",
+          "Incorporate 'computadora portatil' into the description to capture that high-volume search term"
+        ]
+      },
+      "reference": {
+        "gold_title": "Notebook Hp 255 G10 Amd Ryzen 5 7530u, Ram 32gb, Ssd 512gb, Pantalla 15,6'' Fhd, Sistema Opertativo Windows 11 Home",
+        "gold_description": "La Notebook HP 255 G10 es la herramienta ideal para quienes buscan rendimiento y versatilidad en un solo dispositivo. Equipado con un potente procesador AMD Ryzen 5 7530U y 32 GB de RAM DDR4, este equ...",
+        "gold_attributes_count": 39
+      }
+    },
+    {
+      "example_id": "val_2",
+      "score": 0.425,
+      "latency_s": 22.2,
+      "input": {
+        "weak_title": "Bagcherry 430000 buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes": {
+          "BRAND": "Bagcherry",
+          "MODEL": "430000",
+          "IS_WATERPROOF": "No",
+          "IS_IMPERMEABLE": "No"
+        }
+      },
+      "output": {
+        "missing_critical_attributes": [
+          "PROCESSOR_MODEL",
+          "PROCESSOR_BRAND",
+          "RAM_MEMORY_SIZE_GB",
+          "RAM_MEMORY_TYPE",
+          "SSD_DATA_STORAGE_CAPACITY",
+          "HDD_DATA_STORAGE_CAPACITY",
+          "SCREEN_SIZE_INCHES",
+          "OPERATING_SYSTEM",
+          "GPU_MODEL",
+          "BATTERY_CAPACITY_MAH",
+          "WEIGHT_KG",
+          "CONNECTIVITY_PORTS"
+        ],
+        "title_issues": [
+          "The phrase 'buen precio' is a non-searchable filler that MELI penalizes and no buyer ever searches for",
+          "The title does not contain the word 'notebook' or 'laptop', making it invisible to category searches",
+          "Model number '430000' alone communicates nothing — processor type, RAM, and storage are absent from the title",
+          "Brand 'Bagcherry' has no recognition; without technical specs alongside it, the title generates zero buyer confidence or clicks",
+          "Screen size (e.g., 15.6 pulgadas) is missing, which is one of the top filtering criteria for notebook buyers"
+        ],
+        "description_issues": [
+          "The description contains zero technical specifications — processor, RAM, storage, screen size, and OS are completely absent",
+          "Instructing buyers to 'consultar por mensaje' for basic product characteristics causes immediate drop-off; most buyers will not message and will simply leave",
+          "There is no mention of what differentiates this notebook (performance tier, use case: gaming, office, study, etc.)",
+          "No warranty information, included accessories, or condition details are provided",
+          "The description is two generic sentences that could apply to any product on the platform — it provides no SEO value whatsoever"
+        ],
+        "missing_keywords": [
+          "notebook",
+          "computadora portatil",
+          "netbook"
+        ],
+        "priority_fixes": [
+          "Rewrite the title to include the product type, processor model, RAM size, storage capacity, and screen size — e.g., 'Notebook Bagcherry 430000 Intel [Processor] [X]GB RAM [Y]GB SSD [Z] pulgadas'",
+          "Fill in all missing critical attributes (processor model/brand, RAM size and type, storage capacity and type, screen size, OS, GPU) so the listing appears in filtered searches",
+          "Replace the entire description with a structured spec sheet listing processor, RAM, storage, screen size, OS, ports, battery, weight, and warranty",
+          "Remove 'buen precio' from the title and replace it with a concrete differentiator such as the operating system or storage type (SSD)",
+          "Add 'notebook' and 'computadora portatil' to the title to capture generic category search traffic"
+        ]
+      },
+      "reference": {
+        "gold_title": "Mochila porta notebook Bagcherry Urbana 430000 color gris diseño lisa 25L",
+        "gold_description": "Disfrutá de llevar con vos todo lo que necesitás para pasar tiempo fuera del hogar. Elegí el mejor producto que se adapte a lo que estás buscando, siempre persiguiendo la calidad y la practicidad para...",
+        "gold_attributes_count": 33
+      }
+    },
+    {
+      "example_id": "val_3",
+      "score": 1.0,
+      "latency_s": 25.8,
+      "input": {
+        "weak_title": "Asus X1404ZA-I38128 16 GB 256 GB buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes": {
+          "BRAND": "Asus",
+          "LINE": "VivoBook",
+          "MODEL": "X1404ZA-I38128",
+          "OS_NAME": "Windows",
+          "WITH_WI_FI": "Sí"
+        }
+      },
+      "output": {
+        "missing_critical_attributes": [
+          "CPU_MODEL",
+          "CPU_BRAND",
+          "SCREEN_SIZE",
+          "RAM_MEMORY",
+          "RAM_MEMORY_TYPE",
+          "SSD_DATA_STORAGE_CAPACITY",
+          "STORAGE_TYPE",
+          "OS_VERSION",
+          "VIDEO_CARD",
+          "COLOR",
+          "WEIGHT"
+        ],
+        "title_issues": [
+          "'buen precio' is a filler phrase that wastes 10 characters and provides no searchable or differentiating value — remove it immediately",
+          "Processor name is absent: buyers searching 'Intel Core i3' will not match this listing since only the model code appears",
+          "Storage type is not specified: '256 GB' could be HDD or SSD — top listings explicitly say 'SSD 256 GB'",
+          "Screen size (14 pulgadas) is missing, which is a primary filter criterion for notebook buyers",
+          "VivoBook line name is absent from the title, losing searches like 'asus vivobook 14'",
+          "Windows version is not mentioned (e.g., Windows 11 Home), which is a common search qualifier"
+        ],
+        "description_issues": [
+          "The description contains zero product specifications — processor, screen size, storage type, battery, weight, and ports are all absent",
+          "'Consultar disponibilidad por mensaje' discourages purchase by implying stock uncertainty and forces unnecessary friction on the buyer",
+          "No use-case context is provided (e.g., ideal for students, home office, everyday tasks) to help buyers self-qualify",
+          "No mention of warranty, included accessories, or condition (new/used), which are trust signals buyers look for",
+          "The description does not incorporate any trending search terms, missing SEO value that the description field can contribute"
+        ],
+        "missing_keywords": [
+          "computadora portatil",
+          "intel core i3",
+          "ssd"
+        ],
+        "priority_fixes": [
+          "Rewrite the title to: 'Notebook Asus VivoBook 14 Intel Core i3 16GB RAM SSD 256GB Windows 11' — removing 'buen precio' and adding processor name, screen size, storage type, and OS version",
+          "Fill in the CPU_MODEL attribute with the exact processor (e.g., Intel Core i3-1215U) so the listing appears in filtered searches by processor",
+          "Specify SSD_DATA_STORAGE_CAPACITY and STORAGE_TYPE attributes to confirm SSD storage, as this is a top conversion driver in notebook searches",
+          "Add SCREEN_SIZE (14 pulgadas), RAM_MEMORY (16 GB), RAM_MEMORY_TYPE, and OS_VERSION attributes to complete the technical profile required by MELI catalog",
+          "Replace the description with a structured spec sheet covering: processor, RAM, storage, display size/resolution, OS, ports, battery, weight, and warranty — minimum 150 words",
+          "Add COLOR and VIDEO_CARD (Intel Iris Xe Graphics) attributes to match catalog completeness standards of top-ranked listings"
+        ]
+      },
+      "reference": {
+        "gold_title": "Notebook Asus Vivobook 14 Intel Core I3 1215u 16gb De Ram 256gb Ssd Full Hd Windows 11 Home",
+        "gold_description": "Notebook Asus Vivobook 14, una opción ideal para quienes buscan un equilibrio entre rendimiento y portabilidad. Equipado con un procesador Intel Core i3 1215U y 16GB de RAM, este dispositivo garantiza...",
+        "gold_attributes_count": 56
+      }
+    },
+    {
+      "example_id": "val_4",
+      "score": 1.0,
+      "latency_s": 27.2,
+      "input": {
+        "weak_title": "CDTek FUNDA CON BOLSILLO buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes": {
+          "BRAND": "CDTek",
+          "MODEL": "FUNDA CON BOLSILLO",
+          "SUITABLE_SCREEN_SIZE": "15.6 \"",
+          "IS_IMPACT_RESISTANT": "Sí"
+        }
+      },
+      "output": {
+        "missing_critical_attributes": [
+          "MATERIAL",
+          "COLOR",
+          "CLOSURE_TYPE",
+          "COMPATIBLE_BRANDS",
+          "ITEM_TYPE",
+          "NUMBER_OF_POCKETS",
+          "EXTERIOR_DIMENSIONS"
+        ],
+        "title_issues": [
+          "The phrase 'buen precio' is a promotional filler that wastes title space and is penalized by MELI's ranking algorithm — it communicates no product attribute",
+          "The title omits the material of the case (e.g., neoprene, polyester, Oxford fabric), which is a primary purchase decision factor for buyers",
+          "No color is specified, forcing buyers to click through just to find basic product information",
+          "The screen size '15.6\"' appears only in attributes and not in the title, missing a high-value search keyword",
+          "The product type is ambiguous — 'funda' could mean sleeve, pouch, or cover; the specific format (sleeve, maletín, sobre) is not stated"
+        ],
+        "description_issues": [
+          "The description contains zero product information — it does not mention material, dimensions, compatible laptop models, or any feature beyond what the title already states",
+          "The phrase 'Consultar disponibilidad y características por mensaje' violates MELI's content policies and signals to buyers that the listing is incomplete, reducing conversion",
+          "No compatibility information is provided (e.g., which laptop brands/models fit: Dell Inspiron 15, ASUS VivoBook 15.6, Samsung, HP), which is critical for accessory listings",
+          "No internal or external dimensions are listed, so buyers cannot verify their laptop will fit",
+          "No use-case or differentiating value is communicated (e.g., water resistance, padding thickness, organizational pockets for accessories)"
+        ],
+        "missing_keywords": [
+          "computadora portatil",
+          "notebook 15.6 pulgadas",
+          "dell inspiron 3520",
+          "marca asus vivobook 15.6 pulgadas"
+        ],
+        "priority_fixes": [
+          "Rewrite the description with at minimum: material, internal dimensions, compatible laptop brands/models (Dell Inspiron 15, ASUS VivoBook 15.6, Samsung, HP), closure type, and pocket details — remove the 'consultar por mensaje' instruction entirely.",
+          "Rebuild the title to follow the format: Brand + Product Type + Key Feature + Material + Size, e.g., 'CDTek Funda Sleeve Neoprene con Bolsillo para Notebook 15.6 Pulgadas'.",
+          "Remove 'buen precio' from the title immediately, as it is a policy-violating promotional phrase that also reduces search ranking.",
+          "Fill in the MATERIAL attribute (e.g., neoprene, polyester) and COLOR attribute, as these are the top filters buyers use when searching for laptop cases.",
+          "Add COMPATIBLE_BRANDS attribute listing the major notebook brands this sleeve fits (Dell, ASUS, HP, Lenovo, Samsung) to capture accessory compatibility searches.",
+          "Add CLOSURE_TYPE attribute (zipper, velcro, magnetic) since this is a primary differentiator among competing sleeve listings."
+        ]
+      },
+      "reference": {
+        "gold_title": "Funda Hp Asus Dell Lenovo Acer Asus Exo 15.6 Bolsillo Negro",
+        "gold_description": "¡Protege tu preciado dispositivo con la Funda de Tela Cordura de CDTek!\n\nSumérgete en un mundo de seguridad y estilo con nuestra funda diseñada para ofrecerte la máxima protección para tu notebook. Co...",
+        "gold_attributes_count": 15
+      }
+    }
+  ]
+}

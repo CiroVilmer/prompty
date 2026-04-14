@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { CirclePlus, LayoutDashboard, LogOut, type LucideIcon } from "lucide-react";
 
-const NAV_ITEMS = [
-  { href: "/dashboard", label: "Overview", icon: "⊞" },
-  { href: "/dashboard/products/new", label: "New Product", icon: "✦" },
+const NAV_ITEMS: { href: string; label: string; Icon: LucideIcon }[] = [
+  { href: "/dashboard", label: "Overview", Icon: LayoutDashboard },
+  { href: "/dashboard/products/new", label: "New Product", Icon: CirclePlus },
 ];
 
 export default function Sidebar() {
@@ -18,14 +19,14 @@ export default function Sidebar() {
       {/* Navigation */}
       <nav className="flex-1 overflow-y-auto px-3 py-4" aria-label="Sidebar">
         <ul className="space-y-1">
-          {NAV_ITEMS.map((item) => (
-            <li key={item.href}>
+          {NAV_ITEMS.map(({ href, label, Icon }) => (
+            <li key={href}>
               <Link
-                href={item.href}
+                href={href}
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900"
               >
-                <span aria-hidden="true">{item.icon}</span>
-                {item.label}
+                <Icon className="h-4 w-4 shrink-0 opacity-70" aria-hidden />
+                {label}
               </Link>
             </li>
           ))}
@@ -38,7 +39,7 @@ export default function Sidebar() {
           href="/login"
           className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700"
         >
-          <span aria-hidden="true">↩</span>
+          <LogOut className="h-4 w-4 shrink-0 opacity-70" aria-hidden />
           Sign out
         </Link>
       </div>

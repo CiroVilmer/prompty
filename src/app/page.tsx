@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Navbar } from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSectionDynamic";
+import Problem from "@/components/sections/Problem";
 import BeforeAfterSection from "@/components/sections/BeforeAfterSection";
 import WhyPrompty from "@/components/sections/WhyPrompty";
 import Footer from "@/components/sections/Footer";

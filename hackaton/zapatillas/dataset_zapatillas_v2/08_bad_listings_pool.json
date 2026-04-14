@@ -1,0 +1,1182 @@
+[
+  {
+    "title": "Zapatilla deportiva blanca",
+    "description": "Zapatilla cómoda, buen estado, poco uso.",
+    "brand": "",
+    "model": "",
+    "color": "Blanco",
+    "gender": "",
+    "shoe_type": "Deportiva",
+    "num_photos": 1,
+    "attributes_filled": 2,
+    "price_ars": 3500,
+    "error_types": [
+      "titulo_generico",
+      "pocos_atributos",
+      "pocas_fotos",
+      "sin_marca_modelo"
+    ],
+    "seller_profile": "novato_total",
+    "generated_at": "2026-04-13T16:04:57.131968"
+  },
+  {
+    "title": "Nike negra hombre",
+    "description": "Se vende zapatilla",
+    "brand": "Nike",
+    "model": "",
+    "color": "Negro",
+    "gender": "Hombre",
+    "shoe_type": "",
+    "num_photos": 1,
+    "attributes_filled": 3,
+    "price_ars": 5200,
+    "error_types": [
+      "titulo_cortado",
+      "pocos_atributos",
+      "pocas_fotos",
+      "descripcion_vaga"
+    ],
+    "seller_profile": "novato_total",
+    "generated_at": "2026-04-13T16:04:57.131968"
+  },
+  {
+    "title": "Zapatilla mujer",
+    "description": "Buen estado impecable",
+    "brand": "Adidas",
+    "model": "",
+    "color": "",
+    "gender": "Mujer",
+    "shoe_type": "Deportiva",
+    "num_photos": 1,
+    "attributes_filled": 2,
+    "price_ars": 4100,
+    "error_types": [
+      "titulo_generico",
+      "pocos_atributos",
+      "pocas_fotos",
+      "atributos_incompletos"
+    ],
+    "seller_profile": "novato_total",
+    "generated_at": "2026-04-13T16:04:57.131968"
+  },
+  {
+    "title": "Puma running",
+    "description": "Se vende como está",
+    "brand": "Puma",
+    "model": "",
+    "color": "Rojo",
+    "gender": "",
+    "shoe_type": "Running",
+    "num_photos": 1,
+    "attributes_filled": 2,
+    "price_ars": 3800,
+    "error_types": [
+      "titulo_generico",
+      "pocos_atributos",
+      "pocas_fotos",
+      "sin_descripcion_real"
+    ],
+    "seller_profile": "novato_total",
+    "generated_at": "2026-04-13T16:04:57.131968"
+  },
+  {
+    "title": "Zapatilla",
+    "description": "Talle 41",
+    "brand": "",
+    "model": "",
+    "color": "",
+    "gender": "",
+    "shoe_type": "",
+    "num_photos": 1,
+    "attributes_filled": 1,
+    "price_ars": 2900,
+    "error_types": [
+      "titulo_generico",
+      "pocos_atributos",
+      "pocas_fotos",
+      "sin_marca",
+      "descripcion_minima"
+    ],
+    "seller_profile": "novato_total",
+    "generated_at": "2026-04-13T16:04:57.131968"
+  },
+  {
+    "title": "Zapatilla deportiva",
+    "description": "Zapatilla cómoda buen estado poco uso",
+    "brand": "",
+    "model": "",
+    "color": "Blanco",
+    "gender": "",
+    "shoe_type": "Deportiva",
+    "num_photos": 1,
+    "attributes_filled": 2,
+    "price_ars": 35000,
+    "error_types": [
+      "titulo_generico",
+      "pocos_atributos",
+      "pocas_fotos",
+      "sin_marca"
+    ],
+    "seller_profile": "novato_total",
+    "generated_at": "2026-04-13T16:05:02.436746"
+  },
+  {
+    "title": "Nike zapatilla hombre",
+    "description": "Impecable como nueva",
+    "brand": "Nike",
+    "model": "",
+    "color": "Negro",
+    "gender": "Hombre",
+    "shoe_type": "",
+    "num_photos": 1,
+    "attributes_filled": 2,
+    "price_ars": 52000,
+    "error_types": [
+      "titulo_generico",
+      "pocos_atributos",
+      "pocas_fotos",
+      "sin_modelo"
+    ],
+    "seller_profile": "novato_total",
+    "generated_at": "2026-04-13T16:05:02.436746"
+  },
+  {
+    "title": "Calzado deporte",
+    "description": "Zapato deportivo",
+    "brand": "Adidas",
+    "model": "",
+    "color": "",
+    "gender": "",
+    "shoe_type": "Deportiva",
+    "num_photos": 1,
+    "attributes_filled": 2,
+    "price_ars": 41000,
+    "error_types": [
+      "titulo_generico",
+      "pocos_atributos",
+      "pocas_fotos",
+      "sin_color",
+      "sin_gender"
+    ],
+    "seller_profile": "novato_total",
+    "generated_at": "2026-04-13T16:05:02.436746"
+  },
+  {
+    "title": "Zapatilla",
+    "description": "En buen estado",
+    "brand": "",
+    "model": "",
+    "color": "Rojo",
+    "gender": "Mujer",
+    "shoe_type": "",
+    "num_photos": 1,
+    "attributes_filled": 2,
+    "price_ars": 38000,
+    "error_types": [
+      "titulo_extremadamente_generico",
+      "pocos_atributos",
+      "pocas_fotos",
+      "sin_marca",
+      "sin_modelo"
+    ],
+    "seller_profile": "novato_total",
+    "generated_at": "2026-04-13T16:05:02.436746"
+  },
+  {
+    "title": "Puma running",
+    "description": "Zapatilla rápida envío",
+    "brand": "Puma",
+    "model": "",
+    "color": "Gris",
+    "gender": "",
+    "shoe_type": "Running",
+    "num_photos": 1,
+    "attributes_filled": 3,
+    "price_ars": 47500,
+    "error_types": [
+      "titulo_incompleto",
+      "pocos_atributos",
+      "pocas_fotos",
+      "sin_modelo",
+      "sin_gender"
+    ],
+    "seller_profile": "novato_total",
+    "generated_at": "2026-04-13T16:05:02.436746"
+  },
+  {
+    "title": "ZAPATILLA DEPORTIVA HOMBRE OFERTA ENVÍO GRATIS MEJOR PRECIO NIKE ADIDAS PUMA!!",
+    "description": "OFERTA IMPRESIONANTE!!! MEJOR PRECIO DEL MERCADO!!! Zapatilla deportiva de calidad. ENVÍO GRATIS a todo el país. CONSULTE STOCK ANTES DE COMPRAR. Producto nuevo. No se aceptan devoluciones. OFERTA por tiempo limitado!!!",
+    "brand": "NIKE/ADIDAS",
+    "model": "Deportiva",
+    "color": "Varios colores",
+    "gender": "Hombre",
+    "shoe_type": "Deportiva",
+    "num_photos": 2,
+    "attributes_filled": 4,
+    "price_ars": 38500,
+    "error_types": [
+      "titulo_mayusculas",
+      "titulo_spam",
+      "descripcion_spam",
+      "pocas_fotos",
+      "pocos_atributos"
+    ],
+    "seller_profile": "spammer",
+    "generated_at": "2026-04-13T16:05:11.474848"
+  },
+  {
+    "title": "BOTINES FUTBOL 11 HOMBRE OFERTA PECHERAS SUBLIMADAS MEDIAS FUTBOL ENVÍO GRATIS!!!",
+    "description": "OFERTA ESPECIAL!!! Botín de fútbol profesional. MEJOR PRECIO GARANTIZADO. ENVÍO GRATIS toda Argentina. Consulte disponibilidad de stock. Zapatilla para futbol hombre. OFERTA VÁLIDA ESTA SEMANA. No se hacen devoluciones.",
+    "brand": "Puma",
+    "model": "Botín Futbol",
+    "color": "Negro/Blanco",
+    "gender": "Hombre",
+    "shoe_type": "Botín",
+    "num_photos": 3,
+    "attributes_filled": 4,
+    "price_ars": 52000,
+    "error_types": [
+      "titulo_spam",
+      "titulo_mayusculas",
+      "descripcion_spam",
+      "pocos_atributos"
+    ],
+    "seller_profile": "spammer",
+    "generated_at": "2026-04-13T16:05:11.474848"
+  },
+  {
+    "title": "ZAPATILLAS ASICS RUNNING HOMBRE OFERTA INCREÍBLE ENVÍO GRATIS NUEVO MODELO!!!",
+    "description": "OFERTA DE TEMPORADA!!! Zapatilla deportiva Asics para hombre. MEJOR PRECIO en mercado libre. ENVÍO GRATIS. Consulte stock. Producto original. OFERTA limitada. COMPRE AHORA.",
+    "brand": "Asics",
+    "model": "Running",
+    "color": "Talle único",
+    "gender": "Hombre",
+    "shoe_type": "Running",
+    "num_photos": 2,
+    "attributes_filled": 3,
+    "price_ars": 65000,
+    "error_types": [
+      "titulo_mayusculas",
+      "titulo_spam",
+      "descripcion_spam",
+      "atributos_incorrectos",
+      "pocas_fotos"
+    ],
+    "seller_profile": "spammer",
+    "generated_at": "2026-04-13T16:05:11.474848"
+  },
+  {
+    "title": "ZAPATILLA MUJER DEPORTIVA OFERTA REEBOK ADIDAS NIKE ENVÍO GRATIS PRECIO FINAL!!!",
+    "description": "OFERTA ESPECTACULAR!!! Zapatilla de mujer para deportes. MEJOR PRECIO DEL MERCADO GARANTIZADO. Envío gratis a toda la Argentina. CONSULTE ANTES DE OFERTAR. Producto nuevo sin uso. OFERTA VÁLIDA HOY. No aceptamos cambios.",
+    "brand": "Reebok",
+    "model": "Classic",
+    "color": "Varios",
+    "gender": "Mujer",
+    "shoe_type": "Deportiva",
+    "num_photos": 3,
+    "attributes_filled": 3,
+    "price_ars": 42000,
+    "error_types": [
+      "titulo_mayusculas",
+      "titulo_spam",
+      "descripcion_spam",
+      "pocos_atributos"
+    ],
+    "seller_profile": "spammer",
+    "generated_at": "2026-04-13T16:05:11.474848"
+  },
+  {
+    "title": "ZAPATILLAS PUMA HOMBRE OFERTA MOCASIN ENVÍO GRATIS MEDIAS FUTBOL MEJOR PRECIO!!!",
+    "description": "OFERTA INCREÍBLE!!! Zapatilla Puma para hombre. MEJOR PRECIO GARANTIZADO EN TODO MERCADO LIBRE. Envío sin costo. CONSULTE STOCK INMEDIATAMENTE. Artículo nuevo original. OFERTA por tiempo limitado. Compre ya mismo!!!",
+    "brand": "Puma",
+    "model": "Casual",
+    "color": "Blanco/Gris",
+    "gender": "Hombre",
+    "shoe_type": "Casual",
+    "num_photos": 2,
+    "attributes_filled": 4,
+    "price_ars": 48000,
+    "error_types": [
+      "titulo_mayusculas",
+      "titulo_spam",
+      "descripcion_spam",
+      "pocas_fotos"
+    ],
+    "seller_profile": "spammer",
+    "generated_at": "2026-04-13T16:05:11.474848"
+  },
+  {
+    "title": "ZAPATILLA ADIDAS ASTRASTAR BLANCA MUJER OFERTA ENVÍO GRATIS MEJOR PRECIO!!!",
+    "description": "OFERTA IMPERDIBLE!!! ENVÍO GRATIS A TODO EL PAÍS!!! MEJOR PRECIO GARANTIZADO!!! CONSULTE STOCK ANTES DE COMPRAR!!! ZAPATILLA DEPORTIVA ORIGINAL!!! NO PIERDA ESTA OPORTUNIDAD!!! OFERTA POR TIEMPO LIMITADO!!! ENVÍO RÁPIDO!!!",
+    "brand": "ADIDAS",
+    "model": "ASTRASTAR",
+    "color": "Blanco",
+    "gender": "Mujer",
+    "shoe_type": "Zapatilla Deportiva",
+    "num_photos": 3,
+    "attributes_filled": 4,
+    "price_ars": 52000,
+    "error_types": [
+      "titulo_mayusculas",
+      "titulo_spam",
+      "descripcion_spam",
+      "pocas_fotos"
+    ],
+    "seller_profile": "spammer",
+    "generated_at": "2026-04-13T16:05:20.185662"
+  },
+  {
+    "title": "NIKE KD BASKETBALL ZAPATILLAS HOMBRE OFERTA ENVÍO GRATIS STOCK LIMITADO!!!",
+    "description": "ENVÍO GRATIS!!! OFERTA EXCLUSIVA!!! MEJOR PRECIO DEL MERCADO!!! CONSULTE STOCK DISPONIBLE!!! ZAPATILLAS DE CALIDAD!!! NO ESPERES MÁS!!! OFERTA VÁLIDA MIENTRAS HAY STOCK!!! COMPRA AHORA!!!",
+    "brand": "NIKE",
+    "model": "KD",
+    "color": "Negro/Rojo",
+    "gender": "Hombre",
+    "shoe_type": "Zapatilla Basketball",
+    "num_photos": 2,
+    "attributes_filled": 4,
+    "price_ars": 68500,
+    "error_types": [
+      "titulo_mayusculas",
+      "titulo_spam",
+      "descripcion_spam",
+      "pocas_fotos",
+      "pocos_atributos"
+    ],
+    "seller_profile": "spammer",
+    "generated_at": "2026-04-13T16:05:20.185662"
+  },
+  {
+    "title": "ZAPATILLAS DEPORTIVAS RUNNING OFERTA ENVÍO GRATIS MEJOR PRECIO GARANTIZADO!!!",
+    "description": "OFERTA IMPRESIONANTE!!! ENVÍO RÁPIDO Y GRATIS!!! CONSULTE ANTES DE OFERTAR!!! ZAPATILLA DEPORTIVA PREMIUM!!! MEJOR PRECIO ASEGURADO!!! OFERTA LIMITADA!!! STOCK DISPONIBLE!!! COMPRE CON CONFIANZA!!!",
+    "brand": "Puma",
+    "model": "Running X",
+    "color": "Varios colores",
+    "gender": "Talle único",
+    "shoe_type": "Zapatilla",
+    "num_photos": 2,
+    "attributes_filled": 2,
+    "price_ars": 39800,
+    "error_types": [
+      "titulo_generico",
+      "titulo_mayusculas",
+      "titulo_spam",
+      "descripcion_spam",
+      "pocos_atributos",
+      "atributos_incorrectos",
+      "pocas_fotos"
+    ],
+    "seller_profile": "spammer",
+    "generated_at": "2026-04-13T16:05:20.185662"
+  },
+  {
+    "title": "REEBOK CLASSIC ZAPATILLA URBANA OFERTA ENVÍO INCLUIDO MEJOR PRECIO!!!",
+    "description": "OFERTA ÚNICA!!! ENVÍO GRATIS A TODO EL PAÍS!!! CONSULTE DISPONIBILIDAD!!! ZAPATILLA DE EXCELENTE CALIDAD!!! MEJOR PRECIO GARANTIZADO!!! OFERTA POR TIEMPO LIMITADO!!! NO PIERDA ESTA OPORTUNIDAD!!! STOCK LIMITADO!!!",
+    "brand": "REEBOK",
+    "model": "CLASSIC",
+    "color": "Blanco/Azul",
+    "gender": "Unisex",
+    "shoe_type": "Zapatilla Urbana",
+    "num_photos": 3,
+    "attributes_filled": 5,
+    "price_ars": 43200,
+    "error_types": [
+      "titulo_mayusculas",
+      "titulo_spam",
+      "descripcion_spam"
+    ],
+    "seller_profile": "spammer",
+    "generated_at": "2026-04-13T16:05:20.185662"
+  },
+  {
+    "title": "NEW BALANCE 574 HOMBRE OFERTA ENVÍO GRATIS STOCK LIMITADO MEJOR PRECIO!!!",
+    "description": "OFERTA EXTRAORDINARIA!!! ENVÍO GRATIS Y RÁPIDO!!! CONSULTE STOCK DISPONIBLE!!! ZAPATILLAS ORIGINALES!!! MEJOR PRECIO DEL MERCADO!!! OFERTA VÁLIDA HOY!!! COMPRE AHORA MISMO!!! NO SE ARREPENTIRÁ!!!",
+    "brand": "NEW BALANCE",
+    "model": "574",
+    "color": "Gris/Negro",
+    "gender": "Hombre",
+    "shoe_type": "Zapatilla Deportiva",
+    "num_photos": 2,
+    "attributes_filled": 4,
+    "price_ars": 55900,
+    "error_types": [
+      "titulo_mayusculas",
+      "titulo_spam",
+      "descripcion_spam",
+      "pocas_fotos"
+    ],
+    "seller_profile": "spammer",
+    "generated_at": "2026-04-13T16:05:20.185662"
+  },
+  {
+    "title": "Zapatillas Nike Air Max Running Deportivas Originales Imp",
+    "description": "Zapatillas de cuero genuino con plantilla ortopédica extraíble. Ideales para formales y eventos. Tecnología Boost para máximo confort. Importadas de Europa. Garantía internacional. Envío gratis a todo el país.",
+    "brand": "Nike",
+    "model": "Air Max Running",
+    "color": "Marrón",
+    "gender": "Mujer",
+    "shoe_type": "Formal",
+    "num_photos": 3,
+    "attributes_filled": 4,
+    "price_ars": 52000,
+    "error_types": [
+      "descripcion_copiada",
+      "atributos_incorrectos",
+      "info_contradictoria",
+      "pocas_fotos"
+    ],
+    "seller_profile": "copypaste",
+    "generated_at": "2026-04-13T16:05:28.563304"
+  },
+  {
+    "title": "Adidas Stan Smith Classic Blancas Hombre Originales",
+    "description": "Zapatos de vestir premium con suela de goma resistente. Perfectos para boating y ocasiones formales. Con cordones ajustables y forro de tela transpirable. Stock limitado.",
+    "brand": "Adidas",
+    "model": "Stan Smith",
+    "color": "Blanco",
+    "gender": "Hombre",
+    "shoe_type": "Casual",
+    "num_photos": 4,
+    "attributes_filled": 5,
+    "price_ars": 38500,
+    "error_types": [
+      "descripcion_copiada",
+      "info_contradictoria"
+    ],
+    "seller_profile": "copypaste",
+    "generated_at": "2026-04-13T16:05:28.563304"
+  },
+  {
+    "title": "Puma RS X Negro Unisex Deportivas Zapatillas Modelo",
+    "description": "Botinetas para dama con diseño moderno y cómodo. Plantilla Memory Foam para máximo confort en todo el día. Ideal para trabajo y casual. Importadas. Última talla disponible.",
+    "brand": "Puma",
+    "model": "RS X",
+    "color": "Rojo",
+    "gender": "Unisex",
+    "shoe_type": "Casual",
+    "num_photos": 3,
+    "attributes_filled": 4,
+    "price_ars": 41200,
+    "error_types": [
+      "titulo_cortado",
+      "descripcion_copiada",
+      "atributos_incorrectos",
+      "info_contradictoria"
+    ],
+    "seller_profile": "copypaste",
+    "generated_at": "2026-04-13T16:05:28.563304"
+  },
+  {
+    "title": "New Balance 574 Azul Zapatillas Running Deportiva Original",
+    "description": "Zapatillas de cuero con cordones, perfectas para boating y actividades acuáticas. Suela antideslizante grado 5. Tecnología Boost Pro. Garantía 2 años. Envío sin costo.",
+    "brand": "New Balance",
+    "model": "574",
+    "color": "Verde",
+    "gender": "Mujer",
+    "shoe_type": "Boating",
+    "num_photos": 2,
+    "attributes_filled": 3,
+    "price_ars": 48900,
+    "error_types": [
+      "descripcion_copiada",
+      "atributos_incorrectos",
+      "pocas_fotos",
+      "info_contradictoria"
+    ],
+    "seller_profile": "copypaste",
+    "generated_at": "2026-04-13T16:05:28.563304"
+  },
+  {
+    "title": "Reebok Club C Blancas Hombre Zapatillas Modelo Casual",
+    "description": "Botines de futbol 11 con suela de goma reforzada para máximo agarre. Plantilla extraíble y ajustable. Ideal para formales y eventos especiales. Stock disponible en varios colores.",
+    "brand": "Reebok",
+    "model": "Club C",
+    "color": "Negro",
+    "gender": "Hombre",
+    "shoe_type": "Futbol",
+    "num_photos": 3,
+    "attributes_filled": 4,
+    "price_ars": 39800,
+    "error_types": [
+      "descripcion_copiada",
+      "atributos_incorrectos",
+      "info_contradictoria",
+      "titulo_generico"
+    ],
+    "seller_profile": "copypaste",
+    "generated_at": "2026-04-13T16:05:28.563304"
+  },
+  {
+    "title": "Zapatillas Reebok Classic Leather Retro Running Negras Originales Imp",
+    "description": "Zapatillas deportivas de alta calidad con tecnología de amortiguación avanzada. Ideales para correr largas distancias y entrenamientos intensos. Suela de goma resistente, plantilla ergonómica, diseño moderno y cómodo. Disponible en varios talles. Envíos a todo el país. Garantía de autenticidad.",
+    "brand": "Reebok",
+    "model": "Classic Leather Retro",
+    "color": "Gris",
+    "gender": "Femenino",
+    "shoe_type": "Running",
+    "num_photos": 3,
+    "attributes_filled": 4,
+    "price_ars": 52000,
+    "error_types": [
+      "titulo_cortado",
+      "descripcion_copiada",
+      "atributos_incorrectos",
+      "pocas_fotos"
+    ],
+    "seller_profile": "copypaste",
+    "generated_at": "2026-04-13T16:05:37.523210"
+  },
+  {
+    "title": "Nike Air Max 90 Zapatillas Deportivas Blancas Para Cualquier Deporte",
+    "description": "Zapatilla Nike original importada. Perfecta para futbol, tenis, basketball y running. Construcción de material premium con refuerzos laterales. Excelente grip en cualquier superficie.",
+    "brand": "Nike",
+    "model": "Air Max",
+    "color": "Blanco",
+    "gender": "Sin género",
+    "shoe_type": "Multisporte",
+    "num_photos": 4,
+    "attributes_filled": 5,
+    "price_ars": 67500,
+    "error_types": [
+      "titulo_generico",
+      "descripcion_copiada",
+      "atributos_incorrectos"
+    ],
+    "seller_profile": "copypaste",
+    "generated_at": "2026-04-13T16:05:37.523210"
+  },
+  {
+    "title": "Puma Suede Zapatillas Clásicas Negro Unisex Original",
+    "description": "Las mejores zapatillas para correr y entrenamientos de alta intensidad. Tecnología Boost en la suela para máxima comodidad. Material transpirable, apto para cualquier clima. Recomendado para deportistas profesionales. Incluye caja original.",
+    "brand": "Puma",
+    "model": "Suede Classic",
+    "color": "Negro",
+    "gender": "Masculino",
+    "shoe_type": "Basketball",
+    "num_photos": 3,
+    "attributes_filled": 5,
+    "price_ars": 38900,
+    "error_types": [
+      "titulo_generico",
+      "descripcion_copiada",
+      "atributos_incorrectos",
+      "info_contradictoria"
+    ],
+    "seller_profile": "copypaste",
+    "generated_at": "2026-04-13T16:05:37.523210"
+  },
+  {
+    "title": "Adidas Stan Smith Zapatillas Deportivas Verdes Originales Impor",
+    "description": "Zapatilla de cuero premium con suela de goma. Ideal para basketball profesional y entrenamientos diarios. Plantilla memory foam, tecnología amortiguada, resistente al agua. Perfecta para correr.",
+    "brand": "Adidas",
+    "model": "Stan Smith",
+    "color": "Verde",
+    "gender": "Femenino",
+    "shoe_type": "Casual",
+    "num_photos": 3,
+    "attributes_filled": 4,
+    "price_ars": 43200,
+    "error_types": [
+      "titulo_cortado",
+      "descripcion_copiada",
+      "atributos_incorrectos",
+      "info_contradictoria"
+    ],
+    "seller_profile": "copypaste",
+    "generated_at": "2026-04-13T16:05:37.523210"
+  },
+  {
+    "title": "New Balance 574 Zapatillas Running Bordo Premium Quality",
+    "description": "Modelo deportivo de última generación con tecnología de amortiguación de punta. Excelente para futbol 5. Suela antideslizante, material transpirable y resistente. Oferta limitada stock disponible.",
+    "brand": "New Balance",
+    "model": "574",
+    "color": "Rojo",
+    "gender": "Sin género",
+    "shoe_type": "Futbol",
+    "num_photos": 4,
+    "attributes_filled": 4,
+    "price_ars": 55400,
+    "error_types": [
+      "descripcion_copiada",
+      "atributos_incorrectos",
+      "info_contradictoria"
+    ],
+    "seller_profile": "copypaste",
+    "generated_at": "2026-04-13T16:05:37.523210"
+  },
+  {
+    "title": "Zapatillas Reebok Freestyle",
+    "description": "Zapatillas originales Reebok. Excelente estado. Consultar talles disponibles por mensaje. Envíos a todo el país.",
+    "brand": "Reebok",
+    "model": "Freestyle",
+    "color": "",
+    "gender": "",
+    "shoe_type": "",
+    "num_photos": 4,
+    "attributes_filled": 2,
+    "price_ars": 52000,
+    "error_types": [
+      "pocos_atributos",
+      "titulo_incompleto",
+      "atributos_vacios"
+    ],
+    "seller_profile": "perezoso",
+    "generated_at": "2026-04-13T16:05:43.274613"
+  },
+  {
+    "title": "Nike Air Max Running Deportivas",
+    "description": "Zapatillas Nike originales. Muy buenas. Consultar disponibilidad antes de comprar.",
+    "brand": "Nike",
+    "model": "Air Max",
+    "color": "",
+    "gender": "",
+    "shoe_type": "Running",
+    "num_photos": 5,
+    "attributes_filled": 2,
+    "price_ars": 68000,
+    "error_types": [
+      "pocos_atributos",
+      "titulo_generico",
+      "descripcion_corta"
+    ],
+    "seller_profile": "perezoso",
+    "generated_at": "2026-04-13T16:05:43.274613"
+  },
+  {
+    "title": "Adidas Stan Smith Zapatillas",
+    "description": "Zapatillas Adidas Stan Smith. Producto original. Talles consultar.",
+    "brand": "Adidas",
+    "model": "Stan Smith",
+    "color": "",
+    "gender": "",
+    "shoe_type": "",
+    "num_photos": 4,
+    "attributes_filled": 2,
+    "price_ars": 48500,
+    "error_types": [
+      "pocos_atributos",
+      "sin_color",
+      "sin_genero",
+      "descripcion_minima"
+    ],
+    "seller_profile": "perezoso",
+    "generated_at": "2026-04-13T16:05:43.274613"
+  },
+  {
+    "title": "Puma RS-X Urbanas",
+    "description": "Puma RS-X originales. Buen estado. Consultar antes de ofertar.",
+    "brand": "Puma",
+    "model": "RS-X",
+    "color": "",
+    "gender": "",
+    "shoe_type": "",
+    "num_photos": 4,
+    "attributes_filled": 2,
+    "price_ars": 45000,
+    "error_types": [
+      "pocos_atributos",
+      "atributos_incompletos",
+      "titulo_sin_detalles"
+    ],
+    "seller_profile": "perezoso",
+    "generated_at": "2026-04-13T16:05:43.274613"
+  },
+  {
+    "title": "New Balance 574 Zapatillas Deportivas",
+    "description": "New Balance originales. Muy buenos. Mensaje para talles y consultas.",
+    "brand": "New Balance",
+    "model": "574",
+    "color": "",
+    "gender": "",
+    "shoe_type": "",
+    "num_photos": 5,
+    "attributes_filled": 2,
+    "price_ars": 55000,
+    "error_types": [
+      "pocos_atributos",
+      "descripcion_vaga",
+      "atributos_vacios"
+    ],
+    "seller_profile": "perezoso",
+    "generated_at": "2026-04-13T16:05:43.274613"
+  },
+  {
+    "title": "Nike Air Max Running Hombre",
+    "description": "Zapatillas Nike originales. Muy buenas. Consultar talles disponibles por mensaje. Envíos a todo el país.",
+    "brand": "Nike",
+    "model": "Air Max",
+    "color": "",
+    "gender": "Hombre",
+    "shoe_type": "Running",
+    "num_photos": 4,
+    "attributes_filled": 3,
+    "price_ars": 52000,
+    "error_types": [
+      "titulo_incompleto",
+      "pocos_atributos",
+      "descripcion_minimalista"
+    ],
+    "seller_profile": "perezoso",
+    "generated_at": "2026-04-13T16:05:49.561096"
+  },
+  {
+    "title": "Adidas Boost Deportivas",
+    "description": "Zapatillas deportivas Adidas. Estado impecable. Consultar disponibilidad.",
+    "brand": "Adidas",
+    "model": "Boost",
+    "color": "",
+    "gender": "",
+    "shoe_type": "Deportiva",
+    "num_photos": 5,
+    "attributes_filled": 2,
+    "price_ars": 48500,
+    "error_types": [
+      "pocos_atributos",
+      "color_vacio",
+      "genero_vacio"
+    ],
+    "seller_profile": "perezoso",
+    "generated_at": "2026-04-13T16:05:49.561096"
+  },
+  {
+    "title": "Puma RS-X Mujer Blanco",
+    "description": "Puma original. Buen estado. Preguntar talles.",
+    "brand": "Puma",
+    "model": "RS-X",
+    "color": "Blanco",
+    "gender": "Mujer",
+    "shoe_type": "",
+    "num_photos": 4,
+    "attributes_filled": 3,
+    "price_ars": 41000,
+    "error_types": [
+      "descripcion_minimalista",
+      "shoe_type_vacio"
+    ],
+    "seller_profile": "perezoso",
+    "generated_at": "2026-04-13T16:05:49.561096"
+  },
+  {
+    "title": "New Balance 574 Zapatillas",
+    "description": "Zapatillas New Balance. Originales. Consultar talles por privado.",
+    "brand": "New Balance",
+    "model": "574",
+    "color": "",
+    "gender": "",
+    "shoe_type": "Casual",
+    "num_photos": 4,
+    "attributes_filled": 2,
+    "price_ars": 45900,
+    "error_types": [
+      "titulo_generico",
+      "pocos_atributos",
+      "color_vacio"
+    ],
+    "seller_profile": "perezoso",
+    "generated_at": "2026-04-13T16:05:49.561096"
+  },
+  {
+    "title": "Reebok Classic Hombre Deportivo",
+    "description": "Reebok clásicas. Muy buenas. Envíos sin costo. Consultar.",
+    "brand": "Reebok",
+    "model": "Classic",
+    "color": "",
+    "gender": "Hombre",
+    "shoe_type": "Deportiva",
+    "num_photos": 5,
+    "attributes_filled": 3,
+    "price_ars": 39800,
+    "error_types": [
+      "color_vacio",
+      "descripcion_vaga"
+    ],
+    "seller_profile": "perezoso",
+    "generated_at": "2026-04-13T16:05:49.561096"
+  },
+  {
+    "title": "Zapatilla Nike Air Max Running Hombre Negra - OFERTA IMPERDIBLE",
+    "description": "Zapatilla deportiva de excelente calidad. Posee tecnología Boost en la suela para mayor comodidad. Material de cuero genuino. Perfecta para entrenamientos intensos y uso diario. Envío gratis a todo el país.",
+    "brand": "Nike",
+    "model": "Air Max 90",
+    "color": "Blanco",
+    "gender": "Mujer",
+    "shoe_type": "Urbana",
+    "num_photos": 3,
+    "attributes_filled": 4,
+    "price_ars": 52000,
+    "error_types": [
+      "atributos_incorrectos",
+      "info_contradictoria",
+      "descripcion_spam"
+    ],
+    "seller_profile": "desinformado",
+    "generated_at": "2026-04-13T16:05:58.331264"
+  },
+  {
+    "title": "Adidas Energifalcon Cross Original Mujer Talles 36 37 38",
+    "description": "Zapatilla running de última generación. Con suela michelin y amortiguación gel avanzada. Ideal para hombre deportista. Tela transpirable y ligera.",
+    "brand": "Addidas",
+    "model": "Energy Falcon",
+    "color": "Gris",
+    "gender": "Hombre",
+    "shoe_type": "Running",
+    "num_photos": 2,
+    "attributes_filled": 5,
+    "price_ars": 38500,
+    "error_types": [
+      "titulo_typos",
+      "info_contradictoria",
+      "pocas_fotos",
+      "descripcion_copiada"
+    ],
+    "seller_profile": "desinformado",
+    "generated_at": "2026-04-13T16:05:58.331264"
+  },
+  {
+    "title": "Reebok BB4590 Blanca Naranja - Zapatilla Deportiva Premium",
+    "description": "Excelente estado. Casi sin usar. Material sintético de alta calidad con refuerzos en cuero. Sistema de amortiguación Air Boost. Modelo exclusivo retro.",
+    "brand": "Rebok",
+    "model": "BB4590 Ultra",
+    "color": "Azul",
+    "gender": "Sin especificar",
+    "shoe_type": "Urbana",
+    "num_photos": 4,
+    "attributes_filled": 4,
+    "price_ars": 41200,
+    "error_types": [
+      "titulo_typos",
+      "atributos_incorrectos",
+      "info_contradictoria"
+    ],
+    "seller_profile": "desinformado",
+    "generated_at": "2026-04-13T16:05:58.331264"
+  },
+  {
+    "title": "PUMA RS-X TRENDING ZAPATILLA HOMBRE NUEVA COLECCIÓN 2024",
+    "description": "Zapatilla. Muy buena. Para hacer deporte o salir. Talle 42. Color rojo.",
+    "brand": "Puma",
+    "model": "RS-X",
+    "color": "Rojo",
+    "gender": "Mujer",
+    "shoe_type": "Running",
+    "num_photos": 2,
+    "attributes_filled": 3,
+    "price_ars": 35800,
+    "error_types": [
+      "sin_descripcion",
+      "pocos_atributos",
+      "pocas_fotos",
+      "atributos_incorrectos"
+    ],
+    "seller_profile": "desinformado",
+    "generated_at": "2026-04-13T16:05:58.331264"
+  },
+  {
+    "title": "Topper Zapatilla Talle 12.5 US Negro Verde Hombre Botín",
+    "description": "Zapatilla de fútbol con tecnología Flyknit y suela de carbono. Perfecta para mujer. Excelente agarre y estabilidad. Colores: blanco y oro. Impecable.",
+    "brand": "Topper",
+    "model": "Challenge Futsal",
+    "color": "Blanco",
+    "gender": "Mujer",
+    "shoe_type": "Botín",
+    "num_photos": 3,
+    "attributes_filled": 5,
+    "price_ars": 48900,
+    "error_types": [
+      "atributos_incorrectos",
+      "info_contradictoria",
+      "descripcion_spam"
+    ],
+    "seller_profile": "desinformado",
+    "generated_at": "2026-04-13T16:05:58.331264"
+  },
+  {
+    "title": "Zapatilla Adidas Astrastar Running Hombre Negra Deportiva",
+    "description": "Zapatilla deportiva Adidas Astrastar con tecnología Boost ultra cómoda para running y entrenamiento. Suela de goma antideslizante, diseño moderno. Perfecta para actividades deportivas intensas. Incluye caja.",
+    "brand": "Adidas",
+    "model": "Astrastar",
+    "color": "Blanco",
+    "gender": "Mujer",
+    "shoe_type": "Casual",
+    "num_photos": 3,
+    "attributes_filled": 4,
+    "price_ars": 52000,
+    "error_types": [
+      "atributos_incorrectos",
+      "info_contradictoria",
+      "descripcion_copiada"
+    ],
+    "seller_profile": "desinformado",
+    "generated_at": "2026-04-13T16:06:07.259330"
+  },
+  {
+    "title": "Nike Air Max Furyosa Hombre Azul Marino - OFERTA IMPERDIBLE!!!",
+    "description": "OFERTA OFERTA OFERTA Zapatilla Nike Air Max Furyosa con cuero premium italiano y suela de carbono. Perfecto para entrenamientos de futbol y basquet. Tecnología AirMax invisible. OFERTA OFERTA",
+    "brand": "Nike",
+    "model": "Air Max Furyosa",
+    "color": "Rojo",
+    "gender": "Hombre",
+    "shoe_type": "Futbol",
+    "num_photos": 2,
+    "attributes_filled": 3,
+    "price_ars": 68500,
+    "error_types": [
+      "descripcion_spam",
+      "atributos_incorrectos",
+      "pocas_fotos",
+      "info_contradictoria"
+    ],
+    "seller_profile": "desinformado",
+    "generated_at": "2026-04-13T16:06:07.259330"
+  },
+  {
+    "title": "Botines Puma Future Z Numero 42 Cantera",
+    "description": "Botín Puma Future Z talle 42. Material sintético con refuerzos. Excelente estado, poco uso. Para futbol 5 y cesped. Envios al interior.",
+    "brand": "Puma",
+    "model": "Future Z",
+    "color": "Verde Limón",
+    "gender": "Niño",
+    "shoe_type": "Futbol",
+    "num_photos": 4,
+    "attributes_filled": 5,
+    "price_ars": 38000,
+    "error_types": [
+      "atributos_incorrectos",
+      "info_contradictoria"
+    ],
+    "seller_profile": "desinformado",
+    "generated_at": "2026-04-13T16:06:07.259330"
+  },
+  {
+    "title": "Zapatilla Reebook Classic Urbana Mujer Violeta Pastel Talles",
+    "description": "Reebook Classic zapatilla urbana para mujer, super comoda. Tiene plantilla de gel y tecnología Boost de ultima generación. Color violeta. Ideal para uso diario y entrenamientos ligeros.",
+    "brand": "Rebok",
+    "model": "Classic",
+    "color": "Negro",
+    "gender": "Hombre",
+    "shoe_type": "Running",
+    "num_photos": 3,
+    "attributes_filled": 4,
+    "price_ars": 42000,
+    "error_types": [
+      "titulo_typos",
+      "atributos_incorrectos",
+      "descripcion_copiada",
+      "info_contradictoria"
+    ],
+    "seller_profile": "desinformado",
+    "generated_at": "2026-04-13T16:06:07.259330"
+  },
+  {
+    "title": "NEW BALANCE 990V5 ZAPATILLA DEPORTIVA PREMIUM OFERRTA",
+    "description": "Zapatilla New Balance 990V5 con diseño retro clásico. Suela de caucho natural, plantilla de cuero genuino. Excelente para running trail y montaña.",
+    "brand": "New Balanse",
+    "model": "990V5",
+    "color": "Gris",
+    "gender": "Unisex",
+    "shoe_type": "Casual",
+    "num_photos": 2,
+    "attributes_filled": 3,
+    "price_ars": 55000,
+    "error_types": [
+      "titulo_typos",
+      "titulo_mayusculas",
+      "pocas_fotos",
+      "atributos_incorrectos",
+      "info_contradictoria"
+    ],
+    "seller_profile": "desinformado",
+    "generated_at": "2026-04-13T16:06:07.259330"
+  },
+  {
+    "title": "Adidas Sport Running Shoes Zapatilla Deportiva Hombre Blanco OOC27",
+    "description": "Zapato de deporte de alta calidad para correr. Muy confortable para hacer running y actividades atléticas. Diseño moderno con suela de goma resistente. Perfecto para entrenamientos diarios.",
+    "brand": "Adidas",
+    "model": "OOC27",
+    "color": "Blanco",
+    "gender": "Hombre",
+    "shoe_type": "Running",
+    "num_photos": 3,
+    "attributes_filled": 5,
+    "price_ars": 52000,
+    "error_types": [
+      "titulo_generico",
+      "descripcion_traducida",
+      "pocas_fotos"
+    ],
+    "seller_profile": "traducido_mal",
+    "generated_at": "2026-04-13T16:06:14.357812"
+  },
+  {
+    "title": "Sneaker Casual Shoes Zapatilla Deportiva Mujer Rojo",
+    "description": "Zapato casual de deporte para mujer. Construcción de tela transpirable. Cómodo para caminar todo el día. Material de alta resistencia.",
+    "brand": "Generic",
+    "model": "",
+    "color": "Rojo",
+    "gender": "Mujer",
+    "shoe_type": "Casual",
+    "num_photos": 2,
+    "attributes_filled": 4,
+    "price_ars": 38500,
+    "error_types": [
+      "titulo_generico",
+      "descripcion_traducida",
+      "pocas_fotos",
+      "pocos_atributos"
+    ],
+    "seller_profile": "traducido_mal",
+    "generated_at": "2026-04-13T16:06:14.357812"
+  },
+  {
+    "title": "Topper San Ciro V Sport Shoes Zapatilla Negro Blanco Men Training",
+    "description": "Zapatilla de entrenamiento de alta calidad. Suela gruesa para comodidad máxima. Ideal para deportes y actividades físicas intensas. Muy durable.",
+    "brand": "Topper",
+    "model": "San Ciro V",
+    "color": "Negro/Blanco",
+    "gender": "Hombre",
+    "shoe_type": "Training",
+    "num_photos": 3,
+    "attributes_filled": 5,
+    "price_ars": 42800,
+    "error_types": [
+      "titulo_spam",
+      "descripcion_traducida",
+      "pocas_fotos"
+    ],
+    "seller_profile": "traducido_mal",
+    "generated_at": "2026-04-13T16:06:14.357812"
+  },
+  {
+    "title": "Reebok Classic Shoes Zapatilla Deportiva Unisex Amarelo Yellow",
+    "description": "Zapato deportivo clásico de estilo. Comodidad suprema para el uso diario. Tela de calidad superior con acabados profesionales. Muy recomendado.",
+    "brand": "Reebok",
+    "model": "Classic",
+    "color": "Amarillo",
+    "gender": "Unisex",
+    "shoe_type": "Casual",
+    "num_photos": 2,
+    "attributes_filled": 4,
+    "price_ars": 35900,
+    "error_types": [
+      "titulo_spam",
+      "descripcion_traducida",
+      "pocas_fotos",
+      "atributos_incorrectos"
+    ],
+    "seller_profile": "traducido_mal",
+    "generated_at": "2026-04-13T16:06:14.357812"
+  },
+  {
+    "title": "Nike Air Running Sneaker Zapatilla Deportiva Hombre Gris Azul",
+    "description": "Zapatilla de running de marca reconocida internacionalmente. Suela de aire comprimido para máxima amortiguación. Excelente para hacer deportes todos los días. Muy cómoda y moderna.",
+    "brand": "Nike",
+    "model": "Air",
+    "color": "Gris/Azul",
+    "gender": "Hombre",
+    "shoe_type": "Running",
+    "num_photos": 3,
+    "attributes_filled": 5,
+    "price_ars": 48900,
+    "error_types": [
+      "titulo_generico",
+      "descripcion_traducida",
+      "pocas_fotos"
+    ],
+    "seller_profile": "traducido_mal",
+    "generated_at": "2026-04-13T16:06:14.357812"
+  },
+  {
+    "title": "Sneaker Running Shoes Zapatilla Deportiva Hombre Comodidad",
+    "description": "Zapato de deporte de alta calidad. Muy confortable para hacer running y caminar. Diseño moderno con suela resistente. Perfecto para actividades físicas diarias. Material transpirable.",
+    "brand": "Adidas",
+    "model": "NKW98",
+    "color": "Negro",
+    "gender": "Hombre",
+    "shoe_type": "Running",
+    "num_photos": 3,
+    "attributes_filled": 5,
+    "price_ars": 52000,
+    "error_types": [
+      "titulo_spam",
+      "descripcion_traducida",
+      "pocas_fotos"
+    ],
+    "seller_profile": "traducido_mal",
+    "generated_at": "2026-04-13T16:06:21.752519"
+  },
+  {
+    "title": "Sport Casual Shoes Zapatos Deportivos Mujer Blanco Tenis",
+    "description": "Zapato casual deportivo para mujer. Muy cómodo y elegante. Ideal para uso diario. Suela antideslizante de gran durabilidad. Oferta especial precio.",
+    "brand": "Puma",
+    "model": "Court Flex",
+    "color": "Blanco",
+    "gender": "Mujer",
+    "shoe_type": "Casual",
+    "num_photos": 2,
+    "attributes_filled": 4,
+    "price_ars": 38000,
+    "error_types": [
+      "titulo_spam",
+      "descripcion_traducida",
+      "pocas_fotos"
+    ],
+    "seller_profile": "traducido_mal",
+    "generated_at": "2026-04-13T16:06:21.752519"
+  },
+  {
+    "title": "Zapatilla Basketball Shoes Hombre Negro Deportiva Calidad",
+    "description": "Zapato basketball de deporte profesional. Excelente para jugar basquetbol. Amortiguación superior y soporte de tobillo. Material de tela de calidad. Resistencia al desgarre.",
+    "brand": "Nike",
+    "model": "Court Vision",
+    "color": "Negro/Gris",
+    "gender": "Hombre",
+    "shoe_type": "Basketball",
+    "num_photos": 3,
+    "attributes_filled": 4,
+    "price_ars": 65000,
+    "error_types": [
+      "titulo_spam",
+      "descripcion_traducida"
+    ],
+    "seller_profile": "traducido_mal",
+    "generated_at": "2026-04-13T16:06:21.752519"
+  },
+  {
+    "title": "Walking Shoes Zapatilla Caminar Mujer Gris Comodidad Premium",
+    "description": "Zapato para caminar con gran comodidad. Diseño ergonómico y moderno. Muy liviano para uso prolongado. Suela flexible con amortiguación. Material que permite respiración.",
+    "brand": "New Balance",
+    "model": "W520",
+    "color": "Gris",
+    "gender": "Mujer",
+    "shoe_type": "Walking",
+    "num_photos": 2,
+    "attributes_filled": 3,
+    "price_ars": 48000,
+    "error_types": [
+      "titulo_spam",
+      "descripcion_traducida",
+      "pocas_fotos",
+      "pocos_atributos"
+    ],
+    "seller_profile": "traducido_mal",
+    "generated_at": "2026-04-13T16:06:21.752519"
+  },
+  {
+    "title": "Casual Sneaker Shoes Zapatilla Urbana Hombre Azul Tenis",
+    "description": "Zapatilla casual urbana para hombre. Estilo moderno y cómodo. Perfecta para uso casual y deportivo. Materiales de calidad premium. Gran durabilidad y diseño.",
+    "brand": "Reebok",
+    "model": "Royal Prime",
+    "color": "Azul",
+    "gender": "Hombre",
+    "shoe_type": "Casual",
+    "num_photos": 3,
+    "attributes_filled": 5,
+    "price_ars": 41000,
+    "error_types": [
+      "titulo_spam",
+      "descripcion_traducida"
+    ],
+    "seller_profile": "traducido_mal",
+    "generated_at": "2026-04-13T16:06:21.752519"
+  }
+]
