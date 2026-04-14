@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/images/logo-footer.png" alt="Prompty" height="80" />
+  <img src="public/images/logo-footer.png" alt="Prompty" height="140" />
   <br/><br/>
 
   [![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)](https://nextjs.org)
