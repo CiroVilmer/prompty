@@ -10,6 +10,7 @@ interface Props {
 
 // Stub — replace with a real DB lookup
 async function getPrompt(id: string): Promise<Prompt | null> {
+  "use cache";
   void id;
   return null;
 }
