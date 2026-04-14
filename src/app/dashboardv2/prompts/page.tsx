@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 
 // Stub — replace with a real DB query
 async function getPrompts(): Promise<Prompt[]> {
+  "use cache";
   return [];
 }
 

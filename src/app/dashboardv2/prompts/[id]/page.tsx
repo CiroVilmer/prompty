@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Prompt } from "@/types";
 import PromptForm from "../PromptForm";
-
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -15,14 +15,18 @@ async function getPrompt(id: string): Promise<Prompt | null> {
   return null;
 }
 
+// No static paths to pre-generate — render on demand
+export function generateStaticParams() {
+  return [];
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const prompt = await getPrompt(id);
   return { title: prompt ? `Edit: ${prompt.title}` : "Prompt not found" };
 }
 
-export default async function PromptDetailPage({ params }: Props) {
-  const { id } = await params;
+async function PromptDetail({ id }: { id: string }) {
   const prompt = await getPrompt(id);
 
   if (!prompt) {
@@ -54,5 +58,14 @@ export default async function PromptDetailPage({ params }: Props) {
       </div>
       <PromptForm prompt={prompt} />
     </div>
+  );
+}
+
+export default async function PromptDetailPage({ params }: Props) {
+  const { id } = await params;
+  return (
+    <Suspense fallback={<div className="animate-pulse text-sm text-gray-400">Loading prompt…</div>}>
+      <PromptDetail id={id} />
+    </Suspense>
   );
 }
