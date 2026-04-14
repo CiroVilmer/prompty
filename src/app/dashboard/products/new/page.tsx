@@ -201,20 +201,54 @@ function ThinkingDots() {
 /* ── Simulated AI steps ─────────────────────────────────────────────────────── */
 
 const AI_STEPS: { role: 'user' | 'assistant'; content: string; icon: string }[] = [
-  { role: 'assistant', content: 'Analyzing your product description…', icon: '🔍' },
-  { role: 'assistant', content: 'Identified category: Computación > Laptops > Apple', icon: '📂' },
-  { role: 'assistant', content: 'Generating SEO-optimized title with brand, model, and key specs…', icon: '✏️' },
-  { role: 'assistant', content: 'Setting competitive price based on category benchmarks…', icon: '💰' },
-  { role: 'assistant', content: 'Building attribute table: Marca, Modelo, Procesador, RAM, SSD, Pantalla', icon: '📋' },
-  { role: 'assistant', content: 'Listing ready — review the preview and publish when you\'re happy.', icon: '✅' },
+  {
+    role: 'assistant',
+    content:
+      'Reading your note exactly as you wrote it — no cleanup required on your side.',
+    icon: '🔍',
+  },
+  {
+    role: 'assistant',
+    content:
+      'Locking the right Mercado Libre category (Computación → Laptops → Apple). Wrong branch = you do not show up in search.',
+    icon: '📂',
+  },
+  {
+    role: 'assistant',
+    content:
+      'Building the title with live keyword signal from the Mercado Libre API — not a static hand-written prompt.',
+    icon: '✏️',
+  },
+  {
+    role: 'assistant',
+    content:
+      'Filling required attributes so filters work. One missing field and you disappear from filtered results.',
+    icon: '📋',
+  },
+  {
+    role: 'assistant',
+    content:
+      'Suggesting market price and buyer-friendly installments from category benchmarks.',
+    icon: '💰',
+  },
+  {
+    role: 'assistant',
+    content:
+      'DSPy-optimized program finishes the draft in under two minutes. Compare lists every change; one tap publishes to Mercado Libre.',
+    icon: '✅',
+  },
 ]
 
 /* ── Suggestions ────────────────────────────────────────────────────────────── */
 
 const SUGGESTIONS = [
+  {
+    icon: '💻',
+    label:
+      'Used MacBook, works perfectly, selling to upgrade, open to offers.',
+  },
   { icon: '📱', label: 'iPhone 15 Pro Max 256GB' },
   { icon: '👟', label: 'Nike Air Jordan 1 Chicago' },
-  { icon: '💻', label: 'MacBook Air M2 256GB' },
 ]
 
 /* ── Idle view — hero input ─────────────────────────────────────────────────── */
@@ -385,46 +419,63 @@ function IdleView({
 
 const IMPROVEMENTS = [
   {
-    category: 'Title',
+    category: 'Title & search keywords',
     severity: 'critical' as const,
-    before: 'macbook usada anda perfecto vendo por upgrade acepto permuta escucho ofertas envio',
-    after: 'Apple MacBook Air 13.6" Chip M2 8 Núcleos — 8GB RAM 256GB SSD — Gris Espacial — macOS Sonoma',
-    explanation: 'Added brand, model, key specs, and screen size. Removed informal language and irrelevant terms that hurt search ranking.',
+    before:
+      'Used MacBook, works perfectly, selling to upgrade, open to offers.',
+    after:
+      'Apple MacBook Air 13.6" Chip M2 8 Núcleos — 8GB RAM 256GB SSD — Gris Espacial — macOS Sonoma — Teclado Español Latino',
+    explanation:
+      'Your note had zero searchable structure. The optimized title adds brand, line, chip, RAM, storage, and screen size so buyers (and ML search) can actually find the listing.',
   },
   {
-    category: 'Price strategy',
-    severity: 'high' as const,
-    before: '$ 1.150.000 (flat price, no discounts)',
-    after: '$ 949.999 with 30% OFF badge + 12 installments without interest',
-    explanation: 'Anchor price creates urgency. Installments increase conversion by 40% in electronics category.',
-  },
-  {
-    category: 'Shipping',
-    severity: 'high' as const,
-    before: '"Llega en 5 a 7 días hábiles" — standard shipping',
-    after: '"Llega mañana" — Envío gratis · Full',
-    explanation: 'Mercado Envíos Full gives priority placement in search results and qualifies for the free shipping badge.',
-  },
-  {
-    category: 'Images',
-    severity: 'medium' as const,
-    before: '1 image, low resolution, no guidelines',
-    after: '4 images: front, angled, detail, lifestyle. White background, 1200×1200px min.',
-    explanation: 'Listings with 4+ quality images see 2× more views. ML prioritizes listings that follow image guidelines.',
+    category: 'Category',
+    severity: 'critical' as const,
+    before: 'Unclear from note — risk of wrong path or generic bucket',
+    after: 'Computación → Laptops y Accesorios → Laptops → Apple (ML taxonomy)',
+    explanation:
+      "Script truth: one wrong category call and the product doesn't show up where buyers look. We lock the path to Mercado Libre's official tree.",
   },
   {
     category: 'Attributes',
     severity: 'critical' as const,
-    before: 'No attributes filled',
-    after: 'All 5 required attributes: Marca, Modelo, Procesador, RAM, Almacenamiento',
-    explanation: 'Missing attributes block your listing from category filters. 68% of buyers use filters to find products.',
+    before: 'None filled — listing invisible in filters',
+    after: 'Marca, Modelo, Procesador, RAM, Almacenamiento (+ optional fields)',
+    explanation:
+      "Right title and category aren't enough: missing attributes mean you drop out of filtered results. Everything required is filled from the structured listing.",
   },
   {
-    category: 'SEO & Keywords',
+    category: 'Market price',
+    severity: 'high' as const,
+    before: '"Open to offers" — no anchor, weak conversion',
+    after: '$ 949.999 · 30% OFF badge · 12 cuotas sin interés',
+    explanation:
+      'Matches the demo: a credible anchor plus installments — the kind of offer electronics buyers expect on Mercado Libre.',
+  },
+  {
+    category: 'DSPy vs hand-written prompts',
+    severity: 'high' as const,
+    before: "Single static prompt — someone's best guess",
+    after:
+      'DSPy program optimized on real top-selling listings; instruction combinations tested empirically',
+    explanation:
+      'Most AI tools ship hand-tuned prompts. Prompty treats prompts like optimizable code (Stanford DSPy) and learns what actually works on ML — measured jump from baseline 0.45 to optimized 0.87 on our judge.',
+  },
+  {
+    category: 'Live Mercado Libre data',
     severity: 'medium' as const,
-    before: 'No keywords strategy, informal search terms',
-    after: 'Top ML search terms included: "apple", "macbook air", "m2", "256gb", "chip"',
-    explanation: 'Title contains the 5 highest-volume keywords for this category based on ML Tendencias data.',
+    before: 'No live trends or category rules',
+    after: 'MELI API: keyword trends + category rules applied to title and fields',
+    explanation:
+      "Hits the platform in real time so keywords and constraints reflect what's moving now, not last month's guess.",
+  },
+  {
+    category: 'Compare → one-tap publish',
+    severity: 'medium' as const,
+    before: 'Messy note in; you rebuild title, category, and fields by hand elsewhere',
+    after: 'Generate → watch steps → Compare shows every diff → Publish to Mercado Libre',
+    explanation:
+      'Matches the demo flow: the landing reel (`/videos/logo_loading.mp4`) sets the brand beat, then this screen walks the same narrative — messy note in, optimized listing out, no extra headcount.',
   },
 ]
 
@@ -462,22 +513,25 @@ function ImprovementsPanel() {
             <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-gray-400">
               Listing quality score
             </p>
+            <p className="mt-0.5 text-[10px] text-gray-400">
+              DSPy-tuned judge · same metric cited in the product story
+            </p>
             <div className="mt-1 flex flex-wrap items-baseline gap-x-2 gap-y-0">
-              <span className="text-lg font-semibold tabular-nums text-gray-300 line-through decoration-gray-300/80">
-                32
+              <span className="text-lg font-semibold tabular-nums text-gray-400 line-through decoration-gray-300/80">
+                0.45
               </span>
               <span className="text-gray-300" aria-hidden>
                 →
               </span>
               <span className="text-2xl font-semibold tabular-nums tracking-tight text-emerald-600">
-                94
+                0.87
               </span>
-              <span className="text-sm font-normal text-gray-400">/100</span>
+              <span className="text-sm font-normal text-gray-400">optimized</span>
             </div>
           </div>
           <div className="flex flex-col items-end gap-1 text-right">
             <span className="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700 ring-1 ring-emerald-100">
-              +62 pts
+              +0.42 vs baseline
             </span>
             <span className="text-[11px] text-gray-400">
               {IMPROVEMENTS.length} improvements applied
