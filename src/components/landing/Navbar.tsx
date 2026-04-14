@@ -24,7 +24,6 @@ export function Navbar() {
         setPastHero(false)
         return
       }
-      // Compact bar once the hero has fully left the viewport (scrolled past it)
       setPastHero(hero.getBoundingClientRect().bottom <= 0)
     }
 
@@ -39,7 +38,6 @@ export function Navbar() {
     }
   }, [])
 
-  // Entrance animation
   useGSAP(
     () => {
       gsap.from(headerRef.current, {
@@ -54,22 +52,34 @@ export function Navbar() {
   )
 
   return (
-    <header ref={headerRef} className="fixed inset-x-0 top-0 z-50 flex justify-center py-4">
+    <header ref={headerRef} className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 py-3">
       <nav
         className={cn(
-          'grid w-full max-w-5xl grid-cols-[1fr_auto_1fr] items-center gap-3 px-6 transition-all duration-300 ease-in-out',
+          'flex w-full max-w-5xl items-center justify-between transition-all duration-300 ease-in-out',
           pastHero
-            ? 'rounded-full border border-gray-200 bg-white/90 py-2.5 shadow-lg shadow-black/5 backdrop-blur-md'
-            : 'py-1',
+            ? 'rounded-full border border-gray-200 bg-white/90 px-5 py-2 shadow-lg shadow-black/5 backdrop-blur-md'
+            : 'px-2 py-1',
         )}
       >
-        <div className="flex min-w-0 items-center justify-start gap-5">
+        {/* Left — Logo */}
+        <Link
+          href="/"
+          className={cn(
+            'font-mono font-bold tracking-[0.3em] text-gray-900 transition-all duration-300',
+            pastHero ? 'text-xs' : 'text-base',
+          )}
+        >
+          PROMPTY
+        </Link>
+
+        {/* Center — links (visible in pill bar via a centered container) */}
+        <div className="flex items-center gap-5">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                'shrink-0 font-medium text-gray-500 transition-colors hover:text-gray-900',
+                'font-medium text-gray-500 transition-colors hover:text-gray-900',
                 pastHero ? 'text-xs' : 'text-sm',
               )}
             >
@@ -78,30 +88,19 @@ export function Navbar() {
           ))}
         </div>
 
+        {/* Right — CTA */}
         <Link
-          href="/"
+          href="/demo"
           className={cn(
-            'justify-self-center font-mono font-bold tracking-[0.3em] text-gray-900 transition-all duration-300',
-            pastHero ? 'text-sm' : 'text-lg',
+            'font-semibold transition-all duration-300',
+            'bg-gray-900 text-white hover:bg-gray-700',
+            pastHero
+              ? 'rounded-full px-4 py-1.5 text-xs'
+              : 'rounded-lg px-5 py-2 text-sm',
           )}
         >
-          PROMPTY
+          Try demo
         </Link>
-
-        <div className="flex justify-end">
-          <Link
-            href="/demo"
-            className={cn(
-              'font-semibold transition-all duration-300',
-              'bg-gray-900 text-white hover:bg-gray-700',
-              pastHero
-                ? 'rounded-full px-4 py-1.5 text-xs'
-                : 'rounded-lg px-5 py-2 text-sm',
-            )}
-          >
-            Try demo
-          </Link>
-        </div>
       </nav>
     </header>
   )
