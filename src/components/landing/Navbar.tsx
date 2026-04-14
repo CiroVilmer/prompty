@@ -72,7 +72,7 @@ export function Navbar() {
           PROMPTY
         </Link>
 
-        {/* Center — links (visible in pill bar via a centered container) */}
+        {/* Center — links */}
         <div className="flex items-center gap-5">
           {NAV_LINKS.map((link) => (
             <Link

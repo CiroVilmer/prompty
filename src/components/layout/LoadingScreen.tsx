@@ -5,12 +5,13 @@ import gsap from "gsap";
 
 interface LoadingScreenProps {
   onComplete: () => void;
+  onExited?: () => void;
 }
 
 const VIDEO_DURATION_S = 3;
 const EXIT_DURATION_S = 0.8;
 
-export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
+export default function LoadingScreen({ onComplete, onExited }: LoadingScreenProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -61,15 +62,33 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
       if (exited) return;
       exited = true;
       window.clearTimeout(fallback);
-      gsap.to(overlayRef.current, {
-        yPercent: -100,
-        duration: EXIT_DURATION_S,
-        ease: "power3.inOut",
-        onComplete: () => {
-          document.body.style.overflow = "";
-          onComplete();
-        },
-      });
+
+      // Capture the DOM node before onComplete() potentially re-renders parent.
+      // The captured reference survives React nullifying the ref after unmount.
+      const overlay = overlayRef.current;
+
+      // Restore scroll and signal parent NOW — hero entrance starts at t=0 of
+      // the curtain rise so content appears to emerge from behind it.
+      document.body.style.overflow = "";
+      onComplete();
+
+      // Slide the overlay upward. onExited fires only after the full 0.8 s so
+      // the parent never unmounts this component while the animation is running.
+      if (overlay) {
+        gsap.to(overlay, {
+          yPercent: -100,
+          duration: EXIT_DURATION_S,
+          ease: "power3.inOut",
+          onComplete: () => {
+            // Do NOT call overlay.remove() — React unmounts the node cleanly
+            // when onExited sets overlayDone=true. Removing it manually first
+            // causes a "removeChild: not a child" crash on the React unmount pass.
+            onExited?.();
+          },
+        });
+      } else {
+        onExited?.();
+      }
     }
 
     const vidEl = videoRef.current;
@@ -97,8 +116,9 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
       window.clearTimeout(fallback);
       vidEl?.removeEventListener("ended", exit);
       document.body.style.overflow = "";
+      // Kill entrance tween only — the exit tween targets a captured local
+      // variable and survives unmount intentionally; don't cancel it here.
       gsap.killTweensOf(contentRef.current);
-      gsap.killTweensOf(overlayRef.current);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

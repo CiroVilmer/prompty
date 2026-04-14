@@ -2,12 +2,14 @@
 
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import { useGSAP } from '@gsap/react'
 import Link from 'next/link'
 import { WarpBackground } from '@/components/ui/warp-background'
 import { Highlighter } from '@/components/ui/highlighter'
 
-gsap.registerPlugin(useGSAP)
+export interface HeroSectionProps {
+  /** Set to true when the LoadingScreen exit starts — triggers the stagger. */
+  loadingComplete: boolean
+}
 
 /* ── MacBook frame — reusable shell that overlays content on the laptop PNG ── */
 
@@ -50,7 +52,6 @@ function BadScreen() {
       </div>
 
       <div className="flex flex-1 flex-col items-center justify-center gap-1.5 px-3 py-2 text-center">
-        {/* "Bad" product thumbnail */}
         <div className="size-10 overflow-hidden rounded-lg border border-stone-300 bg-gradient-to-br from-stone-200 via-stone-300 to-amber-100/80 relative">
           <div
             className="absolute inset-0"
@@ -100,7 +101,6 @@ function GoodScreen() {
       </div>
 
       <div className="flex flex-1 flex-col items-center justify-center gap-1.5 px-3 py-2 text-center">
-        {/* Clean product thumbnail */}
         <div className="size-10 rounded-lg border border-gray-100 bg-white shadow-sm flex items-center justify-center">
           <svg viewBox="0 0 80 56" fill="none" className="w-7" aria-hidden>
             <ellipse cx="40" cy="47" rx="31" ry="4.5" fill="#e5e7eb" />
@@ -132,23 +132,41 @@ function GoodScreen() {
 
 /* ── Main Hero ──────────────────────────────────────────────────────────────── */
 
-export default function HeroSection() {
+export default function HeroSection({ loadingComplete }: HeroSectionProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const badgeRef = useRef<HTMLDivElement>(null)
-  const titleRef = useRef<HTMLHeadingElement>(null)
-  const cardRef = useRef<HTMLDivElement>(null)
-  const ctasRef = useRef<HTMLDivElement>(null)
+  const badgeRef     = useRef<HTMLDivElement>(null)
+  const titleRef     = useRef<HTMLHeadingElement>(null)
+  const cardRef      = useRef<HTMLDivElement>(null)
+  const ctasRef      = useRef<HTMLDivElement>(null)
 
-  useGSAP(
-    () => {
-      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
-      tl.from(badgeRef.current, { opacity: 0, y: -20, duration: 0.55 })
-        .from(titleRef.current, { opacity: 0, y: 36, duration: 0.75 }, '-=0.25')
-        .from(cardRef.current, { opacity: 0, y: 56, duration: 0.85 }, '-=0.35')
-        .from(ctasRef.current, { opacity: 0, y: 20, duration: 0.5 }, '-=0.45')
-    },
-    { scope: containerRef },
-  )
+  useEffect(() => {
+    const badge = badgeRef.current
+    const title = titleRef.current
+    const card  = cardRef.current
+    const ctas  = ctasRef.current
+
+    if (!badge || !title || !card || !ctas) return
+
+    if (!loadingComplete) {
+      gsap.set([badge, title, card, ctas], { opacity: 0 })
+      gsap.set(badge, { y: 20 })
+      gsap.set(title, { y: 30 })
+      gsap.set(card,  { y: 40, scale: 0.97 })
+      gsap.set(ctas,  { y: 20 })
+      return
+    }
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
+
+      tl.to(badge, { opacity: 1, y: 0,           duration: 0.6 }, 0.00)
+        .to(title, { opacity: 1, y: 0,           duration: 0.7 }, 0.10)
+        .to(card,  { opacity: 1, y: 0, scale: 1, duration: 0.8 }, 0.25)
+        .to(ctas,  { opacity: 1, y: 0,           duration: 0.5 }, 0.40)
+    }, containerRef)
+
+    return () => ctx.revert()
+  }, [loadingComplete])
 
   useEffect(() => {
     queueMicrotask(() =>
