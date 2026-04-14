@@ -5,9 +5,9 @@ import type { OptimizeRequestBody, OptimizeResponse, ApiSuccess, ApiError } from
 /**
  * POST /api/optimize
  *
- * Runs a DSPy-style optimisation pass on an existing prompt.
+ * Runs a DSPy-style optimization pass on an existing prompt.
  * Today this calls the Anthropic API directly; wire up DSPy / a Python
- * micro-service when you need multi-step teleprompter optimisation.
+ * micro-service when you need multi-step teleprompter optimization.
  */
 export async function POST(
   request: NextRequest
@@ -32,13 +32,13 @@ export async function POST(
 
     // TODO: fetch the original prompt content from DB using body.promptId
 
-    // Stub optimisation response — replace with a real Anthropic / DSPy call
+    // Stub optimization response — replace with a real Anthropic / DSPy call
     const result: OptimizeResponse = {
       promptId: body.promptId,
       optimizedContent:
-        "<!-- Optimised prompt will appear here after wiring up Anthropic / DSPy -->",
+        "<!-- Optimized prompt will appear here after wiring up Anthropic / DSPy -->",
       optimizationScore: 0,
-      reasoning: "Stub — no optimisation performed yet.",
+      reasoning: "Stub — no optimization performed yet.",
     };
 
     // TODO: persist the updated prompt + score to DB
@@ -47,7 +47,7 @@ export async function POST(
   } catch (err) {
     console.error("[POST /api/optimize]", err);
     return NextResponse.json(
-      { error: "Optimisation failed." },
+      { error: "Optimization failed." },
       { status: 500 }
     );
   }

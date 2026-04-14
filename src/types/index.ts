@@ -33,7 +33,7 @@ export interface UpdatePromptBody extends Partial<CreatePromptBody> {}
 
 export interface OptimizeRequestBody {
   promptId: string;
-  /** Target model to optimise for */
+  /** Target model to optimize for */
   model?: string;
   /** Optional few-shot examples to guide DSPy */
   examples?: Array<{ input: string; expectedOutput: string }>;

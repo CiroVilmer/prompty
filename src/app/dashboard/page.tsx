@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 // Stub stats — replace with real DB queries
 const STATS = [
   { label: "Total prompts", value: "—" },
-  { label: "Optimised", value: "—" },
+  { label: "Optimized", value: "—" },
   { label: "Avg. score", value: "—" },
 ];
 

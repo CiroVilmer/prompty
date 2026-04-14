@@ -1,10 +1,11 @@
 'use client'
 
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import Link from 'next/link'
 import { WarpBackground } from '@/components/ui/warp-background'
+import { Highlighter } from '@/components/ui/highlighter'
 
 gsap.registerPlugin(useGSAP)
 
@@ -27,8 +28,15 @@ export default function HeroSection() {
     { scope: containerRef },
   )
 
+  useEffect(() => {
+    queueMicrotask(() =>
+      window.dispatchEvent(new CustomEvent('prompty:landing-hero-mounted')),
+    )
+  }, [])
+
   return (
     <WarpBackground
+      id="landing-hero"
       className="w-full min-h-screen rounded-none border-0 p-0 flex items-center justify-center"
       perspective={100}
       beamsPerSide={3}
@@ -57,7 +65,30 @@ export default function HeroSection() {
           ref={titleRef}
           className="max-w-3xl text-balance text-5xl font-extrabold leading-[1.1] tracking-tight text-gray-900 sm:text-6xl lg:text-[4.5rem]"
         >
-          Listings optimizados para tus productos
+          Listings{' '}
+          <Highlighter
+            action="highlight"
+            color="#f8f8f6"
+            strokeWidth={2}
+            animationDuration={700}
+            isView
+            multiline={false}
+          >
+            optimized
+          </Highlighter>
+          {' '}with AI and{' '}
+          <Highlighter
+            action="underline"
+            color="#38bdf8"
+            strokeWidth={1.75}
+            animationDuration={950}
+            iterations={3}
+            padding={[1, 4, 5, 4]}
+            isView
+            multiline
+          >
+            real data
+          </Highlighter>
         </h1>
 
         {/* Comparison widget */}
@@ -73,32 +104,32 @@ export default function HeroSection() {
               <span className="h-3 w-3 rounded-full bg-green-400" />
             </div>
             <span className="font-mono text-xs text-gray-400">
-              prompty · optimización de listing · zapatillas
+              prompty · listing optimization · sneakers
             </span>
           </div>
 
           <div className="grid grid-cols-2 divide-x divide-gray-100">
-            {/* SIN PROMPTY */}
+            {/* WITHOUT PROMPTY */}
             <div className="p-7">
               <div className="mb-5 flex items-center gap-2">
                 <span className="inline-flex h-5 items-center rounded-full bg-red-50 px-2 font-mono text-[10px] font-semibold tracking-widest text-red-500">
-                  SIN PROMPTY
+                  WITHOUT PROMPTY
                 </span>
               </div>
 
               <div className="mb-5 rounded-lg border border-gray-100 bg-gray-50 p-4">
                 <p className="text-sm font-medium italic leading-relaxed text-gray-400">
-                  &ldquo;zapatilla deportiva cómoda buen precio varios talles
-                  envío gratis&rdquo;
+                  &ldquo;comfortable athletic shoe good price many sizes free
+                  shipping&rdquo;
                 </p>
               </div>
 
               <div className="mb-5 space-y-2.5">
                 {[
-                  'Título sin keywords relevantes',
-                  'Atributos vacíos o incompletos',
-                  'Sin descripción de producto',
-                  'Foto con fondo desordenado',
+                  'Title missing relevant keywords',
+                  'Incomplete or empty attributes',
+                  'No product description',
+                  'Photo with a messy background',
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-2.5">
                     <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-red-100 text-[10px] font-bold text-red-500">
@@ -127,27 +158,27 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* CON PROMPTY */}
+            {/* WITH PROMPTY */}
             <div className="bg-brand-500 p-7">
               <div className="mb-5 flex items-center gap-2">
                 <span className="inline-flex h-5 items-center rounded-full bg-brand-200 px-2 font-mono text-[10px] font-semibold tracking-widest text-brand-800">
-                  CON PROMPTY
+                  WITH PROMPTY
                 </span>
               </div>
 
               <div className="mb-5 rounded-lg border border-brand-200/60 bg-white p-4 shadow-sm">
                 <p className="text-sm font-semibold leading-relaxed text-gray-900">
-                  &ldquo;Zapatillas Running Adidas Galaxy 6 Hombre —
-                  Amortiguación Cloudfoam, Suela de Goma Flexible&rdquo;
+                  &ldquo;Adidas Galaxy 6 Men&apos;s Running Shoes — Cloudfoam
+                  Cushioning, Flexible Rubber Outsole&rdquo;
                 </p>
               </div>
 
               <div className="mb-5 space-y-2.5">
                 {[
-                  'Título con keywords de tendencia',
-                  'Atributos completos (marca, talle, modelo)',
-                  'Descripción con bullets de venta',
-                  'Imagen con fondo blanco y especificaciones',
+                  'Title with trending keywords',
+                  'Complete attributes (brand, size, model)',
+                  'Sales-focused bullet description',
+                  'White-background image with specs',
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-2.5">
                     <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[10px] font-bold text-emerald-600">
@@ -181,8 +212,7 @@ export default function HeroSection() {
 
           <div className="border-t border-gray-100 bg-gray-50/50 px-6 py-3 text-center">
             <span className="font-mono text-[11px] text-gray-400">
-              Optimización entrenada con los best sellers reales de la categoría
-              · DSPy MIPROv2
+              Trained on real category best sellers · DSPy MIPROv2
             </span>
           </div>
         </div>
@@ -196,13 +226,13 @@ export default function HeroSection() {
             href="/demo"
             className="rounded-lg bg-gray-900 px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-gray-700"
           >
-            Probá la demo
+            Try the demo
           </Link>
           <Link
-            href="#como-funciona"
+            href="#how-it-works"
             className="rounded-lg border border-gray-200 bg-white px-7 py-3 text-sm font-semibold text-gray-700 shadow-sm transition-all hover:bg-gray-50"
           >
-            Cómo funciona
+            How it works
           </Link>
         </div>
       </div>

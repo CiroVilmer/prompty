@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | Prompty",
   },
   description:
-    "Prompty — prompt optimisation and distribution platform. Build, test, and share high-quality AI prompts.",
+    "Prompty — AI-powered marketplace listing optimization. Turn weak product pages into data-backed listings built from real best sellers, trends, and platform rules.",
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
   ),

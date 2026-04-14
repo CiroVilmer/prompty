@@ -30,7 +30,7 @@ export default function PromptForm({ prompt }: Props) {
   const [tagsInput, setTagsInput] = useState(prompt?.tags.join(", ") ?? "");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const [optimising, setOptimising] = useState(false);
+  const [optimizing, setOptimizing] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -74,9 +74,9 @@ export default function PromptForm({ prompt }: Props) {
     }
   }
 
-  async function handleOptimise() {
+  async function handleOptimize() {
     if (!prompt) return;
-    setOptimising(true);
+    setOptimizing(true);
     try {
       const res = await fetch("/api/optimize", {
         method: "POST",
@@ -90,7 +90,7 @@ export default function PromptForm({ prompt }: Props) {
         }
       }
     } finally {
-      setOptimising(false);
+      setOptimizing(false);
     }
   }
 
@@ -144,7 +144,7 @@ export default function PromptForm({ prompt }: Props) {
           label="Tags (comma-separated)"
           value={tagsInput}
           onChange={(e) => setTagsInput(e.target.value)}
-          placeholder="marketing, summarisation, rag"
+          placeholder="marketing, summarization, rag"
         />
 
         {error && (
@@ -162,10 +162,10 @@ export default function PromptForm({ prompt }: Props) {
               <Button
                 type="button"
                 variant="secondary"
-                disabled={optimising}
-                onClick={handleOptimise}
+                disabled={optimizing}
+                onClick={handleOptimize}
               >
-                {optimising ? "Optimising…" : "Optimise"}
+                {optimizing ? "Optimizing…" : "Optimize"}
               </Button>
             )}
           </div>
