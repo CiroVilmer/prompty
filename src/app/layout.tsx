@@ -30,8 +30,17 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${googleSansFlex.className}`}>
-      <body className="antialiased">{children}</body>
+    <html lang="en" className={googleSansFlex.className}>
+      <head>
+        {/* Preload the loading screen video so it plays instantly */}
+        <link rel="preload" as="video" href="/videos/logo_loading.mp4" />
+        {/*
+          Set body to black on initial paint — eliminates any flash of white
+          before the fixed LoadingScreen overlay renders client-side.
+        */}
+        <style>{`body { background-color: #000; }`}</style>
+      </head>
+      <body className="antialiased bg-white">{children}</body>
     </html>
   )
 }
