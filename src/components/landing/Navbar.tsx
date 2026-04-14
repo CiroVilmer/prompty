@@ -99,7 +99,7 @@ export function Navbar() {
 
         {/* Right — CTA */}
         <Link
-          href="/demo"
+          href="/dashboard"
           className={cn(
             'font-semibold transition-all duration-300',
             'bg-gray-900 text-white hover:bg-gray-700',
