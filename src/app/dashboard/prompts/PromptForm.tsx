@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import type { Prompt, CreatePromptBody } from "@/types";
-import Button from "@/components/ui/Button";
+import { Button } from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
-import Card from "@/components/ui/Card";
+import { Card } from "@/components/ui/Card";
 
 interface Props {
   /** When provided the form operates in edit mode */

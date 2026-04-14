@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import type { Prompt } from "@/types";
-import Card from "@/components/ui/Card";
+import { Card } from "@/components/ui/Card";
 
 export const metadata: Metadata = {
   title: "Prompts",
