@@ -1,0 +1,147 @@
+{
+  "module": "generator",
+  "optimizer": null,
+  "split": "val",
+  "n_examples": 5,
+  "metric_mean": 0.6495,
+  "metric_median": 0.7125,
+  "metric_stdev": 0.1792,
+  "metric_min": 0.35,
+  "metric_max": 0.825,
+  "timestamp": "2026-04-14T15:04:30.402254+00:00",
+  "git_sha": "unknown",
+  "per_example": [
+    {
+      "example_id": "val_0",
+      "score": 0.7125,
+      "latency_s": 23.8,
+      "input": {
+        "weak_title": "Asus M1502-BQ580 24 GB 512 GB buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes_keys": [
+          "BRAND",
+          "MODEL",
+          "INTEGRATED_GRAPHIC_CARD_LINE",
+          "CORES_NUMBER"
+        ],
+        "category": "notebooks"
+      },
+      "output": {
+        "title": "Notebook Asus VivoBook 15 M1502 AMD Ryzen 5 7530U 24GB RAM 512GB SSD 15.6\" Win11",
+        "description": "La Notebook Asus VivoBook 15 M1502-BQ580 es una computadora portatil diseñada para universitarios, profesionales en home office y usuarios que necesitan potencia real en el día a día. Equipada con el procesador AMD Ryzen 5 7530U de 8 núcleos y 24 GB de memoria RAM DDR4, esta laptop maneja con fluide...",
+        "attributes_count": 24
+      },
+      "reference": {
+        "gold_title": "Notebook Asus Vivobook M1502ya-bq580 Ryzen 7 5825u 24gb De Ram Ddr4 512gb Ssd M.2 Nvme Pcie, Amd Radeon Graphics (15,6) Full Hd 1920 X 1080 Ips Wi-fi 6e (802.11ax) Windows 11 Home, Color Cool Silver.",
+        "gold_description": "ESPECIFICACIONES:\n\nModelo\nMarca: Asus\nLínea: Vivobook M1502-BQ580\nColor: Gris\nSKU: 90NB0X22-M01HS0\nEAN: 4711636208888\n\nSistema operativo\n* Windows 11 Home\n\nProcesador\n* Línea: AMD Ryzen 7 5825U\n* Cara...",
+        "gold_attributes_count": 64
+      }
+    },
+    {
+      "example_id": "val_1",
+      "score": 0.825,
+      "latency_s": 26.5,
+      "input": {
+        "weak_title": "HP A82ZVUA 32 GB 512 GB buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes_keys": [
+          "BRAND",
+          "MODEL",
+          "ALPHANUMERIC_MODEL",
+          "SSD_DATA_STORAGE_CAPACITY",
+          "WITH_HEADPHONES_OUTPUT"
+        ],
+        "category": "notebooks"
+      },
+      "output": {
+        "title": "Notebook HP EliteBook 840 G9 Intel Core i7-1255U 32GB RAM 512GB SSD 14\" Win 11 Pro",
+        "description": "El HP EliteBook 840 G9 es una laptop HP de nivel empresarial diseñada para profesionales que exigen rendimiento, seguridad y portabilidad en un solo equipo. Esta computadora portatil combina el procesador Intel Core i7-1255U de 12.ª generación con 32 GB de RAM DDR5 y almacenamiento SSD NVMe de 512 G...",
+        "attributes_count": 29
+      },
+      "reference": {
+        "gold_title": "Notebook Hp 255 G10 Amd Ryzen 5 7530u, Ram 32gb, Ssd 512gb, Pantalla 15,6'' Fhd, Sistema Opertativo Windows 11 Home",
+        "gold_description": "La Notebook HP 255 G10 es la herramienta ideal para quienes buscan rendimiento y versatilidad en un solo dispositivo. Equipado con un potente procesador AMD Ryzen 5 7530U y 32 GB de RAM DDR4, este equ...",
+        "gold_attributes_count": 39
+      }
+    },
+    {
+      "example_id": "val_2",
+      "score": 0.35,
+      "latency_s": 26.0,
+      "input": {
+        "weak_title": "Bagcherry 430000 buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes_keys": [
+          "BRAND",
+          "MODEL",
+          "IS_WATERPROOF",
+          "IS_IMPERMEABLE"
+        ],
+        "category": "notebooks"
+      },
+      "output": {
+        "title": "Notebook Bagcherry 430000 Computadora Portatil Laptop - Consulta Stock",
+        "description": "La Notebook Bagcherry modelo 430000 es una computadora portatil diseñada para uso cotidiano, ideal para tareas de oficina, estudio y navegacion web. Su construccion compacta y liviana la convierte en una opcion practica para llevar a cualquier lugar. Consulta disponibilidad de stock y variantes de c...",
+        "attributes_count": 6
+      },
+      "reference": {
+        "gold_title": "Mochila porta notebook Bagcherry Urbana 430000 color gris diseño lisa 25L",
+        "gold_description": "Disfrutá de llevar con vos todo lo que necesitás para pasar tiempo fuera del hogar. Elegí el mejor producto que se adapte a lo que estás buscando, siempre persiguiendo la calidad y la practicidad para...",
+        "gold_attributes_count": 33
+      }
+    },
+    {
+      "example_id": "val_3",
+      "score": 0.7125,
+      "latency_s": 29.3,
+      "input": {
+        "weak_title": "Asus X1404ZA-I38128 16 GB 256 GB buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes_keys": [
+          "BRAND",
+          "LINE",
+          "MODEL",
+          "OS_NAME",
+          "WITH_WI_FI"
+        ],
+        "category": "notebooks"
+      },
+      "output": {
+        "title": "Notebook Asus VivoBook 14 Intel Core i3 16GB RAM SSD 256GB Windows 11 X1404ZA",
+        "description": "La Notebook Asus VivoBook 14 X1404ZA es una computadora portatil diseñada para el uso cotidiano en el hogar, la oficina y los estudios. Equipada con un procesador Intel Core i3-1215U de 12va generacion, 16 GB de memoria RAM y almacenamiento SSD de 256 GB, ofrece un arranque rapido, multitarea fluida...",
+        "attributes_count": 18
+      },
+      "reference": {
+        "gold_title": "Notebook Asus Vivobook 14 Intel Core I3 1215u 16gb De Ram 256gb Ssd Full Hd Windows 11 Home",
+        "gold_description": "Notebook Asus Vivobook 14, una opción ideal para quienes buscan un equilibrio entre rendimiento y portabilidad. Equipado con un procesador Intel Core i3 1215U y 16GB de RAM, este dispositivo garantiza...",
+        "gold_attributes_count": 56
+      }
+    },
+    {
+      "example_id": "val_4",
+      "score": 0.6475,
+      "latency_s": 24.1,
+      "input": {
+        "weak_title": "CDTek FUNDA CON BOLSILLO buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes_keys": [
+          "BRAND",
+          "MODEL",
+          "SUITABLE_SCREEN_SIZE",
+          "IS_IMPACT_RESISTANT"
+        ],
+        "category": "notebooks"
+      },
+      "output": {
+        "title": "CDTek Funda Sleeve Neoprene con Bolsillo para Notebook 15.6 Pulgadas Negro",
+        "description": "La funda sleeve CDTek con bolsillo exterior es la solución ideal para transportar tu notebook de 15.6 pulgadas con protección y organización. Fabricada en neoprene acolchado, absorbe golpes e impactos durante el traslado diario, protegiendo la pantalla y el cuerpo de tu computadora portatil. Compati...",
+        "attributes_count": 12
+      },
+      "reference": {
+        "gold_title": "Funda Hp Asus Dell Lenovo Acer Asus Exo 15.6 Bolsillo Negro",
+        "gold_description": "¡Protege tu preciado dispositivo con la Funda de Tela Cordura de CDTek!\n\nSumérgete en un mundo de seguridad y estilo con nuestra funda diseñada para ofrecerte la máxima protección para tu notebook. Co...",
+        "gold_attributes_count": 15
+      }
+    }
+  ]
+}

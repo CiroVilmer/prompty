@@ -1,0 +1,14 @@
+[project]
+name = "prompty"
+version = "0.1.0"
+description = "DSPy pipeline to optimize Mercado Libre listings."
+requires-python = ">=3.11"
+dependencies = [
+    "dspy-ai>=2.5",
+    "anthropic",
+    "python-dotenv",
+    "pytest",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

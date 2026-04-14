@@ -1,0 +1,320 @@
+{
+  "module": "auditor",
+  "optimizer": null,
+  "split": "holdout",
+  "n_examples": 5,
+  "metric_mean": 1.0,
+  "metric_median": 1.0,
+  "metric_stdev": 0.0,
+  "metric_min": 1.0,
+  "metric_max": 1.0,
+  "timestamp": "2026-04-14T16:04:18.640752+00:00",
+  "git_sha": "unknown",
+  "per_example": [
+    {
+      "example_id": "holdout_0",
+      "score": 1.0,
+      "latency_s": 28.5,
+      "input": {
+        "weak_title": "Enova Celeron 4020 128GB 4 GB 128 GB buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes": {
+          "BRAND": "Enova",
+          "MODEL": "Celeron 4020 128GB",
+          "WITH_RETINA_DISPLAY": "No",
+          "IS_GAMER": "No"
+        }
+      },
+      "output": {
+        "missing_critical_attributes": [
+          "PROCESSOR_MODEL",
+          "RAM_MEMORY",
+          "RAM_MEMORY_TYPE",
+          "INTERNAL_STORAGE_CAPACITY",
+          "STORAGE_TYPE",
+          "DISPLAY_SIZE",
+          "OPERATING_SYSTEM",
+          "SCREEN_RESOLUTION",
+          "COLOR",
+          "GRAPHICS_CARD",
+          "NUMBER_OF_USB_PORTS",
+          "BATTERY_CAPACITY"
+        ],
+        "title_issues": [
+          "'128GB' appears twice in the title (once after model name, once as '128 GB'), duplicating information and wasting character space",
+          "'buen precio' is a non-searchable filler phrase that MELI penalizes and buyers never search for",
+          "Screen size (e.g., 14' or 15.6') is absent, which is a primary filter criterion buyers use when searching notebooks",
+          "Operating system is not mentioned (e.g., Windows 11, Linux, sin SO), which is a key purchase decision factor",
+          "Storage type (SSD vs eMMC) is not specified — '128GB SSD' vs '128GB eMMC' has very different perceived value",
+          "RAM type is not specified (DDR4) alongside the '4 GB' figure, reducing technical credibility"
+        ],
+        "description_issues": [
+          "The description contains zero product specifications — screen size, processor speed, RAM, storage type, OS, ports, and connectivity are all absent",
+          "'Consultar disponibilidad por mensaje' discourages immediate purchase and signals the seller may not have stock, reducing buyer confidence",
+          "No use-case context is provided (e.g., ideal for remote work, students, basic office tasks) to help buyers self-qualify",
+          "No mention of what is included in the box (charger, warranty card, documentation)",
+          "Warranty terms and after-sale support are not mentioned, which is critical for electronics buyers on MELI"
+        ],
+        "missing_keywords": [
+          "netbook",
+          "computadora portatil"
+        ],
+        "priority_fixes": [
+          "Rewrite the title following the structure: 'Notebook Enova Intel Celeron N4020 4GB RAM 128GB SSD [X]\" [OS]' — removing the duplicate '128GB' and the phrase 'buen precio'",
+          "Fill in the DISPLAY_SIZE attribute with the exact screen size in inches, as this is the #1 filter buyers use on MELI notebooks category",
+          "Fill in OPERATING_SYSTEM attribute (Windows 11, Linux, or 'Sin sistema operativo') since this is a mandatory decision factor for buyers",
+          "Fill in STORAGE_TYPE attribute specifying whether the 128GB is SSD or eMMC, as this directly impacts perceived value and search ranking",
+          "Replace the entire description with a structured spec sheet covering: processor, RAM, storage, screen size/resolution, OS, ports (USB, HDMI), battery, weight, and warranty",
+          "Add RAM_MEMORY and RAM_MEMORY_TYPE attributes (4GB DDR4) to enable the listing to appear in filtered searches by RAM capacity",
+          "Add the term 'computadora portatil' to the description body to capture that trending search segment without keyword stuffing the title"
+        ]
+      },
+      "reference": {
+        "gold_title": "Notebook Enova 14 Celeron N4020 Ram 4gb Ssd 128gb Gris",
+        "gold_description": "Producto: Notebook Enova Celeron N4020 4Gb Ssd 128Gb 14\" Win11\n\nEspecificaciones técnicas: \n\n- Marca : Enova\n- P/N : C141PP-A3S1-W11H\n- UPC / EAN : 798181992346\n- Procesador : Procesador Intel Celeron...",
+        "gold_attributes_count": 56
+      }
+    },
+    {
+      "example_id": "holdout_1",
+      "score": 1.0,
+      "latency_s": 20.4,
+      "input": {
+        "weak_title": "Lenovo Ideapad 3 8 GB 256 GB buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes": {
+          "BRAND": "Lenovo",
+          "MODEL": "Ideapad 3",
+          "WITH_RETINA_DISPLAY": "No",
+          "DISPLAY_SIZE": "15.6 \"",
+          "OPTIMIZED_FOR_AI": "No"
+        }
+      },
+      "output": {
+        "missing_critical_attributes": [
+          "PROCESSOR_BRAND",
+          "PROCESSOR_MODEL",
+          "PROCESSOR_GENERATION",
+          "RAM_MEMORY_TYPE",
+          "STORAGE_TYPE",
+          "OPERATING_SYSTEM",
+          "GRAPHICS_CARD_TYPE",
+          "COLOR",
+          "BATTERY_CAPACITY",
+          "PROCESSOR_SPEED"
+        ],
+        "title_issues": [
+          "'buen precio' is a filler phrase that wastes title characters and is not a searchable term — MELI penalizes promotional text in titles",
+          "Processor model and generation are completely absent (e.g., 'Intel Core i5-1235U') — this is the #1 search filter buyers use for notebooks",
+          "Storage type is not specified as 'SSD', which is a high-value differentiator and trending search term",
+          "Operating system (e.g., Windows 11) is missing from the title, which top-ranked listings always include",
+          "Screen size (15.6\") is present in attributes but omitted from the title where it drives search visibility"
+        ],
+        "description_issues": [
+          "The description contains zero technical specifications — processor, RAM, storage, OS, GPU, ports, and battery are all absent",
+          "'Consultar disponibilidad y características por mensaje' signals poor seller commitment and discourages immediate purchase decisions",
+          "No use-case context is provided (e.g., suitable for students, home office, light gaming) to help buyers self-qualify",
+          "No mention of what's included in the box (charger, warranty type, invoice)",
+          "The description does not reinforce any of the product's key selling points, making it useless for both buyers and MELI's search ranking algorithm"
+        ],
+        "missing_keywords": [
+          "computadora portatil",
+          "intel core",
+          "notebook lenovo i3 intel core",
+          "256gb ssd",
+          "windows 11"
+        ],
+        "priority_fixes": [
+          "Rewrite the title to include processor name and generation, storage type, and OS — e.g., 'Notebook Lenovo IdeaPad 3 Intel Core i5 8GB RAM 256GB SSD Windows 11 15.6'",
+          "Replace the entire description with a structured spec sheet covering processor, RAM, storage type, OS, display, GPU, ports, battery, and weight",
+          "Fill in the missing critical attributes: PROCESSOR_MODEL, PROCESSOR_GENERATION, STORAGE_TYPE (SSD), OPERATING_SYSTEM, and RAM_MEMORY_TYPE so the listing qualifies for catalog matching",
+          "Remove 'buen precio' from the title and use those characters to add 'SSD' and 'Windows 11' instead",
+          "Add 'computadora portatil' and 'Intel Core' to the description naturally to capture those trending search queries"
+        ]
+      },
+      "reference": {
+        "gold_title": "Laptop Lenovo Ideapad Ryzen 5 8gb 256gb Ssd Win 11 82VG00WXUS D.pro",
+        "gold_description": "La Laptop Lenovo Ideapad Ryzen 5 es una herramienta potente y versátil, ideal para estudiantes y profesionales que buscan un rendimiento confiable. Con un procesador AMD Ryzen 5 7520U, esta laptop ofr...",
+        "gold_attributes_count": 63
+      }
+    },
+    {
+      "example_id": "holdout_2",
+      "score": 1.0,
+      "latency_s": 25.0,
+      "input": {
+        "weak_title": "HP A82ZVUA 16 GB 512 GB buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes": {
+          "BRAND": "HP",
+          "MODEL": "A82ZVUA",
+          "PROCESSOR_LINE": "Ryzen 7",
+          "WITH_TOUCH_SCREEN": "No",
+          "OPTIMIZED_FOR_AI": "No"
+        }
+      },
+      "output": {
+        "missing_critical_attributes": [
+          "PROCESSOR_MODEL",
+          "SCREEN_SIZE",
+          "SCREEN_RESOLUTION",
+          "OPERATING_SYSTEM",
+          "RAM_MEMORY_TYPE",
+          "STORAGE_TYPE",
+          "GRAPHICS_CARD_MODEL",
+          "COLOR",
+          "WEIGHT",
+          "BATTERY_CAPACITY"
+        ],
+        "title_issues": [
+          "'buen precio' is a promotional filler phrase that MELI penalizes and buyers never search for — it wastes title characters",
+          "Model number 'A82ZVUA' is an internal HP SKU, not a searchable product line name (e.g., HP Pavilion, HP Envy, HP Laptop 15) — buyers do not search by part number",
+          "Processor 'Ryzen 7' is only in attributes but absent from the title, missing a high-intent search term",
+          "'512 GB' has no storage type qualifier — buyers search for '512GB SSD' specifically; omitting 'SSD' loses relevant traffic",
+          "Screen size is completely absent from the title, which is one of the top filtering criteria buyers use when searching notebooks"
+        ],
+        "description_issues": [
+          "The description contains zero product specifications — no screen size, resolution, processor model, RAM type, storage type, OS, ports, or battery life",
+          "'Consultar disponibilidad y características por mensaje' signals to buyers that the seller does not know the product, destroying purchase confidence",
+          "No use-case context is provided (e.g., suitable for work, university, light gaming) to help buyers self-qualify",
+          "No mention of what's included in the box (charger, warranty, accessories), which is a common buyer concern for HP notebooks",
+          "Description does not mention the operating system, which is a decisive purchase factor for most notebook buyers"
+        ],
+        "missing_keywords": [
+          "computadora portatil"
+        ],
+        "priority_fixes": [
+          "Rewrite the title to include the product line name, processor, screen size, RAM, and storage type — e.g., 'Notebook HP [Pavilion/Envy] Ryzen 7 16GB RAM 512GB SSD 15.6'",
+          "Remove 'buen precio' from the title immediately, as it wastes characters and can suppress search ranking",
+          "Fill in the PROCESSOR_MODEL attribute with the specific Ryzen 7 variant (e.g., 7730U, 5700U) to qualify for catalog matching",
+          "Add SCREEN_SIZE, OPERATING_SYSTEM, RAM_MEMORY_TYPE, and STORAGE_TYPE attributes, which are mandatory filters buyers use on MELI's search page",
+          "Replace the entire description with a structured spec sheet covering: processor, RAM, storage, screen, OS, ports, battery, weight, and warranty",
+          "Add 'computadora portatil' as a keyword in the description to capture that high-volume trending search term"
+        ]
+      },
+      "reference": {
+        "gold_title": "Notebook HP 255 G10 Ryzen 7 7730U | 16GB RAM | 512GB SSD NVMe | 15.6” Full HD | Windows 11 Home | Laptop Empresarial",
+        "gold_description": "DESCRIPCIÓN DEL PRODUCTO\n*****************************************\nLa HP 255 G10 es una notebook confiable y potente, diseñada para trabajo profesional, estudio universitario y uso diario intensivo. O...",
+        "gold_attributes_count": 41
+      }
+    },
+    {
+      "example_id": "holdout_3",
+      "score": 1.0,
+      "latency_s": 26.7,
+      "input": {
+        "weak_title": "Lenovo 14IJL7 4 GB 128 GB buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes": {
+          "BRAND": "Lenovo",
+          "LINE": "Ideapad 1",
+          "MODEL": "14IJL7",
+          "WITH_BACKLIGHT_KEYBOARD": "No"
+        }
+      },
+      "output": {
+        "missing_critical_attributes": [
+          "PROCESSOR_MODEL",
+          "RAM_MEMORY_TYPE",
+          "STORAGE_TYPE",
+          "STORAGE_INTERFACE",
+          "OPERATING_SYSTEM",
+          "SCREEN_SIZE_INCHES",
+          "SCREEN_RESOLUTION",
+          "GRAPHICS_CARD_MODEL",
+          "COLOR",
+          "BATTERY_CAPACITY",
+          "WEIGHT"
+        ],
+        "title_issues": [
+          "Contains promotional phrase 'buen precio' which adds no product information and is penalized by MELI's ranking algorithm",
+          "Missing the processor name and model (e.g., Intel Celeron N4500) — the most searched technical spec for budget notebooks",
+          "Missing storage type qualifier: '128 GB' could be eMMC or SSD — this is a critical distinction that affects buyer trust and search matching",
+          "Missing screen size (14\") despite it being part of the model number — buyers search by screen size",
+          "Missing the 'IdeaPad 1' product line name, which is a searchable brand sub-line term",
+          "Missing operating system (e.g., Windows 11 Home S) — a top filter criterion on MELI notebooks category"
+        ],
+        "description_issues": [
+          "Description contains zero product specifications — processor, RAM speed, storage type, display resolution, ports, and connectivity are all absent",
+          "Phrase 'Consultar disponibilidad por mensaje' signals low seller commitment and discourages immediate purchase decisions",
+          "No mention of included software or operating system, leaving buyers uncertain about out-of-box usability",
+          "No connectivity details (WiFi standard, Bluetooth version, USB ports, HDMI) that buyers compare across listings",
+          "No warranty information (Lenovo's official warranty period and coverage) is stated, reducing buyer confidence",
+          "No use-case framing (e.g., suitable for students, home office, basic tasks) to help buyers self-qualify"
+        ],
+        "missing_keywords": [
+          "computadora portatil",
+          "netbook"
+        ],
+        "priority_fixes": [
+          "Rewrite the title to: 'Notebook Lenovo IdeaPad 1 14\" Intel Celeron N4500 4GB RAM 128GB eMMC Windows 11' — removing 'buen precio' and adding processor, storage type, screen size, and OS",
+          "Fill in the PROCESSOR_MODEL attribute with the exact CPU (e.g., Intel Celeron N4500) so the listing matches processor-based search filters",
+          "Fill in STORAGE_TYPE attribute as 'eMMC' (not SSD) to avoid misleading buyers and to match accurate filter navigation",
+          "Fill in OPERATING_SYSTEM attribute (Windows 11 Home in S mode) so the listing appears in OS-filtered searches",
+          "Replace the entire description with a structured spec sheet covering: processor, RAM (amount + type), storage (capacity + type), display (size + resolution), ports (USB, HDMI), wireless (WiFi + Bluetooth), OS, battery life, and Lenovo warranty terms",
+          "Add SCREEN_SIZE_INCHES and SCREEN_RESOLUTION attributes to qualify for display-size filter searches, which are among the top notebook filters on MELI",
+          "Add COLOR and WEIGHT attributes to complete the listing's attribute score, which directly impacts catalog ranking eligibility"
+        ]
+      },
+      "reference": {
+        "gold_title": "Notebook Lenovo Ideapad 1 14IJL7 Procesador Intel Celeron N4500 4gb Ram Ddr4 128gb SSD Pantalla 14\" HD Windows 11 S Color Gris",
+        "gold_description": "Notebook Lenovo Ideapad 1 14IJL7 Procesador Intel Celeron N4500 4gb Ram Ddr4 128gb SSD Pantalla 14\" HD Windows 11 S Color Gris\n\nProcesador\nFabricante del procesador Intel\nTipo de procesador Celeron\nMo...",
+        "gold_attributes_count": 62
+      }
+    },
+    {
+      "example_id": "holdout_4",
+      "score": 1.0,
+      "latency_s": 24.0,
+      "input": {
+        "weak_title": "Wilson 65.11110BL buen precio",
+        "weak_description": "Producto en venta. Consultar disponibilidad y características por mensaje.",
+        "weak_attributes": {
+          "BRAND": "Wilson",
+          "MODEL": "65.11110BL",
+          "DEPTH": "15 cm",
+          "WITH_WAIST_STRAP": "No",
+          "WITH_BOTTLE_POCKET": "Sí"
+        }
+      },
+      "output": {
+        "missing_critical_attributes": [
+          "COLOR",
+          "CAPACITY",
+          "COMPATIBLE_SCREEN_SIZE",
+          "MATERIAL",
+          "NUMBER_OF_COMPARTMENTS",
+          "WITH_LAPTOP_COMPARTMENT",
+          "PRODUCT_TYPE"
+        ],
+        "title_issues": [
+          "The phrase 'buen precio' is a promotional filler that violates MELI title guidelines and consumes character space without informational value",
+          "The product type is completely absent — buyers cannot tell this is a backpack/mochila from the title alone",
+          "No color is mentioned, which is a primary search filter for bags",
+          "No capacity (liters) or compatible laptop screen size is stated, preventing filtering by key specs",
+          "The model number '65.11110BL' is not a consumer-recognizable identifier and cannot stand alone as a product descriptor"
+        ],
+        "description_issues": [
+          "The description contains zero product information — no features, materials, dimensions, or use cases are described",
+          "Directing buyers to 'consultar por mensaje' for basic product characteristics creates friction and signals an incomplete listing, reducing conversion",
+          "'Producto en venta' is redundant on a marketplace listing and wastes the opening line, which is the most-read part of a description",
+          "No laptop compatibility is stated (e.g., fits up to 15.6\" notebooks), which is the primary purchase criterion for a laptop bag",
+          "No material or construction quality details are provided to justify the purchase decision"
+        ],
+        "missing_keywords": [],
+        "priority_fixes": [
+          "Rewrite the title to include product type, color, capacity, and compatible screen size, e.g., 'Mochila Wilson 65.11110BL Para Notebook Hasta 15.6\" Negra 20L Con Porta Laptop'",
+          "Remove 'buen precio' from the title immediately and replace with a concrete product attribute (color, capacity, or material)",
+          "Fill in the COLOR, CAPACITY, COMPATIBLE_SCREEN_SIZE, and WITH_LAPTOP_COMPARTMENT attributes in the listing form",
+          "Replace the entire description with structured content covering: laptop compartment size, total capacity, materials, number of compartments, dimensions, and ergonomic features",
+          "Verify the listing is in the correct category — if this is purely a backpack without laptop-specific features, it may need to be recategorized under 'mochilas' rather than 'notebooks'"
+        ]
+      },
+      "reference": {
+        "gold_title": "Mochila Wilson Porta Notebook Reforzada Original Puerto Usb Oficina De Viaje Unisex Color Negro 65.11110BL 40 Litros",
+        "gold_description": "Realizada en tela de poliester de primera calidad, íntegramente forrada.\nLa mochila Wilson es la elección perfecta para aquellos que buscan un equilibrio entre estilo y funcionalidad. Diseñada para ad...",
+        "gold_attributes_count": 29
+      }
+    }
+  ]
+}

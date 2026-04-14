@@ -88,7 +88,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="text-gray-400 transition-colors hover:text-gray-600"
               >
-                <Icon className="h-5 w-5" />
+                <Icon />
               </a>
             ))}
           </div>

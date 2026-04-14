@@ -1,0 +1,342 @@
+{
+  "all_categories": [
+    {
+      "id": "MLA109026",
+      "name": "Calzado",
+      "total_items": 1178168,
+      "depth": 0,
+      "has_children": true
+    },
+    {
+      "id": "MLA414673",
+      "name": "Alpargatas",
+      "total_items": 5674,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA414251",
+      "name": "Botas y Botinetas",
+      "total_items": 150959,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA415192",
+      "name": "Chatitas",
+      "total_items": 37528,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA455893",
+      "name": "Cubre Zapatos",
+      "total_items": 10823,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA414674",
+      "name": "Mocasines y Oxfords",
+      "total_items": 45223,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA414610",
+      "name": "Pantuflas",
+      "total_items": 89144,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA416005",
+      "name": "Sandalias y Ojotas",
+      "total_items": 240237,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA415194",
+      "name": "Stilletos y Plataformas",
+      "total_items": 46392,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA109027",
+      "name": "Zapatillas",
+      "total_items": 537265,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA415193",
+      "name": "Otros",
+      "total_items": 14923,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA1455",
+      "name": "Ropa y Calzado para Bebés",
+      "total_items": 116698,
+      "depth": 0,
+      "has_children": true
+    },
+    {
+      "id": "MLA24771",
+      "name": "Accesorios",
+      "total_items": 11410,
+      "depth": 1,
+      "has_children": true
+    },
+    {
+      "id": "MLA417918",
+      "name": "Baberos Bandana",
+      "total_items": 408,
+      "depth": 2,
+      "has_children": false
+    },
+    {
+      "id": "MLA39984",
+      "name": "Gorros",
+      "total_items": 5134,
+      "depth": 2,
+      "has_children": false
+    },
+    {
+      "id": "MLA417919",
+      "name": "Tocados, Tiaras y Vinchas",
+      "total_items": 5855,
+      "depth": 2,
+      "has_children": false
+    },
+    {
+      "id": "MLA417917",
+      "name": "Otros",
+      "total_items": 8,
+      "depth": 2,
+      "has_children": false
+    },
+    {
+      "id": "MLA86455",
+      "name": "Batas",
+      "total_items": 30,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA113084",
+      "name": "Bermudas y Shorts",
+      "total_items": 3804,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA417937",
+      "name": "Blusas",
+      "total_items": 20,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA10271",
+      "name": "Bodys",
+      "total_items": 13624,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA458052",
+      "name": "Bolsas de Dormir",
+      "total_items": 260,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA24738",
+      "name": "Buzos",
+      "total_items": 105,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA11796",
+      "name": "Calzados",
+      "total_items": 20509,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA39986",
+      "name": "Camisas",
+      "total_items": 1820,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA24739",
+      "name": "Camperas",
+      "total_items": 3077,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA39956",
+      "name": "Conjuntos",
+      "total_items": 23578,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA24757",
+      "name": "Jardineros",
+      "total_items": 3443,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA437433",
+      "name": "Kits para Salida del Hospital",
+      "total_items": 254,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA86457",
+      "name": "Medias",
+      "total_items": 3084,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA24703",
+      "name": "Pantalones",
+      "total_items": 11665,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA39957",
+      "name": "Pijamas",
+      "total_items": 1299,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA39977",
+      "name": "Polleras",
+      "total_items": 1312,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA6553",
+      "name": "Remeras, Musculosas y Chombas",
+      "total_items": 1216,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA39996",
+      "name": "Saquitos y Sweaters",
+      "total_items": 2134,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA39979",
+      "name": "Trajes de Baño",
+      "total_items": 4758,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA39976",
+      "name": "Vestidos",
+      "total_items": 9231,
+      "depth": 1,
+      "has_children": false
+    },
+    {
+      "id": "MLA4919",
+      "name": "Otros",
+      "total_items": 62,
+      "depth": 1,
+      "has_children": false
+    }
+  ],
+  "highlights_report": [
+    {
+      "id": "MLA109027",
+      "name": "Zapatillas",
+      "total_items": 537265,
+      "highlight_products": 20,
+      "highlight_items": 0
+    },
+    {
+      "id": "MLA416005",
+      "name": "Sandalias y Ojotas",
+      "total_items": 240237,
+      "highlight_products": 1,
+      "highlight_items": 19
+    },
+    {
+      "id": "MLA414251",
+      "name": "Botas y Botinetas",
+      "total_items": 150959,
+      "highlight_products": 0,
+      "highlight_items": 20
+    },
+    {
+      "id": "MLA414610",
+      "name": "Pantuflas",
+      "total_items": 89144,
+      "highlight_products": 0,
+      "highlight_items": 20
+    },
+    {
+      "id": "MLA415194",
+      "name": "Stilletos y Plataformas",
+      "total_items": 46392,
+      "highlight_products": 0,
+      "highlight_items": 20
+    },
+    {
+      "id": "MLA414674",
+      "name": "Mocasines y Oxfords",
+      "total_items": 45223,
+      "highlight_products": 0,
+      "highlight_items": 20
+    },
+    {
+      "id": "MLA415192",
+      "name": "Chatitas",
+      "total_items": 37528,
+      "highlight_products": 0,
+      "highlight_items": 20
+    },
+    {
+      "id": "MLA10271",
+      "name": "Bodys",
+      "total_items": 13624,
+      "highlight_products": 0,
+      "highlight_items": 9
+    },
+    {
+      "id": "MLA455893",
+      "name": "Cubre Zapatos",
+      "total_items": 10823,
+      "highlight_products": 0,
+      "highlight_items": 15
+    },
+    {
+      "id": "MLA414673",
+      "name": "Alpargatas",
+      "total_items": 5674,
+      "highlight_products": 0,
+      "highlight_items": 20
+    }
+  ]
+}
