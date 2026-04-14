@@ -159,7 +159,7 @@ export default function HeroSection({ loadingComplete }: HeroSectionProps) {
           className="mt-8 flex flex-wrap items-center justify-center gap-3"
         >
           <Link
-            href="/demo"
+            href="/dashboard"
             className="rounded-lg bg-gray-900 px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-gray-700"
           >
             Try the demo
