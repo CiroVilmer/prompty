@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 
 // Stub stats — replace with real DB queries
 const STATS = [
-  { label: "Total prompts", value: "—" },
-  { label: "Optimized", value: "—" },
-  { label: "Avg. score", value: "—" },
+  { label: "Total products", value: "—" },
+  { label: "Published", value: "—" },
+  { label: "Avg. SEO score", value: "—" },
 ];
 
 export default function DashboardPage() {
@@ -40,16 +40,16 @@ export default function DashboardPage() {
         </h2>
         <div className="flex flex-wrap gap-3">
           <Link
-            href="/dashboard/prompts/new"
+            href="/dashboard/products/new"
             className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white hover:bg-brand-700"
           >
-            + New prompt
+            + New product
           </Link>
           <Link
-            href="/dashboard/prompts"
+            href="/dashboard/products"
             className="rounded-lg border border-gray-200 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
           >
-            View all prompts
+            View all products
           </Link>
         </div>
       </div>

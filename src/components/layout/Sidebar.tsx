@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const NAV_ITEMS = [
   { href: "/dashboard", label: "Overview", icon: "⊞" },
-  { href: "/dashboard/prompts", label: "Prompts", icon: "✦" },
+  { href: "/dashboard/products/new", label: "New Product", icon: "✦" },
 ];
 
 export default function Sidebar() {
