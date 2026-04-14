@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Navbar } from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSectionDynamic";
+import BeforeAfterSection from "@/components/sections/BeforeAfterSection";
 import WhyPrompty from "@/components/sections/WhyPrompty";
 import Footer from "@/components/sections/Footer";
 import LoadingScreen from "@/components/layout/LoadingScreen";
@@ -28,6 +29,7 @@ export default function LandingPage() {
         <Navbar />
         <main>
           <HeroSection loadingComplete={heroReady} />
+          <BeforeAfterSection />
           <WhyPrompty />
         </main>
         <Footer />
