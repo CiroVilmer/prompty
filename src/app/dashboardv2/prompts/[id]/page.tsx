@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import type { Prompt } from "@/types";
 import PromptForm from "../PromptForm";
 
-export const dynamic = "force-dynamic";
 
 interface Props {
   params: Promise<{ id: string }>;

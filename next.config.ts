@@ -3,10 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Moved out of experimental in Next.js 16 — requires babel-plugin-react-compiler
   reactCompiler: true,
-  experimental: {
-    // Required to use the 'use cache' directive
-    cacheComponents: true,
-  },
+  // Required to use the 'use cache' directive (moved out of experimental in Next.js 16)
+  cacheComponents: true,
   images: {
     remotePatterns: [
       {
