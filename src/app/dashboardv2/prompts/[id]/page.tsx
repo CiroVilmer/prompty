@@ -15,9 +15,9 @@ async function getPrompt(id: string): Promise<Prompt | null> {
   return null;
 }
 
-// No static paths to pre-generate — render on demand
+// cacheComponents requires at least one entry; "placeholder" hits notFound() at build time (safe)
 export function generateStaticParams() {
-  return [];
+  return [{ id: "placeholder" }];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
