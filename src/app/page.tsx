@@ -3,22 +3,32 @@
 import { useState } from "react";
 import { Navbar } from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSectionDynamic";
+import Footer from "@/components/sections/Footer";
 import LoadingScreen from "@/components/layout/LoadingScreen";
 
 export default function LandingPage() {
-  const [loadingComplete, setLoadingComplete] = useState(false);
+  // heroReady: fires when LoadingScreen exit starts → triggers hero stagger
+  const [heroReady, setHeroReady] = useState(false);
+  // overlayDone: fires when slide-up tween completes → safe to unmount overlay
+  const [overlayDone, setOverlayDone] = useState(false);
 
   return (
     <>
-      {!loadingComplete && (
-        <LoadingScreen onComplete={() => setLoadingComplete(true)} />
+      {/* Keep LoadingScreen mounted until its exit tween fully completes.
+          Unmounting early kills the GSAP slide-up animation. */}
+      {!overlayDone && (
+        <LoadingScreen
+          onComplete={() => setHeroReady(true)}
+          onExited={() => setOverlayDone(true)}
+        />
       )}
 
-      <div className={`bg-white ${loadingComplete ? "" : "invisible"}`}>
+      <div className={`bg-white ${heroReady ? "" : "invisible"}`}>
         <Navbar />
         <main>
-          <HeroSection />
+          <HeroSection loadingComplete={heroReady} />
         </main>
+        <Footer />
       </div>
     </>
   );

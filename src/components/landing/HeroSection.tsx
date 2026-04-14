@@ -2,32 +2,59 @@
 
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import { useGSAP } from '@gsap/react'
 import Link from 'next/link'
 import { WarpBackground } from '@/components/ui/warp-background'
 import { Highlighter } from '@/components/ui/highlighter'
 
-gsap.registerPlugin(useGSAP)
+export interface HeroSectionProps {
+  /** Set to true when the LoadingScreen exit starts — triggers the stagger. */
+  loadingComplete: boolean
+}
 
-export default function HeroSection() {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const badgeRef = useRef<HTMLDivElement>(null)
-  const titleRef = useRef<HTMLHeadingElement>(null)
-  const comparisonRef = useRef<HTMLDivElement>(null)
-  const ctasRef = useRef<HTMLDivElement>(null)
+export default function HeroSection({ loadingComplete }: HeroSectionProps) {
+  const containerRef   = useRef<HTMLDivElement>(null)
+  const badgeRef       = useRef<HTMLDivElement>(null)
+  const titleRef       = useRef<HTMLHeadingElement>(null)
+  const comparisonRef  = useRef<HTMLDivElement>(null)
+  const ctasRef        = useRef<HTMLDivElement>(null)
 
-  useGSAP(
-    () => {
-      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+  // ── Entrance animation — fires when loadingComplete becomes true ────────────
+  useEffect(() => {
+    const badge      = badgeRef.current
+    const title      = titleRef.current
+    const comparison = comparisonRef.current
+    const ctas       = ctasRef.current
 
-      tl.from(badgeRef.current, { opacity: 0, y: -20, duration: 0.55 })
-        .from(titleRef.current, { opacity: 0, y: 36, duration: 0.75 }, '-=0.25')
-        .from(comparisonRef.current, { opacity: 0, y: 56, duration: 0.85 }, '-=0.35')
-        .from(ctasRef.current, { opacity: 0, y: 20, duration: 0.5 }, '-=0.45')
-    },
-    { scope: containerRef },
-  )
+    if (!badge || !title || !comparison || !ctas) return
 
+    if (!loadingComplete) {
+      // Keep elements hidden while loading screen is still showing.
+      // gsap.set writes inline styles synchronously — no paint flash.
+      gsap.set([badge, title, comparison, ctas], { opacity: 0 })
+      gsap.set(badge,      { y: 20 })
+      gsap.set(title,      { y: 30 })
+      gsap.set(comparison, { y: 40, scale: 0.97 })
+      gsap.set(ctas,       { y: 20 })
+      return
+    }
+
+    // loadingComplete just flipped to true — play the stagger cascade.
+    // Timeline starts at the same moment the LoadingScreen curtain begins
+    // rising, so elements appear to emerge from behind it.
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
+
+      // ┌─ Element ──────────┬─ Offset ─┬─ y  ─┬─ dur ─┐
+      tl.to(badge,      { opacity: 1, y: 0,            duration: 0.6 }, 0.00)
+        .to(title,      { opacity: 1, y: 0,            duration: 0.7 }, 0.10)
+        .to(comparison, { opacity: 1, y: 0, scale: 1,  duration: 0.8 }, 0.25)
+        .to(ctas,       { opacity: 1, y: 0,            duration: 0.5 }, 0.40)
+    }, containerRef)
+
+    return () => ctx.revert()
+  }, [loadingComplete])
+
+  // Dispatch mount event so Navbar can update its scroll state immediately
   useEffect(() => {
     queueMicrotask(() =>
       window.dispatchEvent(new CustomEvent('prompty:landing-hero-mounted')),
@@ -91,7 +118,7 @@ export default function HeroSection() {
           </Highlighter>
         </h1>
 
-        {/* Comparison widget */}
+        {/* Comparison widget — browser mockup */}
         <div
           ref={comparisonRef}
           className="mt-12 w-full overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl shadow-gray-900/10"
