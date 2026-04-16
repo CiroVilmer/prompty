@@ -48,7 +48,9 @@
       "Bash(pnpm tsc *)",
       "WebFetch(domain:docs.railway.com)",
       "WebFetch(domain:railpack.com)",
-      "Bash(del *)"
+      "Bash(del *)",
+      "mcp__vault__read_note",
+      "WebFetch(domain:dspy.ai)"
     ]
   }
 }

@@ -65,7 +65,7 @@ export default function Problem() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="bg-white py-20 md:py-24">
+    <section id="how-it-works" ref={sectionRef} className="bg-white py-20 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
 
         {/* ── Row 1: two-column ────────────────────────────────────────────── */}

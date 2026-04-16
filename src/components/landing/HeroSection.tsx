@@ -102,15 +102,27 @@ export default function HeroSection({ loadingComplete }: HeroSectionProps) {
         {/* Badge */}
         <div ref={badgeRef} className="mb-7">
           <div className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/80 px-4 py-1.5 shadow-sm backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand-600" />
-            <span className="text-xs font-medium tracking-wide text-gray-500">
-              Powered by Claude (Anthropic) + DSPy
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+            </span>
+            <span className="inline-flex items-center gap-1.5 text-xs font-medium tracking-wide text-gray-500">
+              Powered by
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://www.anthropic.com/favicon.ico" alt="Claude" width={14} height={14} className="rounded-sm" />
+              Claude +
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="DSPy">
+                <rect x="1" y="1" width="14" height="14" rx="2" stroke="#E05252" strokeWidth="1.2"/>
+                <path d="M1 8H4A2 2 0 0 1 8 8H15" stroke="#E05252" strokeWidth="1.2"/>
+                <path d="M8 1V4A2 2 0 0 1 8 8V15" stroke="#E05252" strokeWidth="1.2"/>
+              </svg>
+              DSPy
             </span>
           </div>
         </div>
 
         {/* Team avatars with animated tooltips */}
-        <div className="mb-7 flex flex-row items-center justify-center pl-4">
+        <div className="mb-7 flex flex-row items-center justify-center pr-4">
           <AnimatedTooltip items={TEAM} />
         </div>
 

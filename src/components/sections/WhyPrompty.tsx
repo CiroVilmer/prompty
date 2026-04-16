@@ -86,7 +86,7 @@ export default function WhyPrompty() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="bg-[#F8F9FC] py-28">
+    <section id="why-prompty" ref={sectionRef} className="bg-[#F8F9FC] py-28">
       <div className="mx-auto max-w-6xl px-8">
 
         {/* Header */}
