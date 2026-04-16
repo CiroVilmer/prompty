@@ -71,9 +71,13 @@ function ListingPreview({ visible, result }: { visible: boolean; result?: Genera
       <div className="p-4 space-y-4">
         {/* Image + title row */}
         <div className="flex gap-3">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <div className="flex size-[72px] shrink-0 items-center justify-center overflow-hidden rounded-lg border border-gray-100 bg-gray-50">
-            <img src="/macbook-mock.png" alt="" className="h-full w-full object-contain" />
+          <div className="flex size-[72px] shrink-0 flex-col items-center justify-center gap-1 rounded-lg border border-dashed border-gray-200 bg-gray-50 px-1 text-center">
+            <svg viewBox="0 0 20 20" className="size-5 text-gray-300" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="1" y="3" width="18" height="14" rx="2" />
+              <path d="M3 13.5l4-4a1.5 1.5 0 012.1 0L13 13.5" />
+              <path d="M13 11.5l1.5-1.5a1.5 1.5 0 012.1 0L19 12.5" />
+            </svg>
+            <span className="text-[8px] leading-tight text-gray-400">Image generation not enabled yet</span>
           </div>
           <div className="flex min-w-0 flex-1 flex-col gap-1">
             <div className="flex items-center gap-1.5">
@@ -389,8 +393,8 @@ function IdleView({
                   <TooltipTrigger asChild>
                     <button
                       type="button"
-                      onClick={() => fileRef.current?.click()}
-                      className="flex size-9 items-center justify-center rounded-lg border border-gray-200 bg-white text-foreground shadow-sm transition-colors hover:bg-gray-50"
+                      disabled
+                      className="flex size-9 cursor-not-allowed items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-300 shadow-sm opacity-50"
                     >
                       <svg viewBox="0 0 20 20" className="size-[18px]" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M3 13.5l4-4a1.5 1.5 0 012.1 0L13 13.5" />
@@ -400,7 +404,7 @@ function IdleView({
                       </svg>
                     </button>
                   </TooltipTrigger>
-                  <TooltipContent side="bottom">Adjuntar imágenes</TooltipContent>
+                  <TooltipContent side="bottom">¡Image generation will be enabled soon!</TooltipContent>
                 </Tooltip>
                 <Tooltip>
                   <TooltipTrigger asChild>

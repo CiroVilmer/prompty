@@ -8,6 +8,8 @@
   [![DSPy](https://img.shields.io/badge/DSPy-MIPROv2-6366F1?style=flat-square)](https://dspy.ai)
   [![TypeScript](https://img.shields.io/badge/TypeScript-5.4-3178C6?style=flat-square&logo=typescript)](https://typescriptlang.org)
   [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38BDF8?style=flat-square&logo=tailwindcss)](https://tailwindcss.com)
+  [![Vercel](https://img.shields.io/badge/Frontend-Vercel-000?style=flat-square&logo=vercel)](https://vercel.com)
+  [![Railway](https://img.shields.io/badge/Backend-Railway-7B2FF2?style=flat-square)](https://railway.app)
 
   <h3>AI-powered listing optimization for Mercado Libre sellers.</h3>
   <p>Empirically optimized prompts. Real marketplace data. Measurably better listings.</p>
@@ -76,7 +78,7 @@ The Next.js frontend proxies requests to a FastAPI backend. The backend orchestr
 | **Prompt Optimization** | DSPy (Stanford) + MIPROv2 | Empirical prompt tuning with measurable metrics |
 | **Marketplace API** | Mercado Libre API | Real-time product data, trends, required attributes |
 | **Training Data** | 70+ products, 22 brands, sneakers vertical | Custom dataset for DSPy optimization |
-| **Deployment** | Vercel (frontend), Uvicorn/FastAPI (backend) | Edge-optimized frontend, Python backend |
+| **Deployment** | Vercel (frontend) · Railway (backend) | Edge-optimized frontend, Python backend |
 
 ---
 
@@ -141,7 +143,7 @@ Working with the MELI API at hackathon pace means navigating real permission con
 - Node.js 20+ and pnpm
 - Python 3.11+
 - `ANTHROPIC_API_KEY` (Anthropic console)
-- `MELI_ACCESS_TOKEN` (Mercado Libre developers portal)
+- `MELI_ACCESS_TOKEN` (Mercado Libre developers portal, optional for local dev)
 
 ### Frontend
 
@@ -166,14 +168,55 @@ python -m uvicorn apps.api.main:app --reload --port 8000
 The API will be available at [http://localhost:8000](http://localhost:8000).  
 Interactive docs: [http://localhost:8000/docs](http://localhost:8000/docs).
 
+> **Note:** If the backend is unavailable, every endpoint automatically falls back to hardcoded mock responses so the UI remains functional. Check `GET /api/health` → `"mode"` to confirm whether you're on real or mock data.
+
 ### Environment Variables
+
+Create `.env.local` in the project root:
+
+```bash
+ANTHROPIC_API_KEY=sk-ant-...
+FASTAPI_URL=http://localhost:8000   # or your Railway URL in production
+```
 
 | Variable | Where | Description |
 |---|---|---|
-| `ANTHROPIC_API_KEY` | `.env.local` + backend | Claude API key |
-| `MELI_ACCESS_TOKEN` | Backend | Mercado Libre access token |
-| `FASTAPI_URL` | `.env.local` | Backend URL (default: `http://localhost:8000`) |
-| `NEXT_PUBLIC_APP_URL` | `.env.local` | Frontend base URL |
+| `ANTHROPIC_API_KEY` | `.env.local` + Railway | Claude API key — required for real pipeline |
+| `MELI_ACCESS_TOKEN` | Backend env | Mercado Libre access token — optional, enables live MELI data |
+| `FASTAPI_URL` | `.env.local` / Vercel env | Backend URL — **no trailing slash** |
+| `NEXT_PUBLIC_APP_URL` | `.env.local` | Only needed for server-side API calls locally |
+
+### Verifying the connection
+
+After starting both services, hit:
+```
+http://localhost:3000/api/backend-health
+```
+Response should include `"mode": "real"` if the API key is set and DSPy loaded correctly.
+
+---
+
+## Deployment
+
+The app is deployed as two separate services:
+
+| Service | Platform | URL |
+|---|---|---|
+| Frontend (Next.js) | Vercel | https://prompty-ashen-alpha.vercel.app |
+| Backend (FastAPI) | Railway | Set as `FASTAPI_URL` in Vercel env vars |
+
+### Deploying the backend to Railway
+
+1. Connect your GitHub repo on [railway.app](https://railway.app)
+2. Railway auto-detects the config from `railpack.json` + `railway.toml` + `.python-version`
+3. Add env var: `ANTHROPIC_API_KEY`
+4. Copy the public Railway URL → set it as `FASTAPI_URL` in Vercel environment variables
+5. Redeploy Vercel
+
+The backend build creates a Python 3.11 venv at `/app/.venv` and starts with:
+```
+/app/.venv/bin/python -m uvicorn apps.api.main:app --host 0.0.0.0 --port $PORT
+```
 
 ---
 
@@ -232,15 +275,23 @@ prompty/
 
 ## API Reference
 
-All routes are prefixed with `/api` on the FastAPI backend (`localhost:8000`), proxied through Next.js.
+All routes are prefixed with `/api` on the FastAPI backend, proxied through Next.js API routes (`src/app/api/`). The frontend never calls Claude or MELI directly.
 
 | Method | Path | Description |
 |---|---|---|
 | `POST` | `/api/audit` | Diagnose listing quality vs category benchmarks |
-| `POST` | `/api/generate` | Generate optimized listing (title, description, attributes) |
+| `POST` | `/api/generate` | Generate optimized listing (title, description, attributes) using baseline DSPy |
 | `POST` | `/api/image-prompt` | Generate image brief from category top-performer photos |
-| `POST` | `/api/compare` | Side-by-side: raw LLM vs Prompty baseline vs Prompty optimized |
-| `GET` | `/api/health` | Liveness probe — returns mode, compiled checkpoint name |
+| `POST` | `/api/compare` | Three-way: raw naive LLM vs DSPy baseline vs MIPROv2-optimized + judge scores |
+| `POST` | `/api/degrade` | Produce a deliberately weak listing from product specs (demo "before" state) |
+| `GET` | `/api/health` | FastAPI liveness probe — returns `mode`, `compiled_generator`, `init_error` |
+| `GET` | `/api/backend-health` | Next.js route that proxies to FastAPI `/api/health` — use this to verify the full stack |
+
+### Current limitations
+
+- **Image generation** is not enabled. The UI shows a placeholder; the image-prompt endpoint exists but is not wired into the main product flow.
+- **Publishing to MELI** is simulated — the publish overlay runs an animation but does not make a real MELI write API call.
+- **Category support:** `notebooks` (full) and `zapatillas` (partial). The pipeline is category-agnostic; more categories require training data.
 
 ---
 

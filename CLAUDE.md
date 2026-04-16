@@ -289,11 +289,22 @@ Compiled checkpoint: `dspy_pipeline/compiled/generator_v1.json`
 
 ## Product UI Flow (`/dashboard/products/new`)
 
-1. **Idle view** — Textarea + image upload + suggestion chips. User describes their product in natural language.
-2. **Thinking view** — Animated chat-style activity log (6 simulated AI steps). Simultaneously fires real `/api/generate` call.
-3. **Done view (split)** — Left: AI log with "Completed" badge. Right: Listing preview rendered as a Mercado Libre product page (yellow ML header, thumbnail strip, price, attributes).
-4. **Compare view** — Left: optimized listing preview. Right: `ImprovementsPanel` with 7 before/after cards (title, category, attributes, price, DSPy vs hand-written, live MELI data, compare→publish).
+1. **Idle view** — Textarea + image upload (disabled, coming soon) + suggestion chips. User describes product in natural language.
+2. **Thinking view** — Animated chat-style activity log (6 simulated AI steps). Simultaneously fires real `/api/audit` → `/api/generate` chain.
+3. **Done view (split)** — Left: AI log with "Completed" badge. Right: `ListingPreview` rendered as a Mercado Libre product page (yellow ML header, image placeholder, price, description, attributes). Real API data shows as soon as `generatedListing` is set; `GeneratingPreview` spinner shows while waiting.
+4. **What's new panel** — Toggled via "What's new" button. Shows `WhatsNewPanel` with before/after cards (title, description, attributes, keywords, audit findings) derived from `submittedPrompt`, `generatedListing`, and `auditResult`. No extra API call. "Back to preview" toggles back.
 5. **Publish overlay** — Multi-step progress animation (5 steps). On success, saves listing to `sessionStorage` and redirects to `/dashboard/products/success`.
+
+### Key state variables (`new/page.tsx`)
+- `stage`: `'idle' | 'thinking' | 'done' | 'publishing'`
+- `showSplit`: boolean — controls idle vs split layout
+- `generatedListing`: `GenerateResponse | null` — right panel shows skeleton until this is set
+- `auditResult`: `AuditResponse | null` — used by WhatsNewPanel
+- `submittedPrompt`: original user input — used as "before" in WhatsNewPanel
+- `showWhatsNew`: boolean — toggles ListingPreview ↔ WhatsNewPanel
+
+### API chain in `startGeneration()`
+`/api/audit` → (uses audit diagnosis) → `/api/generate`. Both fire in parallel with the 6-step animation timer. `finalize()` is called when BOTH animation completes AND API resolves.
 
 ---
 
@@ -321,15 +332,47 @@ Order: `LoadingScreen` → `Navbar` → `HeroSectionDynamic` → `Problem` → `
 
 ---
 
+## Deployment
+
+### Frontend — Vercel
+Deployed at `https://prompty-ashen-alpha.vercel.app`. Auto-deploys from `main`.
+
+Required Vercel env vars:
+- `FASTAPI_URL` — Railway backend URL (no trailing slash), e.g. `https://prompty-production-d48f.up.railway.app`
+- `NEXT_PUBLIC_APP_URL` — NOT needed; `api-client.ts` uses relative URLs in the browser
+
+### Backend — Railway
+Deployed via `railpack.json` + `railway.toml` + `.python-version` at repo root.
+
+Key deployment files:
+- `railpack.json` — Railpack config: creates venv at `/app/.venv`, installs deps inline, starts with `/app/.venv/bin/python -m uvicorn`
+- `railway.toml` — start command + healthcheck path (`/api/health`) + 120s timeout
+- `.python-version` — pins Python 3.11
+- `requirements.txt` — top-level copy of `apps/api/requirements.txt` (kept for reference)
+
+Required Railway env vars:
+- `ANTHROPIC_API_KEY`
+- `RAILWAY_HEALTHCHECK_TIMEOUT_SEC=120`
+
+To verify backend: `GET /api/backend-health` from Vercel → should return `"mode":"real"`.
+
+### CORS
+`apps/api/main.py` allows `allow_origin_regex=r"https://.*\.vercel\.app"` — covers all Vercel preview and production URLs automatically.
+
+### `api-client.ts` base URL fix
+Browser calls use `BASE_URL = ""` (relative), server-side calls use `NEXT_PUBLIC_APP_URL`. This makes the client work on localhost, production, and preview URLs without any env var.
+
+---
+
 ## Environment Variables
 
 | Variable | Where | Required | Description |
 |---|---|---|---|
-| `ANTHROPIC_API_KEY` | `.env.local` + backend `.env` | Yes | Claude API key |
-| `MELI_ACCESS_TOKEN` | Backend `.env` | For live MELI data | Mercado Libre access token |
-| `FASTAPI_URL` | `.env.local` | No (default: `http://localhost:8000`) | FastAPI backend URL |
-| `NEXT_PUBLIC_APP_URL` | `.env.local` | No (default: `http://localhost:3000`) | Frontend base URL |
-| `EXTRA_CORS_ORIGINS` | Backend env | No | Comma-separated extra CORS origins |
+| `ANTHROPIC_API_KEY` | `.env.local` + Railway | Yes | Claude API key |
+| `MELI_ACCESS_TOKEN` | Backend Railway env | For live MELI data | Mercado Libre access token |
+| `FASTAPI_URL` | Vercel env vars | Yes in prod | Railway backend URL — no trailing slash |
+| `NEXT_PUBLIC_APP_URL` | `.env.local` | Local server-side only | Frontend base URL (not needed in prod) |
+| `EXTRA_CORS_ORIGINS` | Railway env | No | Comma-separated extra CORS origins |
 
 ---
 
@@ -371,7 +414,7 @@ Order: `LoadingScreen` → `Navbar` → `HeroSectionDynamic` → `Problem` → `
 }
 ```
 
-Dashboard severity colors (used in `ImprovementsPanel`):
+Dashboard severity colors (used in `WhatsNewPanel`):
 - **Critical:** rose-500 border, rose-50 background
 - **High impact:** amber-500 border, amber-50 background
 - **Improvement:** sky-500 border, sky-50 background
@@ -456,6 +499,31 @@ pnpm dlx shadcn@latest add @aceternity/warp-background
 ```
 
 Components land in `src/components/ui/` as source. Modify freely.
+
+---
+
+## Dashboard Overview Page (`/dashboard`)
+
+Stats cards (static values, no DB):
+- **Products trained on:** +100 (real MELI listings)
+- **Published products:** amber "MELI implementation soon" badge
+- **Avg. SEO score:** +96/100
+
+Tools section — image-background rectangular cards defined in `TOOL_IMAGES` constant at top of file:
+- **DEMO: Create Laptop Listing** → `/dashboard/products/new` (active, violet gradient overlay)
+- **Create a Listing** — disabled, "Coming soon" badge
+- **More tools coming** — disabled, muted dashed border, "Stay tuned" badge
+
+To swap card background images: edit `TOOL_IMAGES` at the top of `src/app/dashboard/page.tsx`. Set to `null` to use the gradient fallback.
+
+---
+
+## Known Limitations / Not Implemented
+
+- **Image generation:** disabled in UI (upload button shows tooltip "Image generation will be enabled soon"). `ListingPreview` shows a placeholder instead of a product image.
+- **MELI publishing:** publish overlay is a simulation — no real MELI API write call.
+- **Authentication:** login/register pages exist but auth is not wired up.
+- **Multi-category:** pipeline defaults to `notebooks` if category not detected. Sneakers regex also supported.
 
 ---
 
