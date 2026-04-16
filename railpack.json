@@ -2,7 +2,6 @@
   "$schema": "https://schema.railpack.com",
   "steps": {
     "install": {
-      "inputs": [{ "source": "requirements.txt" }],
       "commands": [
         "python -m pip install fastapi uvicorn pydantic python-dotenv anthropic 'dspy-ai>=2.5' httpx"
       ]
