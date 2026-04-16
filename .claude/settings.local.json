@@ -45,7 +45,10 @@
       "Bash(curl -s -X POST http://localhost:8000/api/degrade -H \"Content-Type: application/json\" -d \"{\\\\\"product_specs\\\\\": \\\\\"Notebook Asus ZenBook 14 UM433DA\\\\nProcesador: AMD Ryzen 5 3500U \\(4C/8T, 6MB cache, 3.7GHz Boost\\)\\\\nGraficos: Radeon Vega 8 integrados\\\\nPantalla: 14 LED Full HD \\(1920x1080\\) NanoEdge\\\\nMemoria: 8GB 2400MHz DDR4\\\\nAlmacenamiento: 512GB PCIe SSD\\\\nPeso: 1.39kg\\\\\", \\\\\"category\\\\\": \\\\\"notebooks\\\\\"}\")",
       "Bash(npm run:*)",
       "Bash(npx tsc *)",
-      "Bash(pnpm tsc *)"
+      "Bash(pnpm tsc *)",
+      "WebFetch(domain:docs.railway.com)",
+      "WebFetch(domain:railpack.com)",
+      "Bash(del *)"
     ]
   }
 }
