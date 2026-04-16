@@ -8,8 +8,12 @@
  *   const { data, error } = await apiClient.post<Prompt>("/api/prompts", body);
  */
 
+// In the browser, use relative URLs (origin is implicit).
+// On the server (SSR/RSC), we need an absolute URL.
 const BASE_URL =
-  process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+  typeof window !== "undefined"
+    ? ""
+    : (process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000");
 
 type HttpMethod = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
 
