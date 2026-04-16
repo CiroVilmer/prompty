@@ -10,7 +10,12 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import { apiClient } from '@/lib/api-client'
-import type { GenerateRequest, GenerateResponse } from '@/types'
+import type {
+  AuditRequest,
+  AuditResponse,
+  GenerateRequest,
+  GenerateResponse,
+} from '@/types'
 
 /* ── Types ──────────────────────────────────────────────────────────────────── */
 
@@ -20,123 +25,112 @@ interface ChatMessage {
   icon?: string
 }
 
-type Stage = 'idle' | 'thinking' | 'done' | 'publishing' | 'comparing'
+type Stage = 'idle' | 'thinking' | 'done' | 'publishing'
 
-/* ── Fake ML listing preview (mirrors the BeforeAfterSection "good" layout) ── */
+/* ── ML listing preview card — vertical layout for panel width ───────────────── */
+
+const MOCK_ATTRS: [string, string][] = [
+  ['BRAND', 'Apple'],
+  ['MODEL', 'MacBook Air M2'],
+  ['PROCESSOR_BRAND', 'Apple'],
+  ['RAM_MEMORY_MODULE_TOTAL_CAPACITY', '8 GB'],
+  ['SSD_DATA_STORAGE_CAPACITY', '256 GB'],
+  ['DISPLAY_SIZE', '13.6"'],
+]
 
 function ListingPreview({ visible, result }: { visible: boolean; result?: GenerateResponse | null }) {
+  const title = result?.title ?? 'Apple MacBook Air 13.6" Chip M2 8 Núcleos — 8 GB RAM 256 GB SSD — Gris Espacial'
+  const description = result?.description
+  const attrs: [string, string][] = result?.attributes
+    ? (Object.entries(result.attributes) as [string, string][])
+    : MOCK_ATTRS
+
   return (
     <div
-      className={`flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white p-4 pt-5 shadow-sm transition-opacity duration-700 sm:p-5 sm:pt-6 ${visible ? 'opacity-100' : 'opacity-0'}`}
+      className={`overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-opacity duration-700 ${visible ? 'opacity-100' : 'opacity-0'}`}
     >
-      {/* ML yellow bar */}
-      <div className="flex shrink-0 items-center gap-3 rounded-t-lg bg-[#fff159] px-4 py-2.5">
+      {/* ML yellow header */}
+      <div className="flex items-center gap-2 bg-[#fff159] px-3 py-2">
         <span className="shrink-0 text-sm font-extrabold text-[#333]">
           mercado<span style={{ color: '#3483fa' }}>libre</span>
         </span>
-        <div className="flex flex-1 items-center gap-2 rounded-sm border border-[#e8d800] bg-white px-3 py-1.5">
-          <span className="flex-1 truncate text-xs text-gray-400">
-            apple macbook air m2 13&quot; 256gb
+        <div className="flex min-w-0 flex-1 items-center rounded-sm border border-[#e8d800] bg-white px-2.5 py-1">
+          <span className="truncate text-[11px] text-gray-400">
+            {title.toLowerCase().slice(0, 50)}
           </span>
         </div>
       </div>
 
       {/* Breadcrumb */}
-      <div className="border-b border-gray-100 bg-gray-50 px-5 py-2">
-        <p className="text-xs text-[#3483fa]">
-          Inicio &rsaquo; Computación &rsaquo; Laptops y Accesorios &rsaquo; Laptops &rsaquo; Apple
+      <div className="border-b border-gray-100 bg-gray-50 px-4 py-1.5">
+        <p className="text-[11px] text-[#3483fa]">
+          Inicio › Computación › Laptops › Apple
         </p>
       </div>
 
-      {/* Product area */}
-      <div className="flex flex-1">
-        {/* Thumbnails */}
-        <div className="flex w-14 shrink-0 flex-col gap-1.5 border-r border-gray-100 py-2 pl-3 pr-2">
-          {[0, 1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className="aspect-square w-full overflow-hidden rounded border bg-gray-50"
-              style={{ borderColor: i === 0 ? '#3483fa' : '#e5e7eb' }}
-            >
-              {i === 0 && (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src="/macbook-mock.png" alt="" className="h-full w-full object-contain" />
-              )}
-            </div>
-          ))}
-        </div>
-
-        {/* Main image */}
-        <div className="flex w-2/5 shrink-0 items-center justify-center border-r border-gray-100 bg-white p-4">
+      <div className="p-4 space-y-4">
+        {/* Image + title row */}
+        <div className="flex gap-3">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/macbook-mock.png"
-            alt="Apple MacBook Air M2"
-            className="w-full object-contain"
-          />
-        </div>
-
-        {/* Info */}
-        <div className="flex flex-1 flex-col gap-2.5 p-5">
-          <div className="flex items-center gap-1.5">
-            <span className="text-xs text-gray-500">Nuevo</span>
-            <span className="text-xs text-gray-200">|</span>
-            <span className="text-xs text-gray-500">+1.200 vendidos</span>
+          <div className="flex size-[72px] shrink-0 items-center justify-center overflow-hidden rounded-lg border border-gray-100 bg-gray-50">
+            <img src="/macbook-mock.png" alt="" className="h-full w-full object-contain" />
           </div>
-
-          <h3 className="text-sm font-medium leading-snug text-[#333]">
-            {result?.title ?? 'Apple MacBook Air 13.6" Chip M2 8 Núcleos — 8GB RAM 256GB SSD — Gris Espacial — macOS Sonoma — Teclado Español Latino'}
-          </h3>
-
-          {/* Stars */}
-          <div className="flex items-center gap-1">
-            <div className="flex">
+          <div className="flex min-w-0 flex-1 flex-col gap-1">
+            <div className="flex items-center gap-1.5">
+              <span className="text-[11px] text-gray-500">Nuevo</span>
+              <span className="text-[11px] text-gray-200">|</span>
+              <span className="text-[11px] text-gray-500">+1.200 vendidos</span>
+            </div>
+            <h3 className="text-[13px] font-medium leading-snug text-[#333]">{title}</h3>
+            <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => (
-                <svg key={i} viewBox="0 0 10 10" className="size-3" fill="#3483fa">
+                <svg key={i} viewBox="0 0 10 10" className="size-2.5" fill="#3483fa">
                   <path d="M5 0l1.5 3.1 3.5.5-2.5 2.4.6 3.5L5 7.8 1.9 9.5l.6-3.5L0 3.6l3.5-.5z" />
                 </svg>
               ))}
+              <span className="text-[11px] text-[#3483fa]">4.9</span>
+              <span className="text-[11px] text-gray-400">(2.847)</span>
             </div>
-            <span className="text-xs text-[#3483fa]">4.9</span>
-            <span className="text-xs text-gray-400">(2.847)</span>
           </div>
+        </div>
 
-          {/* Price */}
-          <div className="mt-1">
-            <p className="text-xs text-gray-400 line-through">$ 1.349.999</p>
-            <div className="flex items-baseline gap-2">
-              <p className="text-xl font-light text-[#333]">$ 949.999</p>
-              <span className="text-sm font-semibold text-[#00a650]">30% OFF</span>
-            </div>
-            <p className="text-xs text-gray-500">en 12 cuotas de $ 79.166 sin interés</p>
+        {/* Price block */}
+        <div className="rounded-lg bg-gray-50 px-3 py-2.5">
+          <p className="text-[11px] text-gray-400 line-through">$ 1.349.999</p>
+          <div className="flex items-baseline gap-2">
+            <span className="text-xl font-light text-[#333]">$ 949.999</span>
+            <span className="text-xs font-semibold text-[#00a650]">30% OFF</span>
           </div>
+          <p className="mt-0.5 text-[11px] text-gray-500">en 12 cuotas de $ 79.166 sin interés</p>
+          <p className="mt-1.5 text-[11px] font-medium text-[#00a650]">✓ Envío gratis · Full · Llega mañana</p>
+        </div>
 
-          {/* Shipping */}
+        {/* Description — the real generated content */}
+        {description && (
           <div>
-            <p className="text-xs font-medium text-[#00a650]">✓ Envío gratis · Full</p>
-            <p className="text-xs text-[#00a650]">Llega mañana</p>
+            <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-gray-400">
+              Descripción
+            </p>
+            <p className="text-[12px] leading-relaxed text-gray-600 whitespace-pre-line">
+              {description}
+            </p>
           </div>
+        )}
 
-          {/* Attributes */}
-          <div className="mt-auto border-t border-gray-100 pt-3">
-            <p className="mb-2 text-xs font-medium text-gray-500">Características principales</p>
-            <div className="space-y-1.5">
-              {(result?.attributes
-                ? Object.entries(result.attributes).slice(0, 5)
-                : [
-                    ['Marca', 'Apple'],
-                    ['Modelo', 'MacBook Air M2'],
-                    ['Procesador', 'Apple M2'],
-                    ['RAM', '8 GB'],
-                    ['Almacenamiento', '256 GB SSD'],
-                  ]
-              ).map(([label, value]) => (
-                <div key={label} className="flex items-center gap-2">
-                  <span className="w-24 shrink-0 text-xs text-gray-400">{label}</span>
-                  <span className="text-xs font-medium text-[#333]">{value}</span>
-                </div>
-              ))}
-            </div>
+        {/* Attributes — the real generated content */}
+        <div>
+          <p className="mb-2 text-[10px] font-semibold uppercase tracking-wider text-gray-400">
+            Características principales
+          </p>
+          <div className="grid grid-cols-2 gap-x-4 gap-y-2.5">
+            {attrs.slice(0, 10).map(([k, v]) => (
+              <div key={k} className="flex min-w-0 flex-col gap-0.5">
+                <span className="text-[10px] uppercase tracking-wide text-gray-400 truncate">
+                  {k.replace(/_/g, ' ')}
+                </span>
+                <span className="text-[12px] font-medium text-[#333] truncate">{v}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -144,32 +138,51 @@ function ListingPreview({ visible, result }: { visible: boolean; result?: Genera
   )
 }
 
-/* ── Skeleton loader for the preview ────────────────────────────────────────── */
+/* ── Generating preview skeleton with rotating messages ─────────────────────── */
 
-function PreviewSkeleton() {
+const WAIT_MESSAGES = [
+  'Running DSPy audit pipeline…',
+  'Detecting category and keywords…',
+  'Building your optimized title…',
+  'Filling required MELI attributes…',
+  'Structuring the description…',
+  'Applying MIPROv2 optimizations…',
+  'Almost ready…',
+]
+
+function GeneratingPreview() {
+  const [msgIdx, setMsgIdx] = useState(0)
+
+  useEffect(() => {
+    const t = setInterval(() => setMsgIdx((i) => (i + 1) % WAIT_MESSAGES.length), 2400)
+    return () => clearInterval(t)
+  }, [])
+
   return (
-    <div className="flex flex-col gap-4 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-      {/* Top bar skeleton */}
-      <div className="h-8 w-full animate-pulse rounded bg-yellow-100" />
-      <div className="h-4 w-2/3 animate-pulse rounded bg-gray-100" />
-
-      <div className="flex gap-4">
-        {/* Image skeleton */}
-        <div className="aspect-square w-2/5 shrink-0 animate-pulse rounded-lg bg-gray-100" />
-        {/* Info skeleton */}
-        <div className="flex flex-1 flex-col gap-3">
-          <div className="h-3 w-1/3 animate-pulse rounded bg-gray-100" />
-          <div className="h-4 w-full animate-pulse rounded bg-gray-100" />
-          <div className="h-4 w-4/5 animate-pulse rounded bg-gray-100" />
-          <div className="h-3 w-1/4 animate-pulse rounded bg-gray-100" />
-          <div className="mt-2 h-6 w-2/5 animate-pulse rounded bg-gray-100" />
-          <div className="h-3 w-1/3 animate-pulse rounded bg-gray-100" />
-          <div className="mt-auto space-y-2 border-t border-gray-100 pt-3">
-            {[...Array(4)].map((_, i) => (
-              <div key={i} className="flex gap-2">
-                <div className="h-3 w-20 animate-pulse rounded bg-gray-100" />
-                <div className="h-3 w-24 animate-pulse rounded bg-gray-50" />
-              </div>
+    <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+      {/* ML bar skeleton */}
+      <div className="h-9 animate-pulse bg-yellow-100" />
+      <div className="flex flex-col items-center gap-5 px-6 py-10">
+        {/* Spinning brand ring */}
+        <div className="relative size-12 shrink-0">
+          <svg className="size-12 animate-spin" style={{ animationDuration: '1.4s' }} viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="20" stroke="#f3f4f6" strokeWidth="4" />
+            <path d="M24 4a20 20 0 0 1 20 20" stroke="#7B2FF2" strokeWidth="4" strokeLinecap="round" />
+          </svg>
+        </div>
+        <p className="text-center text-[13px] text-gray-500 transition-all duration-500">
+          {WAIT_MESSAGES[msgIdx]}
+        </p>
+        {/* Skeleton content */}
+        <div className="w-full space-y-2.5">
+          <div className="h-4 animate-pulse rounded-md bg-gray-100" />
+          <div className="h-4 w-4/5 animate-pulse rounded-md bg-gray-100" />
+          <div className="h-4 w-3/5 animate-pulse rounded-md bg-gray-100" />
+          <div className="mt-3 h-3 w-1/3 animate-pulse rounded-md bg-gray-100" />
+          <div className="h-12 animate-pulse rounded-lg bg-gray-100" />
+          <div className="grid grid-cols-2 gap-2 pt-1">
+            {[...Array(6)].map((_, i) => (
+              <div key={i} className="h-9 animate-pulse rounded-md bg-gray-50" />
             ))}
           </div>
         </div>
@@ -243,6 +256,23 @@ const AI_STEPS: { role: 'user' | 'assistant'; content: string; icon: string }[] 
     icon: '✅',
   },
 ]
+
+/* ── Category detection ─────────────────────────────────────────────────────── */
+
+function detectCategory(text: string): string {
+  const lower = text.toLowerCase()
+  if (
+    /notebook|laptop|macbook|lenovo|dell|asus|hp\s|ryzen|intel|core\s[i-]|thinkpad|ideapad|zenbook/.test(
+      lower,
+    )
+  )
+    return 'notebooks'
+  if (
+    /zapatilla|sneaker|nike|adidas|jordan|puma|new\s?balance|vans|converse/.test(lower)
+  )
+    return 'zapatillas'
+  return 'notebooks'
+}
 
 /* ── Suggestions ────────────────────────────────────────────────────────────── */
 
@@ -422,68 +452,6 @@ function IdleView({
 
 /* ── Improvements panel (compare view) ──────────────────────────────────────── */
 
-const IMPROVEMENTS = [
-  {
-    category: 'Title & search keywords',
-    severity: 'critical' as const,
-    before:
-      'Used MacBook, works perfectly, selling to upgrade, open to offers.',
-    after:
-      'Apple MacBook Air 13.6" Chip M2 8 Núcleos — 8GB RAM 256GB SSD — Gris Espacial — macOS Sonoma — Teclado Español Latino',
-    explanation:
-      'Your note had zero searchable structure. The optimized title adds brand, line, chip, RAM, storage, and screen size so buyers (and ML search) can actually find the listing.',
-  },
-  {
-    category: 'Category',
-    severity: 'critical' as const,
-    before: 'Unclear from note — risk of wrong path or generic bucket',
-    after: 'Computación → Laptops y Accesorios → Laptops → Apple (ML taxonomy)',
-    explanation:
-      "Script truth: one wrong category call and the product doesn't show up where buyers look. We lock the path to Mercado Libre's official tree.",
-  },
-  {
-    category: 'Attributes',
-    severity: 'critical' as const,
-    before: 'None filled — listing invisible in filters',
-    after: 'Marca, Modelo, Procesador, RAM, Almacenamiento (+ optional fields)',
-    explanation:
-      "Right title and category aren't enough: missing attributes mean you drop out of filtered results. Everything required is filled from the structured listing.",
-  },
-  {
-    category: 'Market price',
-    severity: 'high' as const,
-    before: '"Open to offers" — no anchor, weak conversion',
-    after: '$ 949.999 · 30% OFF badge · 12 cuotas sin interés',
-    explanation:
-      'Matches the demo: a credible anchor plus installments — the kind of offer electronics buyers expect on Mercado Libre.',
-  },
-  {
-    category: 'DSPy vs hand-written prompts',
-    severity: 'high' as const,
-    before: "Single static prompt — someone's best guess",
-    after:
-      'DSPy program optimized on real top-selling listings; instruction combinations tested empirically',
-    explanation:
-      'Most AI tools ship hand-tuned prompts. Prompty treats prompts like optimizable code (Stanford DSPy) and learns what actually works on ML — measured jump from baseline 0.45 to optimized 0.87 on our judge.',
-  },
-  {
-    category: 'Live Mercado Libre data',
-    severity: 'medium' as const,
-    before: 'No live trends or category rules',
-    after: 'MELI API: keyword trends + category rules applied to title and fields',
-    explanation:
-      "Hits the platform in real time so keywords and constraints reflect what's moving now, not last month's guess.",
-  },
-  {
-    category: 'Compare → one-tap publish',
-    severity: 'medium' as const,
-    before: 'Messy note in; you rebuild title, category, and fields by hand elsewhere',
-    after: 'Generate → watch steps → Compare shows every diff → Publish to Mercado Libre',
-    explanation:
-      'Matches the demo flow: the landing reel (`/videos/logo_loading.mp4`) sets the brand beat, then this screen walks the same narrative — messy note in, optimized listing out, no extra headcount.',
-  },
-]
-
 const SEVERITY_CONFIG = {
   critical: {
     label: 'Critical',
@@ -508,53 +476,119 @@ const SEVERITY_CONFIG = {
   },
 }
 
-function ImprovementsPanel({ userPrompt, result }: { userPrompt?: string; result?: GenerateResponse | null }) {
+function WhatsNewPanel({
+  userPrompt,
+  listing,
+  audit,
+}: {
+  userPrompt: string
+  listing: GenerateResponse
+  audit: AuditResponse | null
+}) {
+  const trim = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' : s
+
+  const cards: {
+    category: string
+    severity: 'critical' | 'high' | 'medium'
+    before: string
+    after: string
+    explanation: string
+  }[] = []
+
+  // Title
+  cards.push({
+    category: 'Title & search visibility',
+    severity: 'critical',
+    before: trim(userPrompt.split(/[.\n]/)[0].trim() || userPrompt, 160),
+    after: listing.title,
+    explanation: audit?.title_issues?.length
+      ? audit.title_issues.join('. ')
+      : 'The title was rewritten with brand, model, key specs, and high-traffic MELI keywords to maximize search ranking.',
+  })
+
+  // Description
+  cards.push({
+    category: 'Description',
+    severity: 'high',
+    before: trim(userPrompt, 220),
+    after: listing.description ? trim(listing.description, 320) : '—',
+    explanation: audit?.description_issues?.length
+      ? audit.description_issues.join('. ')
+      : 'The description is now structured with three sections: specs, benefits, and why-buy — the format that converts best on Mercado Libre.',
+  })
+
+  // Attributes
+  const attrs = Object.entries(listing.attributes ?? {})
+  if (attrs.length > 0) {
+    cards.push({
+      category: 'Product attributes',
+      severity: 'critical',
+      before: audit?.missing_critical_attributes?.length
+        ? `Missing: ${audit.missing_critical_attributes.slice(0, 4).join(', ')}`
+        : 'Attributes not filled — invisible in filtered searches',
+      after: attrs.slice(0, 5).map(([k, v]) => `${k.replace(/_/g, ' ')}: ${v}`).join(' · '),
+      explanation: audit?.missing_critical_attributes?.length
+        ? `${audit.missing_critical_attributes.length} required attribute${audit.missing_critical_attributes.length > 1 ? 's' : ''} were missing. Listings with incomplete attributes drop out of most filtered searches.`
+        : 'All required MELI attributes filled — your listing now appears in every relevant filter.',
+    })
+  }
+
+  // Keywords
+  if (audit?.missing_keywords?.length) {
+    cards.push({
+      category: 'Search keywords',
+      severity: 'medium',
+      before: 'None targeted',
+      after: audit.missing_keywords.slice(0, 8).join(', '),
+      explanation: `${audit.missing_keywords.length} trending Mercado Libre keywords were injected into the title and description to boost discoverability.`,
+    })
+  }
+
+  // Priority fixes
+  if (audit?.priority_fixes?.length) {
+    cards.push({
+      category: 'Audit findings fixed',
+      severity: 'high',
+      before: audit.priority_fixes.slice(0, 3).map(f => `• ${f}`).join('\n'),
+      after: 'All critical issues resolved by the DSPy pipeline',
+      explanation: 'These were the top issues flagged by the Prompty auditor before generating your listing.',
+    })
+  }
+
   return (
     <div className="flex flex-col gap-4 pb-1">
-      {/* Score summary — compact, editorial */}
-      <div className="improvement-card rounded-2xl border border-black/4 bg-white px-4 py-3.5 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <div>
-            <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-gray-400">
-              Listing quality score
-            </p>
-            <p className="mt-0.5 text-[10px] text-gray-400">
-              DSPy-tuned judge · same metric cited in the product story
-            </p>
-            <div className="mt-1 flex flex-wrap items-baseline gap-x-2 gap-y-0">
-              <span className="text-lg font-semibold tabular-nums text-gray-400 line-through decoration-gray-300/80">
-                0.45
-              </span>
-              <span className="text-gray-300" aria-hidden>
-                →
-              </span>
-              <span className="text-2xl font-semibold tabular-nums tracking-tight text-emerald-600">
-                0.87
-              </span>
-              <span className="text-sm font-normal text-gray-400">optimized</span>
-            </div>
-          </div>
-          <div className="flex flex-col items-end gap-1 text-right">
-            <span className="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700 ring-1 ring-emerald-100">
-              +0.42 vs baseline
+      {/* Summary header */}
+      <div className="rounded-2xl border border-black/4 bg-white px-4 py-3.5 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+        <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-gray-400">
+          What Prompty added
+        </p>
+        <p className="mt-1 text-[13px] leading-relaxed text-gray-600">
+          Every change the AI pipeline made — from your original description to the optimized listing.
+        </p>
+        <div className="mt-2 flex flex-wrap gap-1.5">
+          <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700 ring-1 ring-emerald-100">
+            {cards.length} improvements
+          </span>
+          {audit?.missing_keywords?.length ? (
+            <span className="rounded-full bg-sky-50 px-2 py-0.5 text-[10px] font-medium text-sky-700 ring-1 ring-sky-100">
+              {audit.missing_keywords.length} keywords added
             </span>
-            <span className="text-[11px] text-gray-400">
-              {IMPROVEMENTS.length} improvements applied
+          ) : null}
+          {attrs.length ? (
+            <span className="rounded-full bg-purple-50 px-2 py-0.5 text-[10px] font-medium text-purple-700 ring-1 ring-purple-100">
+              {attrs.length} attributes filled
             </span>
-          </div>
+          ) : null}
         </div>
       </div>
 
-      {/* Improvement cards — vertical before/after so nothing clips */}
-      {IMPROVEMENTS.map((item, idx) => {
+      {/* Cards */}
+      {cards.map((item, idx) => {
         const sev = SEVERITY_CONFIG[item.severity]
-        // For the title card, show the actual user prompt and generated title
-        const beforeText = idx === 0 && userPrompt ? userPrompt : item.before
-        const afterText  = idx === 0 && result?.title ? result.title : item.after
         return (
           <article
             key={item.category}
-            className={`improvement-card rounded-2xl border border-black/4 bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)] ${sev.border} border-l-4`}
+            className={`whats-new-card rounded-2xl border border-black/4 bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)] ${sev.border} border-l-4`}
           >
             <header className="flex items-start gap-3 border-b border-gray-100/80 px-4 py-3.5">
               <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-gray-50 text-xs font-semibold tabular-nums text-gray-500">
@@ -565,47 +599,25 @@ function ImprovementsPanel({ userPrompt, result }: { userPrompt?: string; result
                   <h3 className="text-[13px] font-semibold tracking-tight text-gray-900">
                     {item.category}
                   </h3>
-                  <span
-                    className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-medium ${sev.badge}`}
-                  >
+                  <span className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-medium ${sev.badge}`}>
                     {sev.label}
                   </span>
                 </div>
               </div>
             </header>
-
             <div className="space-y-2.5 px-4 py-4">
-              <div
-                className={`rounded-xl px-3.5 py-3 ${sev.beforeBg} ${sev.beforeRing}`}
-              >
-                <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-gray-500">
-                  Before
-                </p>
-                <p className="text-[13px] leading-relaxed text-gray-700 wrap-break-word">
-                  {beforeText}
-                </p>
+              <div className={`rounded-xl px-3.5 py-3 ${sev.beforeBg} ${sev.beforeRing}`}>
+                <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-gray-500">Before</p>
+                <p className="whitespace-pre-line text-[13px] leading-relaxed text-gray-700 wrap-break-word">{item.before}</p>
               </div>
               <div className="rounded-xl bg-emerald-50/50 px-3.5 py-3 ring-1 ring-emerald-100/90">
-                <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-700">
-                  After
-                </p>
-                <p className="text-[13px] leading-relaxed text-gray-900 wrap-break-word">
-                  {afterText}
-                </p>
+                <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-700">After</p>
+                <p className="text-[13px] leading-relaxed text-gray-900 wrap-break-word">{item.after}</p>
               </div>
             </div>
-
             <footer className="border-t border-gray-100/80 bg-gray-50/40 px-4 py-3">
               <p className="flex gap-2.5 text-[12px] leading-relaxed text-gray-600">
-                <svg
-                  viewBox="0 0 16 16"
-                  className="mt-0.5 size-4 shrink-0 text-amber-500/90"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.25"
-                  strokeLinecap="round"
-                  aria-hidden
-                >
+                <svg viewBox="0 0 16 16" className="mt-0.5 size-4 shrink-0 text-amber-500/90" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" aria-hidden>
                   <path d="M8 1.5a4 4 0 00-4 4c0 2 1 3 2 4v1.5h4V9.5c1-1 2-2 2-4a4 4 0 00-4-4z" />
                   <path d="M6 14.5h4" />
                 </svg>
@@ -772,17 +784,16 @@ export default function NewProductPage() {
   const [messages, setMessages] = useState<ChatMessage[]>([])
   const [stage, setStage] = useState<Stage>('idle')
   const [currentStep, setCurrentStep] = useState(0)
-  const [previewReady, setPreviewReady] = useState(false)
   const [overlayPhase, setOverlayPhase] = useState<OverlayPhase>('hidden')
   const [publishStep, setPublishStep] = useState(0)
   const [showSplit, setShowSplit] = useState(false)
   const [generatedListing, setGeneratedListing] = useState<GenerateResponse | null>(null)
   const [submittedPrompt, setSubmittedPrompt] = useState('')
-  const chatEndRef = useRef<HTMLDivElement>(null)
+  const [auditResult, setAuditResult] = useState<AuditResponse | null>(null)
+  const [showWhatsNew, setShowWhatsNew] = useState(false)
   const chatMessagesRef = useRef<HTMLDivElement>(null)
   const idleRef = useRef<HTMLDivElement>(null)
   const splitRef = useRef<HTMLDivElement>(null)
-  const compareRef = useRef<HTMLDivElement>(null)
   const animatedCount = useRef(0)
 
   useEffect(() => {
@@ -790,11 +801,12 @@ export default function NewProductPage() {
     setStage('idle')
     setMessages([])
     setCurrentStep(0)
-    setPreviewReady(false)
     setPublishStep(0)
     setShowSplit(false)
     setGeneratedListing(null)
     setSubmittedPrompt('')
+    setAuditResult(null)
+    setShowWhatsNew(false)
     animatedCount.current = 0
   }, [])
 
@@ -820,28 +832,50 @@ export default function NewProductPage() {
       animatedCount.current = bubbles.length
     }
 
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    chatMessagesRef.current?.scrollTo({
+      top: chatMessagesRef.current.scrollHeight,
+      behavior: 'smooth',
+    })
   }, [messages, stage])
 
   function startGeneration(userPrompt: string) {
     setMessages([{ role: 'user', content: userPrompt }])
     setStage('thinking')
     setCurrentStep(0)
-    setPreviewReady(false)
     setGeneratedListing(null)
+    setAuditResult(null)
 
-    // Fire real API call immediately — runs in parallel with the animation
-    const apiPromise = apiClient.post<GenerateResponse, GenerateRequest>(
-      '/api/generate',
-      {
-        weak_title: userPrompt.split(/[.\n]/)[0].trim() || userPrompt,
+    const category = detectCategory(userPrompt)
+    const weakTitle = userPrompt.split(/[.\n]/)[0].trim() || userPrompt
+
+    // Audit → generate chain; runs in parallel with the step animation
+    const apiPromise = apiClient
+      .post<AuditResponse, AuditRequest>('/api/audit', {
+        weak_title: weakTitle,
         weak_description: userPrompt,
         weak_attributes: {},
-        category: '',
+        category,
         trending_keywords: [],
-        audit_diagnosis: {},
-      },
-    )
+      })
+      .then((auditRes) => {
+        if (auditRes.data) setAuditResult(auditRes.data)
+        return apiClient.post<GenerateResponse, GenerateRequest>('/api/generate', {
+          weak_title: weakTitle,
+          weak_description: userPrompt,
+          weak_attributes: {},
+          category,
+          trending_keywords: auditRes.data?.missing_keywords ?? [],
+          audit_diagnosis: auditRes.data
+            ? {
+                missing_critical_attributes: auditRes.data.missing_critical_attributes,
+                title_issues: auditRes.data.title_issues,
+                description_issues: auditRes.data.description_issues,
+                missing_keywords: auditRes.data.missing_keywords,
+                priority_fixes: auditRes.data.priority_fixes,
+              }
+            : {},
+        })
+      })
 
     let step = 0
     let animationDone = false
@@ -857,12 +891,13 @@ export default function NewProductPage() {
           ...prev,
           {
             role: 'assistant' as const,
-            content: `Something went wrong: ${res.error ?? 'No data returned'}. Please try again.`,
+            content: `Something went wrong: ${res.error ?? 'No data returned'}. Check that the backend is running and try again.`,
             icon: '⚠️',
           },
         ])
-        setStage('idle')
-        setShowSplit(false)
+        // Keep the split view visible so the user sees the error in context.
+        // stage → 'done' so the retry button renders.
+        setStage('done')
         return
       }
       setGeneratedListing(res.data)
@@ -875,8 +910,6 @@ export default function NewProductPage() {
 
       setMessages((prev) => [...prev, msg])
       setCurrentStep(step + 1)
-
-      if (step === AI_STEPS.length - 2) setPreviewReady(true)
 
       if (step === AI_STEPS.length - 1) {
         animationDone = true
@@ -939,32 +972,6 @@ export default function NewProductPage() {
     })
   }
 
-  function handleCompare() {
-    setStage('comparing')
-    requestAnimationFrame(() => {
-      if (!compareRef.current) return
-      const panels = compareRef.current.children
-      gsap.fromTo(
-        panels,
-        { opacity: 0, y: 20, scale: 0.97 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.45, stagger: 0.08, ease: 'power3.out' },
-      )
-
-      const cards = compareRef.current.querySelectorAll('.improvement-card')
-      if (cards.length) {
-        gsap.fromTo(
-          cards,
-          { opacity: 0, y: 16 },
-          { opacity: 1, y: 0, duration: 0.35, stagger: 0.06, delay: 0.25, ease: 'power2.out' },
-        )
-      }
-    })
-  }
-
-  function handleBackToChat() {
-    setStage('done')
-  }
-
   function handlePublish() {
     setStage('publishing')
     setOverlayPhase('loading')
@@ -989,7 +996,7 @@ export default function NewProductPage() {
   }
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col">
+    <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
       <PublishOverlay phase={overlayPhase} stepIndex={publishStep} />
 
       {/* Idle view */}
@@ -1005,14 +1012,14 @@ export default function NewProductPage() {
         </div>
       )}
 
-      {/* Split view: chat + preview OR compare view */}
-      {showSplit && stage !== 'comparing' && (
+      {/* Split view: chat + preview / what's new */}
+      {showSplit && (
         <div
           ref={splitRef}
           className="grid min-h-0 flex-1 grid-cols-1 gap-6 overflow-hidden opacity-0 lg:grid-cols-2"
         >
           {/* Left — AI activity log */}
-          <div className="flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+          <div className="flex min-h-0 flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
             {/* Header */}
             <div className="flex items-center gap-3 border-b border-gray-100 px-5 py-3.5">
               <div className="flex size-7 items-center justify-center rounded-lg bg-gray-900 text-xs text-white">
@@ -1043,7 +1050,7 @@ export default function NewProductPage() {
             </div>
 
             {/* Messages */}
-            <div ref={chatMessagesRef} className="flex-1 space-y-1 overflow-y-auto px-3 py-4">
+            <div ref={chatMessagesRef} className="min-h-0 flex-1 space-y-1 overflow-y-auto px-3 py-4">
               {messages.map((msg, i) => (
                 <div
                   key={i}
@@ -1082,39 +1089,61 @@ export default function NewProductPage() {
                   </div>
                 </div>
               )}
-              <div ref={chatEndRef} />
             </div>
           </div>
 
-          {/* Right — listing preview */}
-          <div className="flex flex-col gap-4 overflow-y-auto pt-1">
+          {/* Right — listing preview / what's new */}
+          <div className="flex min-h-0 flex-col gap-4 overflow-y-auto overflow-x-hidden pt-1">
             <div className="flex items-center gap-2">
-              <span className="text-sm font-medium text-gray-700">Listing preview</span>
-              {stage === 'thinking' && !previewReady && (
+              <span className="text-sm font-medium text-gray-700">
+                {showWhatsNew ? "What's new" : 'Listing preview'}
+              </span>
+              {stage === 'thinking' && !generatedListing && (
                 <span className="rounded-full bg-gray-100 px-2 py-0.5 text-[10px] font-medium text-gray-500">
                   Building…
                 </span>
               )}
             </div>
 
-            {previewReady ? (
-              <ListingPreview visible={previewReady} result={generatedListing} />
+            {generatedListing ? (
+              showWhatsNew ? (
+                <WhatsNewPanel
+                  userPrompt={submittedPrompt}
+                  listing={generatedListing}
+                  audit={auditResult}
+                />
+              ) : (
+                <ListingPreview visible result={generatedListing} />
+              )
             ) : (
-              <PreviewSkeleton />
+              <GeneratingPreview />
             )}
 
-            {/* Action buttons */}
-            {(stage === 'done' || stage === 'publishing') && (
+            {/* Action buttons — only shown when there is a result */}
+            {(stage === 'done' || stage === 'publishing') && generatedListing && (
               <div className="mt-2 flex gap-3">
-                <button
-                  onClick={handleCompare}
-                  className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white py-3.5 text-sm font-semibold text-gray-700 shadow-sm transition-all hover:bg-gray-50 active:translate-y-px"
-                >
-                  <svg viewBox="0 0 16 16" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-                    <path d="M8 2v12M2 8h4M10 8h4" />
-                  </svg>
-                  Compare
-                </button>
+                {showWhatsNew ? (
+                  <button
+                    onClick={() => setShowWhatsNew(false)}
+                    className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white py-3.5 text-sm font-semibold text-gray-700 shadow-sm transition-all hover:bg-gray-50 active:translate-y-px"
+                  >
+                    <svg viewBox="0 0 16 16" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+                      <path d="M10 2L4 8l6 6" />
+                    </svg>
+                    Back to preview
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => setShowWhatsNew(true)}
+                    className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white py-3.5 text-sm font-semibold text-gray-700 shadow-sm transition-all hover:bg-gray-50 active:translate-y-px"
+                  >
+                    <svg viewBox="0 0 16 16" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M8 2.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" />
+                      <path d="M8 1v1M8 10v1M3.05 3.05l.7.7M11.25 11.25l.7.7M1 8h1M13 8h1M3.05 12.95l.7-.7M11.25 4.75l.7-.7" />
+                    </svg>
+                    What's new
+                  </button>
+                )}
                 <button
                   onClick={handlePublish}
                   disabled={stage === 'publishing'}
@@ -1134,71 +1163,27 @@ export default function NewProductPage() {
                 </button>
               </div>
             )}
+
+            {/* Retry button — shown when generation failed */}
+            {stage === 'done' && !generatedListing && (
+              <div className="mt-2">
+                <button
+                  onClick={() => {
+                    setShowSplit(false)
+                    setStage('idle')
+                    setMessages([])
+                    setAuditResult(null)
+                  }}
+                  className="flex w-full items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white py-3.5 text-sm font-semibold text-gray-700 shadow-sm transition-all hover:bg-gray-50"
+                >
+                  ↩ Try again
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}
 
-      {/* Compare view: listing left + improvements right */}
-      {showSplit && stage === 'comparing' && (
-        <div
-          ref={compareRef}
-          className="grid min-h-0 flex-1 grid-cols-1 gap-5 overflow-hidden lg:grid-cols-2 lg:gap-6"
-        >
-          {/* Left — optimized listing */}
-          <div className="flex min-h-0 min-w-0 flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
-            <div className="flex shrink-0 flex-wrap items-center gap-2 border-b border-gray-100 px-4 py-3 sm:px-5 sm:py-3.5">
-              <span className="text-sm font-semibold text-gray-900">Optimized listing</span>
-              <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700 ring-1 ring-emerald-100">
-                Live preview
-              </span>
-            </div>
-            <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden bg-gray-50/40 px-3 py-4 sm:px-4 sm:py-5">
-              <ListingPreview visible result={generatedListing} />
-            </div>
-          </div>
-
-          {/* Right — improvements: header + scrollable list + fixed actions */}
-          <div className="flex min-h-0 min-w-0 flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
-            <div className="shrink-0 border-b border-gray-100 px-4 py-3.5 sm:px-5">
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="text-sm font-semibold text-gray-900">Improvements</span>
-                <span className="rounded-full bg-brand-50 px-2 py-0.5 text-[10px] font-medium text-brand-700 ring-1 ring-brand-100">
-                  {IMPROVEMENTS.length} changes
-                </span>
-              </div>
-              <p className="mt-1 text-[12px] leading-relaxed text-gray-500">
-                Full breakdown of what Prompty fixed versus a typical unoptimized listing.
-              </p>
-            </div>
-
-            <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain bg-gray-50/30 px-3 py-3 sm:px-4">
-              <ImprovementsPanel userPrompt={submittedPrompt} result={generatedListing} />
-            </div>
-
-            <div className="shrink-0 border-t border-gray-200 bg-white px-3 py-3 sm:px-4">
-              <div className="flex gap-3">
-                <button
-                  type="button"
-                  onClick={handleBackToChat}
-                  className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white py-3 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-50 active:translate-y-px"
-                >
-                  <svg viewBox="0 0 16 16" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-                    <path d="M10 2L4 8l6 6" />
-                  </svg>
-                  Back
-                </button>
-                <button
-                  type="button"
-                  onClick={handlePublish}
-                  className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-[#3483fa] py-3 text-sm font-semibold text-white transition-colors hover:bg-[#2968c8] active:translate-y-px"
-                >
-                  Publish to Mercado Libre
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }

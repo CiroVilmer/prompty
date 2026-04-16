@@ -22,7 +22,8 @@ export function Navbar() {
     const update = () => {
       const hero = document.getElementById('landing-hero')
       if (!hero) {
-        setPastHero(false)
+        // No landing hero on this page (e.g. dashboard) → always use pill form
+        setPastHero(true)
         return
       }
       setPastHero(hero.getBoundingClientRect().bottom <= 0)

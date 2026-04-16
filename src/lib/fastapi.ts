@@ -4,8 +4,9 @@
  * http://localhost:8000).
  */
 
-const FASTAPI_URL =
-  process.env.FASTAPI_URL ?? "http://localhost:8000";
+const FASTAPI_URL = (
+  process.env.FASTAPI_URL ?? "http://localhost:8000"
+).replace(/\/+$/, ""); // strip any trailing slashes
 
 export async function proxyToFastAPI(
   path: string,

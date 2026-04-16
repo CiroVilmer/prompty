@@ -20,7 +20,7 @@ export default function DashboardLayout({
     <div className="flex min-h-dvh flex-col bg-gray-50 text-gray-900 antialiased">
       <Navbar />
       {/* pt-24 clears the fixed navbar (py-4 outer + h-12 logo + buffer) */}
-      <main className="flex min-h-0 flex-1 flex-col px-4 pt-24 pb-8 sm:px-6 sm:pt-28">
+      <main className="flex min-h-0 flex-1 flex-col overflow-hidden px-4 pt-24 pb-8 sm:px-6 sm:pt-28">
         {children}
       </main>
       <Footer />
