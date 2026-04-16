@@ -3,11 +3,12 @@
   "steps": {
     "install": {
       "commands": [
-        "python -m pip install fastapi uvicorn pydantic python-dotenv anthropic 'dspy-ai>=2.5' httpx"
+        "python -m venv /app/.venv",
+        "/app/.venv/bin/pip install fastapi uvicorn pydantic python-dotenv anthropic 'dspy-ai>=2.5' httpx"
       ]
     }
   },
   "deploy": {
-    "startCommand": "python -m uvicorn apps.api.main:app --host 0.0.0.0 --port $PORT"
+    "startCommand": "/app/.venv/bin/python -m uvicorn apps.api.main:app --host 0.0.0.0 --port $PORT"
   }
 }
