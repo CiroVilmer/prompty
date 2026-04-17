@@ -1,5 +1,7 @@
 'use client'
 
+import { useLanguage } from '@/lib/i18n/LanguageContext'
+
 function MLNavbar({ searchText }: { searchText?: string }) {
   return (
     <div className="flex shrink-0 items-center gap-3 bg-[#fff159] px-3 py-2 sm:px-4 sm:py-2.5">
@@ -252,6 +254,7 @@ function GoodListing() {
 }
 
 export default function BeforeAfterSection() {
+  const { t } = useLanguage()
   return (
     <section id="antes-despues" className="w-full bg-[#f5f3f1]">
       <div className="mx-auto max-w-[1440px] px-6 py-16 sm:px-10 sm:py-28 lg:px-16 lg:py-32">
@@ -259,13 +262,13 @@ export default function BeforeAfterSection() {
         {/* Section header */}
         <div className="mb-10 flex flex-col items-center gap-3 text-center sm:mb-16">
           <span className="inline-flex items-center gap-2 rounded-full border border-gray-300/60 bg-white/70 px-4 py-1.5 text-xs font-medium tracking-wide text-gray-500 backdrop-blur-sm">
-            Before &amp; after
+            {t.beforeAfter.badge}
           </span>
           <h2 className="max-w-2xl text-balance text-2xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
-            Same product, different result
+            {t.beforeAfter.title}
           </h2>
           <p className="max-w-xl text-sm text-gray-400 sm:text-lg">
-            The difference between a listing that sells and one that goes unnoticed
+            {t.beforeAfter.subtitle}
           </p>
         </div>
 
@@ -273,11 +276,11 @@ export default function BeforeAfterSection() {
         <div className="mb-3 flex flex-col gap-1.5 sm:mb-4 sm:grid sm:grid-cols-2">
           <div className="flex items-center gap-2.5 pl-1">
             <span className="size-2 rounded-full bg-red-400 sm:size-2.5" />
-            <span className="text-xs font-medium text-gray-500 sm:text-sm">Without Prompty</span>
+            <span className="text-xs font-medium text-gray-500 sm:text-sm">{t.beforeAfter.labelBefore}</span>
           </div>
           <div className="flex items-center gap-2.5 pl-1">
             <span className="size-2 rounded-full bg-emerald-500 sm:size-2.5" />
-            <span className="text-xs font-medium text-gray-500 sm:text-sm">With Prompty</span>
+            <span className="text-xs font-medium text-gray-500 sm:text-sm">{t.beforeAfter.labelAfter}</span>
           </div>
         </div>
 
@@ -290,7 +293,7 @@ export default function BeforeAfterSection() {
         </div>
 
         <p className="mt-6 text-center font-mono text-xs tracking-wide text-gray-400 sm:mt-8">
-          Optimization trained on real category best sellers · DSPy MIPROv2
+          {t.beforeAfter.footer}
         </p>
       </div>
     </section>

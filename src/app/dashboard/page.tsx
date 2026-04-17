@@ -1,129 +1,105 @@
-import type { Metadata } from "next";
+'use client'
+
 import Link from "next/link";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
-export const metadata: Metadata = {
-  title: "Overview",
-};
-
-/* ── Tool card image backgrounds ─────────────────────────────────────────────
-   Change these paths to swap card backgrounds. Use any image in /public.
-   Recommended size: 800×450px (16:9). Set to null to use the gradient fallback.
-────────────────────────────────────────────────────────────────────────────── */
 const TOOL_IMAGES = {
-  demo: "https://g2u-wp-prod.s3-ap-southeast-2.amazonaws.com/wp-content/uploads/2025/01/shutterstock_2328203513.jpg",        // DEMO: Create Laptop Listing
-  create: "https://computerworldmexico.com.mx/wp-content/uploads/2024/09/%C2%BFQue-aparatos-tecnologicos-son-los-mas-usados-hoy-en-dia-1.png",    // Create a listing (coming soon)
-  more: null,                            // ¡More tools — no image needed
+  demo: "https://g2u-wp-prod.s3-ap-southeast-2.amazonaws.com/wp-content/uploads/2025/01/shutterstock_2328203513.jpg",
+  create: "https://computerworldmexico.com.mx/wp-content/uploads/2024/09/%C2%BFQue-aparatos-tecnologicos-son-los-mas-usados-hoy-en-dia-1.png",
+  more: null,
 } as const
 
-/* ── Stats ───────────────────────────────────────────────────────────────────── */
-
-const STATS = [
-  {
-    label: "Products trained on",
-    value: "+100",
-    sub: "Real MELI listings",
-    icon: (
-      <svg viewBox="0 0 20 20" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 10h16M2 6h16M2 14h10" />
-      </svg>
-    ),
-  },
-  {
-    label: "Published products",
-    value: null,
-    badge: "MELI implementation soon",
-    sub: "Mercado Libre integration",
-    icon: (
-      <svg viewBox="0 0 20 20" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M4 10l5 5 7-7" />
-        <circle cx="10" cy="10" r="8" />
-      </svg>
-    ),
-  },
-  {
-    label: "Avg. SEO score",
-    value: "+96",
-    sub: "Out of 100",
-    icon: (
-      <svg viewBox="0 0 20 20" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.4l-4.8 2.4.9-5.3L2.2 7.7l5.4-.8z" />
-      </svg>
-    ),
-  },
+const STAT_ICONS = [
+  (
+    <svg viewBox="0 0 20 20" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 10h16M2 6h16M2 14h10" />
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 20 20" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 10l5 5 7-7" />
+      <circle cx="10" cy="10" r="8" />
+    </svg>
+  ),
+  (
+    <svg viewBox="0 0 20 20" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.3L10 14.4l-4.8 2.4.9-5.3L2.2 7.7l5.4-.8z" />
+    </svg>
+  ),
 ]
 
-/* ── Tool cards ──────────────────────────────────────────────────────────────── */
-
-const TOOLS = [
-  {
-    key: "demo",
-    href: "/dashboard/products/new",
-    title: "DEMO: Create Laptop Listing",
-    description: "Create a fully optimized laptop listing powered by the DSPy pipeline.",
-    badge: null,
-    disabled: false,
-    image: TOOL_IMAGES.demo,
-    gradient: "from-violet-600/50 to-indigo-700/60",
-    accent: "bg-violet-500",
-  },
-  {
-    key: "create",
-    href: null,
-    title: "Create a Listing",
-    description: "Any category, any product — full MELI optimization.",
-    badge: "Coming soon",
-    disabled: true,
-    image: TOOL_IMAGES.create,
-    gradient: "from-gray-700/70 to-gray-900/70",
-    accent: "bg-gray-500",
-  },
-  {
-    key: "more",
-    href: null,
-    title: "More tools coming",
-    description: "¡More tools will be announced shortly!",
-    badge: "Stay tuned",
-    disabled: true,
-    image: TOOL_IMAGES.more,
-    gradient: "from-gray-100 to-gray-200",
-    accent: "bg-gray-300",
-    muted: true,
-  },
-]
+const STAT_VALUES = ['+100', null, '+96']
 
 export default function DashboardPage() {
+  const { t } = useLanguage()
+  const { overview } = t.dashboard
+
+  const TOOLS = [
+    {
+      key: "demo",
+      href: "/dashboard/products/new",
+      title: overview.tools.cards[0].title,
+      description: overview.tools.cards[0].description,
+      badge: null,
+      disabled: false,
+      image: TOOL_IMAGES.demo,
+      gradient: "from-violet-600/50 to-indigo-700/60",
+      muted: false,
+    },
+    {
+      key: "create",
+      href: null,
+      title: overview.tools.cards[1].title,
+      description: overview.tools.cards[1].description,
+      badge: overview.tools.cards[1].badge,
+      disabled: true,
+      image: TOOL_IMAGES.create,
+      gradient: "from-gray-700/70 to-gray-900/70",
+      muted: false,
+    },
+    {
+      key: "more",
+      href: null,
+      title: overview.tools.cards[2].title,
+      description: overview.tools.cards[2].description,
+      badge: overview.tools.cards[2].stayTuned,
+      disabled: true,
+      image: TOOL_IMAGES.more,
+      gradient: "from-gray-100 to-gray-200",
+      muted: true,
+    },
+  ]
+
   return (
     <div className="space-y-10">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Overview</h1>
-        <p className="mt-1 text-sm text-gray-500">
-          Welcome back — here&apos;s a summary of your Prompty workspace.
-        </p>
+        <h1 className="text-2xl font-bold text-gray-900">{overview.title}</h1>
+        <p className="mt-1 text-sm text-gray-500">{overview.subtitle}</p>
       </div>
 
       {/* Stats */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        {STATS.map((s) => (
+        {overview.stats.map((s, i) => (
           <div
             key={s.label}
             className="flex items-start gap-4 rounded-2xl border border-gray-200 bg-white px-5 py-4 shadow-sm"
           >
             <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-gray-50 text-gray-400">
-              {s.icon}
+              {STAT_ICONS[i]}
             </div>
             <div className="min-w-0 flex-1">
               <p className="text-[12px] font-medium text-gray-400">{s.label}</p>
-              {s.value ? (
+              {STAT_VALUES[i] ? (
                 <p className="mt-0.5 text-2xl font-bold tracking-tight text-gray-900">
-                  {s.value}
-                  {s.label === "Avg. SEO score" && (
+                  {STAT_VALUES[i]}
+                  {i === 2 && (
                     <span className="ml-1 text-sm font-normal text-gray-400">/100</span>
                   )}
                 </p>
               ) : (
                 <span className="mt-1 inline-block rounded-full bg-amber-50 px-2.5 py-0.5 text-[11px] font-medium text-amber-700 ring-1 ring-amber-100">
-                  {s.badge}
+                  {s.sub}
                 </span>
               )}
               <p className="mt-0.5 text-[11px] text-gray-400">{s.sub}</p>
@@ -134,7 +110,7 @@ export default function DashboardPage() {
 
       {/* Tools */}
       <div>
-        <h2 className="mb-5 text-lg font-bold text-gray-900">Tools</h2>
+        <h2 className="mb-5 text-lg font-bold text-gray-900">{overview.tools.title}</h2>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {TOOLS.map((tool) => {
@@ -146,7 +122,6 @@ export default function DashboardPage() {
                     : "border-gray-200 shadow-sm"
                 } ${tool.disabled ? "cursor-default" : "cursor-pointer"}`}
               >
-                {/* Background image or gradient */}
                 {tool.image ? (
                   <>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -161,7 +136,6 @@ export default function DashboardPage() {
                   <div className={`absolute inset-0 bg-gradient-to-br ${tool.gradient}`} />
                 )}
 
-                {/* Content */}
                 <div className="relative z-10 p-5">
                   {tool.badge && (
                     <span className={`mb-2 inline-block rounded-full px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${
@@ -180,7 +154,6 @@ export default function DashboardPage() {
                   </p>
                 </div>
 
-                {/* Hover arrow — only on active cards */}
                 {!tool.disabled && (
                   <div className="absolute right-4 top-4 flex size-8 items-center justify-center rounded-full bg-white/20 opacity-0 backdrop-blur-sm transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0.5">
                     <svg viewBox="0 0 16 16" className="size-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

@@ -16,6 +16,7 @@ import type {
   GenerateRequest,
   GenerateResponse,
 } from '@/types'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 /* ── Types ──────────────────────────────────────────────────────────────────── */
 
@@ -109,7 +110,7 @@ function ListingPreview({ visible, result }: { visible: boolean; result?: Genera
           <p className="mt-1.5 text-[11px] font-medium text-[#00a650]">✓ Envío gratis · Full · Llega mañana</p>
         </div>
 
-        {/* Description — the real generated content */}
+        {/* Description */}
         {description && (
           <div>
             <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-gray-400">
@@ -121,7 +122,7 @@ function ListingPreview({ visible, result }: { visible: boolean; result?: Genera
           </div>
         )}
 
-        {/* Attributes — the real generated content */}
+        {/* Attributes */}
         <div>
           <p className="mb-2 text-[10px] font-semibold uppercase tracking-wider text-gray-400">
             Características principales
@@ -144,23 +145,15 @@ function ListingPreview({ visible, result }: { visible: boolean; result?: Genera
 
 /* ── Generating preview skeleton with rotating messages ─────────────────────── */
 
-const WAIT_MESSAGES = [
-  'Running DSPy audit pipeline…',
-  'Detecting category and keywords…',
-  'Building your optimized title…',
-  'Filling required MELI attributes…',
-  'Structuring the description…',
-  'Applying MIPROv2 optimizations…',
-  'Almost ready…',
-]
-
 function GeneratingPreview() {
+  const { t } = useLanguage()
+  const waitMessages = t.newProduct.waitMessages
   const [msgIdx, setMsgIdx] = useState(0)
 
   useEffect(() => {
-    const t = setInterval(() => setMsgIdx((i) => (i + 1) % WAIT_MESSAGES.length), 2400)
-    return () => clearInterval(t)
-  }, [])
+    const interval = setInterval(() => setMsgIdx((i) => (i + 1) % waitMessages.length), 2400)
+    return () => clearInterval(interval)
+  }, [waitMessages.length])
 
   return (
     <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
@@ -175,7 +168,7 @@ function GeneratingPreview() {
           </svg>
         </div>
         <p className="text-center text-[13px] text-gray-500 transition-all duration-500">
-          {WAIT_MESSAGES[msgIdx]}
+          {waitMessages[msgIdx]}
         </p>
         {/* Skeleton content */}
         <div className="w-full space-y-2.5">
@@ -220,55 +213,12 @@ function ThinkingDots() {
   )
 }
 
-/* ── Simulated AI steps ─────────────────────────────────────────────────────── */
-
-const AI_STEPS: { role: 'user' | 'assistant'; content: string; icon: string }[] = [
-  {
-    role: 'assistant',
-    content:
-      'Reading your note exactly as you wrote it — no cleanup required on your side.',
-    icon: '🔍',
-  },
-  {
-    role: 'assistant',
-    content:
-      'Locking the right Mercado Libre category (Computación → Laptops → Apple). Wrong branch = you do not show up in search.',
-    icon: '📂',
-  },
-  {
-    role: 'assistant',
-    content:
-      'Building the title with live keyword signal from the Mercado Libre API — not a static hand-written prompt.',
-    icon: '✏️',
-  },
-  {
-    role: 'assistant',
-    content:
-      'Filling required attributes so filters work. One missing field and you disappear from filtered results.',
-    icon: '📋',
-  },
-  {
-    role: 'assistant',
-    content:
-      'Suggesting market price and buyer-friendly installments from category benchmarks.',
-    icon: '💰',
-  },
-  {
-    role: 'assistant',
-    content:
-      'DSPy-optimized program finishes the draft in under two minutes. Compare lists every change; one tap publishes to Mercado Libre.',
-    icon: '✅',
-  },
-]
-
 /* ── Category detection ─────────────────────────────────────────────────────── */
 
 function detectCategory(text: string): string {
   const lower = text.toLowerCase()
   if (
-    /notebook|laptop|macbook|lenovo|dell|asus|hp\s|ryzen|intel|core\s[i-]|thinkpad|ideapad|zenbook/.test(
-      lower,
-    )
+    /notebook|laptop|macbook|lenovo|dell|asus|hp\s|ryzen|intel|core\s[i-]|thinkpad|ideapad|zenbook/.test(lower)
   )
     return 'notebooks'
   if (
@@ -277,18 +227,6 @@ function detectCategory(text: string): string {
     return 'zapatillas'
   return 'notebooks'
 }
-
-/* ── Suggestions ────────────────────────────────────────────────────────────── */
-
-const SUGGESTIONS = [
-  {
-    icon: '💻',
-    label:
-      'Used MacBook, works perfectly, selling to upgrade, open to offers.',
-  },
-  { icon: '📱', label: 'iPhone 15 Pro Max 256GB' },
-  { icon: '👟', label: 'Nike Air Jordan 1 Chicago' },
-]
 
 /* ── Idle view — hero input ─────────────────────────────────────────────────── */
 
@@ -305,6 +243,8 @@ function IdleView({
   setImages: (v: File[] | ((prev: File[]) => File[])) => void
   onSubmit: (e: React.FormEvent) => void
 }) {
+  const { t, lang } = useLanguage()
+  const { newProduct } = t
   const fileRef = useRef<HTMLInputElement>(null)
 
   const handleFiles = useCallback(
@@ -319,6 +259,12 @@ function IdleView({
   const removeImage = (idx: number) =>
     setImages((prev) => prev.filter((_, i) => i !== idx))
 
+  const suggestions = [
+    { icon: '💻', label: newProduct.suggestions[0] },
+    { icon: '👟', label: newProduct.suggestions[1] },
+    { icon: '📱', label: newProduct.suggestions[2] },
+  ]
+
   return (
     <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center gap-8 px-4">
       {/* Icon + heading */}
@@ -327,11 +273,10 @@ function IdleView({
           ✦
         </div>
         <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-          What are you selling?
+          {newProduct.pageTitle}
         </h2>
         <p className="max-w-lg text-sm leading-relaxed text-gray-400">
-          Describe your product in natural language and attach photos.
-          Prompty will generate a fully optimized Mercado Libre listing.
+          {newProduct.pageSubtitle}
         </p>
       </div>
 
@@ -341,7 +286,7 @@ function IdleView({
           <textarea
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
-            placeholder="Describe your product and let Prompty do the rest"
+            placeholder={newProduct.placeholder}
             rows={4}
             className="w-full resize-none rounded-t-2xl border-0 bg-transparent px-5 pt-5 pb-2 text-[15px] text-gray-900 placeholder:text-gray-400 focus:outline-none"
             onKeyDown={(e) => {
@@ -404,7 +349,7 @@ function IdleView({
                       </svg>
                     </button>
                   </TooltipTrigger>
-                  <TooltipContent side="bottom">¡Image generation will be enabled soon!</TooltipContent>
+                  <TooltipContent side="bottom">Image generation will be enabled soon!</TooltipContent>
                 </Tooltip>
                 <Tooltip>
                   <TooltipTrigger asChild>
@@ -417,7 +362,7 @@ function IdleView({
                       </svg>
                     </button>
                   </TooltipTrigger>
-                  <TooltipContent side="bottom">Pegar URL</TooltipContent>
+                  <TooltipContent side="bottom">{lang === 'es' ? 'Pegar URL' : 'Paste URL'}</TooltipContent>
                 </Tooltip>
               </div>
             </TooltipProvider>
@@ -428,7 +373,7 @@ function IdleView({
               className="flex items-center gap-2 rounded-full bg-gray-900 px-5 py-2 text-sm font-medium text-white transition-all hover:bg-gray-700 disabled:opacity-40"
             >
               <span>✦</span>
-              Generate listing
+              {newProduct.submitButton}
             </button>
           </div>
         </div>
@@ -436,7 +381,7 @@ function IdleView({
 
       {/* Suggestion chips */}
       <div className="flex flex-wrap items-center justify-center gap-2.5">
-        {SUGGESTIONS.map((s) => (
+        {suggestions.map((s) => (
           <button
             key={s.label}
             type="button"
@@ -452,27 +397,22 @@ function IdleView({
   )
 }
 
-/* ── Page ────────────────────────────────────────────────────────────────────── */
-
 /* ── Improvements panel (compare view) ──────────────────────────────────────── */
 
-const SEVERITY_CONFIG = {
+const SEVERITY_STYLES = {
   critical: {
-    label: 'Critical',
     border: 'border-l-rose-500',
     badge: 'bg-rose-50 text-rose-700 ring-1 ring-rose-100',
     beforeBg: 'bg-rose-50/40',
     beforeRing: 'ring-1 ring-rose-100/80',
   },
   high: {
-    label: 'High impact',
     border: 'border-l-amber-500',
     badge: 'bg-amber-50 text-amber-800 ring-1 ring-amber-100',
     beforeBg: 'bg-amber-50/35',
     beforeRing: 'ring-1 ring-amber-100/80',
   },
   medium: {
-    label: 'Improvement',
     border: 'border-l-sky-500',
     badge: 'bg-sky-50 text-sky-800 ring-1 ring-sky-100',
     beforeBg: 'bg-sky-50/30',
@@ -489,6 +429,8 @@ function WhatsNewPanel({
   listing: GenerateResponse
   audit: AuditResponse | null
 }) {
+  const { t } = useLanguage()
+  const { whatsNew, severity, explanations, categories } = t.newProduct
   const trim = (s: string, n: number) => s.length > n ? s.slice(0, n) + '…' : s
 
   const cards: {
@@ -501,62 +443,68 @@ function WhatsNewPanel({
 
   // Title
   cards.push({
-    category: 'Title & search visibility',
+    category: whatsNew.titleCard,
     severity: 'critical',
     before: trim(userPrompt.split(/[.\n]/)[0].trim() || userPrompt, 160),
     after: listing.title,
     explanation: audit?.title_issues?.length
       ? audit.title_issues.join('. ')
-      : 'The title was rewritten with brand, model, key specs, and high-traffic MELI keywords to maximize search ranking.',
+      : explanations.title,
   })
 
   // Description
   cards.push({
-    category: 'Description',
+    category: whatsNew.descCard,
     severity: 'high',
     before: trim(userPrompt, 220),
     after: listing.description ? trim(listing.description, 320) : '—',
     explanation: audit?.description_issues?.length
       ? audit.description_issues.join('. ')
-      : 'The description is now structured with three sections: specs, benefits, and why-buy — the format that converts best on Mercado Libre.',
+      : explanations.description,
   })
 
   // Attributes
   const attrs = Object.entries(listing.attributes ?? {})
   if (attrs.length > 0) {
     cards.push({
-      category: 'Product attributes',
+      category: whatsNew.attributesCard,
       severity: 'critical',
       before: audit?.missing_critical_attributes?.length
         ? `Missing: ${audit.missing_critical_attributes.slice(0, 4).join(', ')}`
-        : 'Attributes not filled — invisible in filtered searches',
+        : whatsNew.noAttributes,
       after: attrs.slice(0, 5).map(([k, v]) => `${k.replace(/_/g, ' ')}: ${v}`).join(' · '),
       explanation: audit?.missing_critical_attributes?.length
         ? `${audit.missing_critical_attributes.length} required attribute${audit.missing_critical_attributes.length > 1 ? 's' : ''} were missing. Listings with incomplete attributes drop out of most filtered searches.`
-        : 'All required MELI attributes filled — your listing now appears in every relevant filter.',
+        : explanations.attributes,
     })
   }
 
   // Keywords
   if (audit?.missing_keywords?.length) {
     cards.push({
-      category: 'Search keywords',
+      category: whatsNew.keywordsCard,
       severity: 'medium',
-      before: 'None targeted',
+      before: whatsNew.noKeywords,
       after: audit.missing_keywords.slice(0, 8).join(', '),
-      explanation: `${audit.missing_keywords.length} trending Mercado Libre keywords were injected into the title and description to boost discoverability.`,
+      explanation: explanations.keywords,
     })
   }
 
   // Priority fixes
   if (audit?.priority_fixes?.length) {
     cards.push({
-      category: 'Audit findings fixed',
+      category: whatsNew.auditCard,
       severity: 'high',
       before: audit.priority_fixes.slice(0, 3).map(f => `• ${f}`).join('\n'),
       after: 'All critical issues resolved by the DSPy pipeline',
-      explanation: 'These were the top issues flagged by the Prompty auditor before generating your listing.',
+      explanation: whatsNew.foundIssues,
     })
+  }
+
+  const severityLabels: Record<'critical' | 'high' | 'medium', string> = {
+    critical: severity.critical,
+    high: severity.high,
+    medium: severity.medium,
   }
 
   return (
@@ -564,7 +512,7 @@ function WhatsNewPanel({
       {/* Summary header */}
       <div className="rounded-2xl border border-black/4 bg-white px-4 py-3.5 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
         <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-gray-400">
-          What Prompty added
+          {whatsNew.panelTitle}
         </p>
         <p className="mt-1 text-[13px] leading-relaxed text-gray-600">
           Every change the AI pipeline made — from your original description to the optimized listing.
@@ -588,7 +536,8 @@ function WhatsNewPanel({
 
       {/* Cards */}
       {cards.map((item, idx) => {
-        const sev = SEVERITY_CONFIG[item.severity]
+        const sev = SEVERITY_STYLES[item.severity]
+        const sevLabel = severityLabels[item.severity]
         return (
           <article
             key={item.category}
@@ -604,18 +553,18 @@ function WhatsNewPanel({
                     {item.category}
                   </h3>
                   <span className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-medium ${sev.badge}`}>
-                    {sev.label}
+                    {sevLabel}
                   </span>
                 </div>
               </div>
             </header>
             <div className="space-y-2.5 px-4 py-4">
               <div className={`rounded-xl px-3.5 py-3 ${sev.beforeBg} ${sev.beforeRing}`}>
-                <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-gray-500">Before</p>
+                <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-gray-500">{whatsNew.beforeLabel}</p>
                 <p className="whitespace-pre-line text-[13px] leading-relaxed text-gray-700 wrap-break-word">{item.before}</p>
               </div>
               <div className="rounded-xl bg-emerald-50/50 px-3.5 py-3 ring-1 ring-emerald-100/90">
-                <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-700">After</p>
+                <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-700">{whatsNew.afterLabel}</p>
                 <p className="text-[13px] leading-relaxed text-gray-900 wrap-break-word">{item.after}</p>
               </div>
             </div>
@@ -640,14 +589,6 @@ function WhatsNewPanel({
 
 /* ── Publishing overlay ─────────────────────────────────────────────────────── */
 
-const PUBLISH_STEPS = [
-  'Connecting to Mercado Libre…',
-  'Uploading images…',
-  'Optimizing SEO metadata…',
-  'Creating listing…',
-  'Verifying publication…',
-]
-
 type OverlayPhase = 'hidden' | 'loading' | 'success'
 
 function PublishOverlay({
@@ -657,17 +598,19 @@ function PublishOverlay({
   phase: OverlayPhase
   stepIndex: number
 }) {
+  const { t } = useLanguage()
+  const publishSteps = t.newProduct.publishSteps
+
   if (phase === 'hidden') return null
 
   const isSuccess = phase === 'success'
-  const progress = isSuccess ? 100 : Math.min(((stepIndex + 1) / PUBLISH_STEPS.length) * 100, 95)
+  const progress = isSuccess ? 100 : Math.min(((stepIndex + 1) / publishSteps.length) * 100, 95)
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/80 backdrop-blur-sm animate-in fade-in duration-300">
       <div className="flex w-full max-w-sm flex-col items-center gap-6">
         {/* Icon area */}
         <div className="relative flex size-20 items-center justify-center">
-          {/* Spinner ring — visible during loading */}
           <svg
             viewBox="0 0 64 64"
             className={`absolute inset-0 size-20 transition-opacity duration-500 ${isSuccess ? 'opacity-0' : 'opacity-100'}`}
@@ -685,7 +628,6 @@ function PublishOverlay({
             />
           </svg>
 
-          {/* Success check — visible on success */}
           <div
             className={`flex size-20 items-center justify-center rounded-full bg-emerald-50 transition-all duration-500 ${
               isSuccess ? 'scale-100 opacity-100' : 'scale-75 opacity-0'
@@ -715,7 +657,7 @@ function PublishOverlay({
         {/* Status text */}
         <div className="flex flex-col items-center gap-1.5 text-center">
           <p className="text-lg font-semibold text-gray-900">
-            {isSuccess ? 'Published successfully!' : 'Publishing to Mercado Libre'}
+            {isSuccess ? t.newProduct.publishedTitle : t.newProduct.publishButton}
           </p>
           <p
             className={`h-5 text-sm transition-all duration-300 ${
@@ -723,8 +665,8 @@ function PublishOverlay({
             }`}
           >
             {isSuccess
-              ? 'Redirecting…'
-              : PUBLISH_STEPS[stepIndex] ?? PUBLISH_STEPS[0]}
+              ? t.newProduct.publishedSubtitle
+              : publishSteps[stepIndex] ?? publishSteps[0]}
           </p>
         </div>
 
@@ -741,7 +683,7 @@ function PublishOverlay({
         {/* Step indicators */}
         {!isSuccess && (
           <div className="flex flex-col gap-2 self-start pl-4">
-            {PUBLISH_STEPS.map((label, i) => {
+            {publishSteps.map((label, i) => {
               const done = i < stepIndex
               const active = i === stepIndex
               return (
@@ -783,6 +725,7 @@ function PublishOverlay({
 
 export default function NewProductPage() {
   const router = useRouter()
+  const { t, lang } = useLanguage()
   const [prompt, setPrompt] = useState('')
   const [images, setImages] = useState<File[]>([])
   const [messages, setMessages] = useState<ChatMessage[]>([])
@@ -843,6 +786,13 @@ export default function NewProductPage() {
   }, [messages, stage])
 
   function startGeneration(userPrompt: string) {
+    // Capture translation at submission time so interval closure stays consistent
+    const aiSteps = t.newProduct.aiSteps.map((s, i) => ({
+      role: 'assistant' as const,
+      content: s.content,
+      icon: ['🔍', '📂', '✏️', '📋', '💰', '✅'][i] ?? '✦',
+    }))
+
     setMessages([{ role: 'user', content: userPrompt }])
     setStage('thinking')
     setCurrentStep(0)
@@ -852,7 +802,6 @@ export default function NewProductPage() {
     const category = detectCategory(userPrompt)
     const weakTitle = userPrompt.split(/[.\n]/)[0].trim() || userPrompt
 
-    // Audit → generate chain; runs in parallel with the step animation
     const apiPromise = apiClient
       .post<AuditResponse, AuditRequest>('/api/audit', {
         weak_title: weakTitle,
@@ -883,8 +832,6 @@ export default function NewProductPage() {
 
     let step = 0
     let animationDone = false
-    // Use a ref-like object so the interval callback and the promise both
-    // read/write the same slot without stale-closure issues
     const shared = { apiResult: null as Awaited<typeof apiPromise> | null }
 
     const finalize = () => {
@@ -899,8 +846,6 @@ export default function NewProductPage() {
             icon: '⚠️',
           },
         ])
-        // Keep the split view visible so the user sees the error in context.
-        // stage → 'done' so the retry button renders.
         setStage('done')
         return
       }
@@ -909,13 +854,13 @@ export default function NewProductPage() {
     }
 
     const interval = setInterval(() => {
-      const msg = AI_STEPS[step]
+      const msg = aiSteps[step]
       if (!msg) { clearInterval(interval); return }
 
       setMessages((prev) => [...prev, msg])
       setCurrentStep(step + 1)
 
-      if (step === AI_STEPS.length - 1) {
+      if (step === aiSteps.length - 1) {
         animationDone = true
         clearInterval(interval)
         finalize()
@@ -977,6 +922,7 @@ export default function NewProductPage() {
   }
 
   function handlePublish() {
+    const publishSteps = t.newProduct.publishSteps
     setStage('publishing')
     setOverlayPhase('loading')
     setPublishStep(0)
@@ -984,7 +930,7 @@ export default function NewProductPage() {
     let step = 0
     const interval = setInterval(() => {
       step++
-      if (step < PUBLISH_STEPS.length) {
+      if (step < publishSteps.length) {
         setPublishStep(step)
       } else {
         clearInterval(interval)
@@ -998,6 +944,12 @@ export default function NewProductPage() {
       }
     }, 800)
   }
+
+  const aiStepsForRender = t.newProduct.aiSteps.map((s, i) => ({
+    role: 'assistant' as const,
+    content: s.content,
+    icon: ['🔍', '📂', '✏️', '📋', '💰', '✅'][i] ?? '✦',
+  }))
 
   return (
     <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
@@ -1033,22 +985,22 @@ export default function NewProductPage() {
                 <span className="text-[13px] font-semibold text-gray-900">Prompty AI</span>
                 <span className="text-[11px] text-gray-400">
                   {stage === 'thinking'
-                    ? 'Generating your listing…'
+                    ? t.newProduct.thinkingTitle
                     : stage === 'done' || stage === 'publishing'
-                      ? 'Listing complete'
+                      ? t.newProduct.previewTitle
                       : 'Ready'}
                 </span>
               </div>
               {stage === 'thinking' && (
                 <span className="flex items-center gap-1.5 rounded-full bg-amber-50 px-2.5 py-1 text-[10px] font-medium text-amber-600">
                   <span className="relative flex size-1.5"><span className="absolute inline-flex size-full animate-ping rounded-full bg-amber-400 opacity-75" /><span className="relative inline-flex size-1.5 rounded-full bg-amber-500" /></span>
-                  Working
+                  {lang === 'es' ? 'Trabajando' : 'Working'}
                 </span>
               )}
               {(stage === 'done' || stage === 'publishing') && (
                 <span className="flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-medium text-emerald-600">
                   <svg viewBox="0 0 12 12" className="size-3" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M2.5 6.5l2 2 5-5" /></svg>
-                  Complete
+                  {lang === 'es' ? 'Completado' : 'Complete'}
                 </span>
               )}
             </div>
@@ -1075,7 +1027,9 @@ export default function NewProductPage() {
                       <div className="flex flex-1 flex-col gap-0.5">
                         <p className="text-[13px] leading-relaxed text-gray-700">{msg.content}</p>
                         {i === messages.length - 1 && (stage === 'done' || stage === 'publishing') && msg.role === 'assistant' && (
-                          <span className="mt-1 text-[11px] text-emerald-500">Completed</span>
+                          <span className="mt-1 text-[11px] text-emerald-500">
+                            {lang === 'es' ? 'Completado' : 'Completed'}
+                          </span>
                         )}
                       </div>
                     </div>
@@ -1083,10 +1037,10 @@ export default function NewProductPage() {
                 </div>
               ))}
 
-              {stage === 'thinking' && currentStep < AI_STEPS.length && (
+              {stage === 'thinking' && currentStep < aiStepsForRender.length && (
                 <div className="flex items-start gap-2.5 px-2 py-2.5">
                   <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-md bg-gray-100 text-xs">
-                    {AI_STEPS[currentStep]?.icon ?? '✦'}
+                    {aiStepsForRender[currentStep]?.icon ?? '✦'}
                   </span>
                   <div className="flex items-center py-1">
                     <ThinkingDots />
@@ -1100,11 +1054,11 @@ export default function NewProductPage() {
           <div className="flex min-h-0 flex-col gap-4 overflow-y-auto overflow-x-hidden pt-1">
             <div className="flex items-center gap-2">
               <span className="text-sm font-medium text-gray-700">
-                {showWhatsNew ? "What's new" : 'Listing preview'}
+                {showWhatsNew ? t.newProduct.whatsNewButton : t.newProduct.previewTitle}
               </span>
               {stage === 'thinking' && !generatedListing && (
                 <span className="rounded-full bg-gray-100 px-2 py-0.5 text-[10px] font-medium text-gray-500">
-                  Building…
+                  {lang === 'es' ? 'Construyendo…' : 'Building…'}
                 </span>
               )}
             </div>
@@ -1134,7 +1088,7 @@ export default function NewProductPage() {
                     <svg viewBox="0 0 16 16" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
                       <path d="M10 2L4 8l6 6" />
                     </svg>
-                    Back to preview
+                    {t.newProduct.backToPreview}
                   </button>
                 ) : (
                   <button
@@ -1145,7 +1099,7 @@ export default function NewProductPage() {
                       <path d="M8 2.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" />
                       <path d="M8 1v1M8 10v1M3.05 3.05l.7.7M11.25 11.25l.7.7M1 8h1M13 8h1M3.05 12.95l.7-.7M11.25 4.75l.7-.7" />
                     </svg>
-                    What's new
+                    {t.newProduct.whatsNewButton}
                   </button>
                 )}
                 <button
@@ -1159,10 +1113,10 @@ export default function NewProductPage() {
                         <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" className="opacity-25" />
                         <path d="M4 12a8 8 0 018-8" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="opacity-75" />
                       </svg>
-                      Publishing…
+                      {lang === 'es' ? 'Publicando…' : 'Publishing…'}
                     </>
                   ) : (
-                    'Publish to Mercado Libre'
+                    t.newProduct.publishButton
                   )}
                 </button>
               </div>
@@ -1180,7 +1134,7 @@ export default function NewProductPage() {
                   }}
                   className="flex w-full items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white py-3.5 text-sm font-semibold text-gray-700 shadow-sm transition-all hover:bg-gray-50"
                 >
-                  ↩ Try again
+                  ↩ {lang === 'es' ? 'Intentar de nuevo' : 'Try again'}
                 </button>
               </div>
             )}

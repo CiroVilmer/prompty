@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Google_Sans_Flex } from "next/font/google"
 import "./globals.css"
+import { LanguageProvider } from "@/lib/i18n/LanguageContext"
 
 const googleSansFlex = Google_Sans_Flex({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -52,7 +53,7 @@ export default function RootLayout({
         */}
         <style>{`body { background-color: #000; }`}</style>
       </head>
-      <body className="antialiased bg-white">{children}</body>
+      <body className="antialiased bg-white"><LanguageProvider>{children}</LanguageProvider></body>
     </html>
   )
 }

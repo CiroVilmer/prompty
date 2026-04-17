@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { WarpBackground } from '@/components/ui/warp-background'
 import { Highlighter } from '@/components/ui/highlighter'
 import { AnimatedTooltip } from '@/components/ui/animated-tooltip'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 const TEAM = [
   {
@@ -43,6 +44,7 @@ export interface HeroSectionProps {
 }
 
 export default function HeroSection({ loadingComplete }: HeroSectionProps) {
+  const { t } = useLanguage()
   const containerRef  = useRef<HTMLDivElement>(null)
   const badgeRef      = useRef<HTMLDivElement>(null)
   const titleRef      = useRef<HTMLHeadingElement>(null)
@@ -107,7 +109,7 @@ export default function HeroSection({ loadingComplete }: HeroSectionProps) {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
             </span>
             <span className="inline-flex items-center gap-1.5 text-xs font-medium tracking-wide text-gray-500">
-              Powered by
+              {t.hero.badge}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="https://www.anthropic.com/favicon.ico" alt="Claude" width={14} height={14} className="rounded-sm" />
               Claude +
@@ -131,7 +133,7 @@ export default function HeroSection({ loadingComplete }: HeroSectionProps) {
           ref={titleRef}
           className="max-w-3xl text-balance text-5xl font-extrabold leading-[1.1] tracking-tight text-gray-900 sm:text-6xl lg:text-[4.5rem]"
         >
-          Listings{' '}
+          {t.hero.titlePre}
           <Highlighter
             action="highlight"
             color="#f8f8f6"
@@ -140,9 +142,9 @@ export default function HeroSection({ loadingComplete }: HeroSectionProps) {
             isView
             multiline={false}
           >
-            optimized
+            {t.hero.titleHighlight}
           </Highlighter>
-          {' '}with AI and{' '}
+          {t.hero.titleMid}
           <Highlighter
             action="underline"
             color="#38bdf8"
@@ -153,7 +155,7 @@ export default function HeroSection({ loadingComplete }: HeroSectionProps) {
             isView
             multiline
           >
-            real data
+            {t.hero.titleUnderline}
           </Highlighter>
         </h1>
 
@@ -162,7 +164,7 @@ export default function HeroSection({ loadingComplete }: HeroSectionProps) {
           ref={subtitleRef}
           className="mt-5 max-w-xl text-lg text-gray-500"
         >
-          Faster, better, and completely optimized listings.
+          {t.hero.subtitle}
         </p>
 
         {/* CTAs */}
@@ -174,13 +176,13 @@ export default function HeroSection({ loadingComplete }: HeroSectionProps) {
             href="/dashboard"
             className="rounded-lg bg-gray-900 px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-gray-700"
           >
-            Try the demo
+            {t.hero.ctaPrimary}
           </Link>
           <Link
             href="#how-it-works"
             className="rounded-lg border border-gray-200 bg-white px-7 py-3 text-sm font-semibold text-gray-700 shadow-sm transition-all hover:bg-gray-50"
           >
-            How it works
+            {t.hero.ctaSecondary}
           </Link>
         </div>
       </div>

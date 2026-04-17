@@ -4,22 +4,23 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Link from 'next/link'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Floating pain-point labels — scattered typographically in the right column
-const PAIN_LABELS = [
-  { text: 'Incomplete titles',    size: 'text-2xl',  top: '0%',  left: '0%',   rotate: '-2deg',   opacity: 0.85 },
-  { text: 'Empty attributes',     size: 'text-xl',   top: '3%',  right: '0%',  rotate: '1.5deg',  opacity: 0.65 },
-  { text: 'Generic descriptions', size: 'text-lg',   top: '34%', left: '0%',   rotate: '-1deg',   opacity: 0.55 },
-  { text: 'Poor photos',          size: 'text-2xl',  top: '28%', right: '4%',  rotate: '2deg',    opacity: 0.75 },
-  { text: 'Missing keywords',     size: 'text-base', top: '58%', left: '8%',   rotate: '-1.5deg', opacity: 0.45 },
-  { text: 'No description',       size: 'text-base', top: '62%', right: '2%',  rotate: '1deg',    opacity: 0.38 },
-  { text: 'Low conversion',       size: 'text-sm',   top: '82%', left: '2%',   rotate: '-0.5deg', opacity: 0.30 },
-  { text: 'Bad SEO',              size: 'text-sm',   top: '84%', right: '10%', rotate: '1.5deg',  opacity: 0.28 },
+const PAIN_LABEL_STYLES = [
+  { size: 'text-2xl',  top: '0%',  left: '0%',   rotate: '-2deg',   opacity: 0.85 },
+  { size: 'text-xl',   top: '3%',  right: '0%',  rotate: '1.5deg',  opacity: 0.65 },
+  { size: 'text-lg',   top: '34%', left: '0%',   rotate: '-1deg',   opacity: 0.55 },
+  { size: 'text-2xl',  top: '28%', right: '4%',  rotate: '2deg',    opacity: 0.75 },
+  { size: 'text-base', top: '58%', left: '8%',   rotate: '-1.5deg', opacity: 0.45 },
+  { size: 'text-base', top: '62%', right: '2%',  rotate: '1deg',    opacity: 0.38 },
+  { size: 'text-sm',   top: '82%', left: '2%',   rotate: '-0.5deg', opacity: 0.30 },
+  { size: 'text-sm',   top: '84%', right: '10%', rotate: '1.5deg',  opacity: 0.28 },
 ]
 
 export default function Problem() {
+  const { t } = useLanguage()
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -45,7 +46,6 @@ export default function Problem() {
         .fromTo('[data-problem="solution"]',
           { y: 15, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: 'power2.out' }, '-=0.1')
 
-      // Individual floating labels drift in from random small offsets
       gsap.from('[data-pain-label]', {
         y: () => gsap.utils.random(-18, 18) as number,
         x: () => gsap.utils.random(-12, 12) as number,
@@ -77,37 +77,37 @@ export default function Problem() {
               data-problem="label"
               className="mb-4 text-xs font-semibold uppercase tracking-widest text-purple-600"
             >
-              / the problem
+              {t.problem.label}
             </p>
 
             <h2
               data-problem="title"
               className="mb-5 text-3xl font-bold leading-tight tracking-tight text-gray-900 md:text-4xl"
             >
-              Publishing well shouldn&apos;t be this hard
+              {t.problem.title}
             </h2>
 
             <p
               data-problem="body"
               className="text-base leading-relaxed text-gray-500"
             >
-              Millions of sellers lose sales every day because of{' '}
+              {t.problem.bodyPre}
               <span className="rounded bg-red-50 px-1 font-semibold text-red-500">
-                mediocre listings
+                {t.problem.bodyHighlight1}
               </span>
-              . The algorithm{' '}
+              {t.problem.bodyMid1}
               <span className="rounded bg-red-50 px-1 font-semibold text-red-500">
-                buries them
-              </span>{' '}
-              and buyers never see them. The problem isn&apos;t lack of effort — it&apos;s{' '}
-              <span className="rounded bg-red-50 px-1 font-semibold text-red-500">
-                lack of tools
+                {t.problem.bodyHighlight2}
               </span>
-              .
+              {t.problem.bodyMid2}
+              <span className="rounded bg-red-50 px-1 font-semibold text-red-500">
+                {t.problem.bodyHighlight3}
+              </span>
+              {'.'}
             </p>
 
             <p className="mt-4 text-xl font-semibold text-purple-600">
-              Until now.
+              {t.problem.untilNow}
             </p>
           </div>
 
@@ -116,20 +116,20 @@ export default function Problem() {
             data-problem="cards"
             className="relative h-64 md:h-72 md:w-[340px] lg:w-[380px]"
           >
-            {PAIN_LABELS.map((label, i) => (
+            {PAIN_LABEL_STYLES.map((style, i) => (
               <span
                 key={i}
                 data-pain-label
-                className={`absolute select-none font-semibold text-gray-400 ${label.size}`}
+                className={`absolute select-none font-semibold text-gray-400 ${style.size}`}
                 style={{
-                  top:     label.top,
-                  left:    'left' in label ? label.left : undefined,
-                  right:   'right' in label ? label.right : undefined,
-                  transform: `rotate(${label.rotate})`,
-                  opacity: label.opacity,
+                  top:     style.top,
+                  left:    'left' in style ? style.left : undefined,
+                  right:   'right' in style ? style.right : undefined,
+                  transform: `rotate(${style.rotate})`,
+                  opacity: style.opacity,
                 }}
               >
-                {label.text}
+                {t.problem.painLabels[i]}
               </span>
             ))}
           </div>
@@ -144,14 +144,15 @@ export default function Problem() {
 
             <div className="max-w-xl">
               <span className="text-xs font-semibold uppercase tracking-widest text-purple-600">
-                / the solution
+                {t.problem.solutionLabel}
               </span>
               <p className="mt-1 text-lg text-gray-700">
-                <span className="font-bold text-gray-900">Meet Prompty</span> — Search,
-                optimize, and boost your listings to{' '}
-                <span className="font-bold text-purple-600">100%</span>, powered by data from
-                the <span className="font-semibold text-gray-900">top sellers</span> in your
-                category.
+                <span className="font-bold text-gray-900">{t.problem.solutionBodyBrand}</span>
+                {t.problem.solutionBodyMid}
+                <span className="font-bold text-purple-600">{t.problem.solutionBodyScore}</span>
+                {t.problem.solutionBodyMid2}
+                <span className="font-semibold text-gray-900">{t.problem.solutionBodyBestSellers}</span>
+                {t.problem.solutionBodyEnd}
               </p>
             </div>
 
@@ -160,13 +161,13 @@ export default function Problem() {
                 href="/how-it-works"
                 className="rounded-full bg-purple-600 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-purple-700"
               >
-                How Prompty works →
+                {t.problem.ctaHowItWorks}
               </Link>
               <Link
                 href="/difference"
                 className="rounded-full border border-gray-300 px-5 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:border-gray-400"
               >
-                What makes us different
+                {t.problem.ctaWhatsDifferent}
               </Link>
             </div>
           </div>

@@ -1,12 +1,8 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
-
-const NAV_LINKS = [
-  { label: 'Cómo funciona', href: '#how-it-works' },
-  { label: 'Nosotros',      href: '#team' },
-  { label: 'Demo',          href: '/demo' },
-  { label: 'Contacto',      href: 'mailto:hello@prompty.com' },
-]
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 // Inline SVGs — lucide-react 1.x removed all social brand icons
 const IconX = () => (
@@ -33,6 +29,33 @@ const IconInstagram = () => (
   </svg>
 )
 
+const TEAM = [
+  {
+    name: 'Ciro Vilmer',
+    role: 'Fullstack Developer',
+    href: 'https://www.linkedin.com/in/ciro-vilmer-b4727a174/',
+    image: 'https://media.licdn.com/dms/image/v2/D4D03AQEg2vjW01SAfA/profile-displayphoto-scale_200_200/B4DZ0.dbBuKUAc-/0/1774869398829?e=1777507200&v=beta&t=Rvgmw4KvMuSHKKLSougdplhdQMmy7MKrRsJGuKSHybo',
+  },
+  {
+    name: 'Luis Embon',
+    role: 'Backend Developer',
+    href: 'https://www.linkedin.com/in/luis-embon-strizzi/',
+    image: 'https://media.licdn.com/dms/image/v2/D4D03AQHDQhChM8M6rA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1689722079097?e=1777507200&v=beta&t=CPL5G4686soOa3PvXxI_gkS0KmIuSBQIjYKxoGwsenk',
+  },
+  {
+    name: 'Valentin Gonzalez',
+    role: 'Frontend Developer',
+    href: 'https://www.linkedin.com/in/valentin-gonzalez-6a1805276/',
+    image: 'https://media.licdn.com/dms/image/v2/D4D03AQEOCZfpgAFCPQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1709020529983?e=1777507200&v=beta&t=PMSnaQsoQA79SzgiimiOsiQL7H0XnUsXjEVbAzjl3HM',
+  },
+  {
+    name: 'Martina Chiappa',
+    role: 'UX Designer',
+    href: 'https://linkedin.com/in/martinachiappa/',
+    image: 'https://media.licdn.com/dms/image/v2/D4D03AQHuMIv_o0RE9w/profile-displayphoto-shrink_400_400/B4DZcTHho3GYAk-/0/1748372430039?e=1777507200&v=beta&t=uyhh71ayB4WQN3Sa9KcraOCcmNrHkM32Udw5-Q3j8Uc',
+  },
+]
+
 const SOCIAL_LINKS = [
   { label: 'X / Twitter', href: 'https://x.com/prompty',                Icon: IconX         },
   { label: 'LinkedIn',    href: 'https://linkedin.com/company/prompty', Icon: IconLinkedIn  },
@@ -41,6 +64,15 @@ const SOCIAL_LINKS = [
 ]
 
 export default function Footer() {
+  const { t, lang } = useLanguage()
+
+  const NAV_LINKS = [
+    { label: t.nav.howItWorks, href: '#how-it-works' },
+    { label: t.nav.about,      href: '#team' },
+    { label: 'Demo',           href: '/dashboard' },
+    { label: lang === 'es' ? 'Contacto' : 'Contact', href: 'mailto:hello@prompty.com' },
+  ]
+
   return (
     <footer className="border-t border-gray-200 bg-white">
       <div className="mx-auto max-w-5xl px-6">
@@ -69,6 +101,37 @@ export default function Footer() {
               </Link>
             ))}
           </nav>
+        </div>
+
+        {/* Team section */}
+        <div className="border-t border-dashed border-gray-200 py-10 flex flex-col items-center gap-3">
+          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400">
+            {lang === 'es' ? 'El equipo' : 'The team'}
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-5">
+            {TEAM.map(({ name, role, href, image }) => (
+              <a
+                key={name}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col items-center gap-2 text-center"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={image}
+                  alt={name}
+                  className="size-12 rounded-full object-cover ring-2 ring-gray-100 transition-all duration-200 group-hover:ring-purple-300 group-hover:scale-105"
+                />
+                <div className="flex flex-col items-center gap-0.5">
+                  <span className="text-sm font-medium text-gray-700 transition-colors group-hover:text-purple-600">
+                    {name}
+                  </span>
+                  <span className="text-xs text-gray-400">{role}</span>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Dotted divider */}

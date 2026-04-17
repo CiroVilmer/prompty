@@ -1,30 +1,34 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { cn } from '@/lib/utils'
 import { StaggeredMenu } from '@/components/ui/StaggeredMenu'
+import { useState } from 'react'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { LanguageToggle } from '@/components/ui/LanguageToggle'
 
 gsap.registerPlugin(useGSAP)
 
-const NAV_LINKS = [
-  { label: 'How it works', href: '#how-it-works' },
-  { label: 'About', href: '#about' },
-]
-
-const MOBILE_ITEMS = [
-  { label: 'How it works', ariaLabel: 'Go to how it works section', link: '/#how-it-works' },
-  { label: 'Before & After', ariaLabel: 'See before and after examples', link: '/#antes-despues' },
-  { label: 'Why Prompty', ariaLabel: 'Why use Prompty', link: '/#why-prompty' },
-  { label: 'Try demo', ariaLabel: 'Try the demo on the dashboard', link: '/dashboard' },
-]
-
 export function Navbar() {
+  const { t } = useLanguage()
   const [pastHero, setPastHero] = useState(false)
   const headerRef = useRef<HTMLElement>(null)
+
+  const NAV_LINKS = [
+    { label: t.nav.howItWorks, href: '#how-it-works' },
+    { label: t.nav.about, href: '#about' },
+  ]
+
+  const MOBILE_ITEMS = [
+    { label: t.nav.mobileHowItWorks, ariaLabel: t.nav.mobileHowItWorksAria, link: '/#how-it-works' },
+    { label: t.nav.mobileBeforeAfter, ariaLabel: t.nav.mobileBeforeAfterAria, link: '/#antes-despues' },
+    { label: t.nav.mobileWhyPrompty, ariaLabel: t.nav.mobileWhyPromptyAria, link: '/#why-prompty' },
+    { label: t.nav.mobileTryDemo, ariaLabel: t.nav.mobileTryDemoAria, link: '/dashboard' },
+  ]
 
   useEffect(() => {
     const update = () => {
@@ -72,7 +76,7 @@ export function Navbar() {
               : 'px-2 py-1',
           )}
         >
-          {/* Left — nav links */}
+          {/* Left — nav links + language toggle */}
           <div className="flex items-center gap-6">
             {NAV_LINKS.map((link) => (
               <Link
@@ -86,6 +90,7 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <LanguageToggle />
           </div>
 
           {/* Center — logo, absolutely centered */}
@@ -118,7 +123,7 @@ export function Navbar() {
                 : 'rounded-lg px-6 py-2.5 text-base',
             )}
           >
-            Try demo
+            {t.nav.tryDemo}
           </Link>
         </nav>
       </header>
@@ -139,6 +144,8 @@ export function Navbar() {
           displayItemNumbering
           closeOnClickAway
         />
+        {/* Floating language toggle for mobile */}
+        <LanguageToggle variant="floating" />
       </div>
     </>
   )
