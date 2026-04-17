@@ -94,6 +94,17 @@ export default function LoadingScreen({ onComplete, onExited }: LoadingScreenPro
     const vidEl = videoRef.current;
     vidEl?.addEventListener("ended", exit, { once: true });
 
+    // iOS Safari needs muted/playsInline set as DOM properties, not just
+    // React attributes. Without this, play() is silently rejected on mobile.
+    if (vidEl) {
+      vidEl.muted = true;
+      vidEl.defaultMuted = true;
+      vidEl.playsInline = true;
+      vidEl.setAttribute("muted", "");
+      vidEl.setAttribute("playsinline", "");
+      vidEl.setAttribute("webkit-playsinline", "");
+    }
+
     // ── All three things start simultaneously on mount ───────────────────────
     // 1. Entrance tween — container rises from y:40 + fades in over 0.6 s
     gsap.to(contentRef.current, {
@@ -103,18 +114,38 @@ export default function LoadingScreen({ onComplete, onExited }: LoadingScreenPro
       ease: "power2.out",
     });
 
-    // 2. Video — play() called at the same instant; autoPlay attr is a hint
-    //    but the explicit call is required for iOS Safari
+    // 2. Video — retry play() until it succeeds. Mobile browsers reject the
+    //    initial call if the video hasn't buffered enough, so we also wire up
+    //    canplay/loadedmetadata listeners as a backstop.
     setBarActive(true);
-    vidEl?.play().catch(() => {
-      // play() blocked (uncommon for muted video) — fallback timer covers it
-    });
+
+    const tryPlay = () => {
+      const p = vidEl?.play();
+      if (p && typeof p.then === "function") {
+        p.catch(() => {
+          // Retry once the element reports it can play.
+        });
+      }
+    };
+
+    if (vidEl) {
+      if (vidEl.readyState >= 2) {
+        tryPlay();
+      } else {
+        vidEl.addEventListener("loadedmetadata", tryPlay, { once: true });
+        vidEl.addEventListener("canplay", tryPlay, { once: true });
+        vidEl.load();
+        tryPlay();
+      }
+    }
 
     // 3. Bar animation is driven by the CSS class toggled by setBarActive above
 
     return () => {
       window.clearTimeout(fallback);
       vidEl?.removeEventListener("ended", exit);
+      vidEl?.removeEventListener("loadedmetadata", tryPlay);
+      vidEl?.removeEventListener("canplay", tryPlay);
       document.body.style.overflow = "";
       // Kill entrance tween only — the exit tween targets a captured local
       // variable and survives unmount intentionally; don't cancel it here.
@@ -140,8 +171,13 @@ export default function LoadingScreen({ onComplete, onExited }: LoadingScreenPro
           ref={videoRef}
           src="/videos/logo_loading.mp4"
           muted
+          defaultMuted
           playsInline
           autoPlay
+          preload="auto"
+          // @ts-expect-error — non-standard iOS attribute
+          webkit-playsinline="true"
+          x5-playsinline="true"
           className="ls-video"
         />
 

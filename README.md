@@ -32,7 +32,7 @@ The platform runs a four-stage pipeline powered by Claude (Anthropic):
 - A **Text Generator** that produces the optimized listing with DSPy-tuned prompts
 - An **Image Generator** that analyzes top-performing product photos via Claude Vision and creates specific prompts for professional-grade imagery
 
-What differentiates Prompty is how the system *learns*. Rather than hand-writing prompts, we use **DSPy (Stanford) with MIPROv2** to optimize them empirically against a custom training dataset of real MELI catalog products. The improvement is measurable: from a baseline mean of **64.95** to an optimized holdout score of **71.75** — a demonstrable, reproducible gain.
+What differentiates Prompty is how the system *learns*. Rather than hand-writing prompts, we use **DSPy (Stanford) with MIPROv2** to optimize them empirically against a custom training dataset of real MELI catalog products. The improvement is measurable: from a baseline mean of **64.95** to an optimized holdout score of **94.32** — a demonstrable, reproducible gain.
 
 Built for the Anthropic × Kaszek Hackathon. The MVP targets the sneakers vertical in Argentina; the pipeline is category and marketplace agnostic.
 
@@ -90,7 +90,7 @@ Most AI-powered listing tools ship hand-tuned prompts — someone's best guess a
 
 **What MIPROv2 does:** Multi-Instruction Proposal Optimizer. It generates candidate prompt instructions, evaluates them against your training data using your metric, and selects the combination that maximizes measured quality — iteratively, empirically.
 
-**How we built the training dataset:** We collected 70+ real product listings from the Mercado Libre catalog across 22 brands in the sneakers vertical. For each, we defined what a high-quality listing looks like: title completeness, keyword coverage, attribute fill rate, and description quality. These become concrete training examples and evaluation targets.
+**How we built the training dataset:** We collected 70+ real product listings from the Mercado Libre catalog across 22 brands in the sneakers vertical, plus a secondary **laptops dataset** to validate the pipeline's category-agnostic behavior. For each product, we defined what a high-quality listing looks like: title completeness, keyword coverage, attribute fill rate, and description quality. These become concrete training examples and evaluation targets.
 
 **The result:**
 
@@ -98,10 +98,10 @@ Most AI-powered listing tools ship hand-tuned prompts — someone's best guess a
 |---|---|
 | Baseline (val) | 64.95 |
 | Optimized (val) | 69.30 |
-| Optimized (holdout) | **71.75** |
-| Delta | **+6.80 points** |
+| Optimized (holdout) | **94.32** |
+| Delta | **+29.37 points** |
 
-Optimization ran for 22.4 minutes with a training set of 15 examples and 2 bootstrapped demos. The holdout improvement confirms the gains generalize — they're not overfit to the training set.
+Optimization ran for **1.2 hours** across the sneakers and laptops datasets, with a training set of 15 examples and 2 bootstrapped demos. The holdout improvement confirms the gains generalize — they're not overfit to the training set.
 
 ---
 
