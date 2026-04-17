@@ -171,14 +171,14 @@ export default function LoadingScreen({ onComplete, onExited }: LoadingScreenPro
           ref={videoRef}
           src="/videos/logo_loading.mp4"
           muted
-          defaultMuted
           playsInline
           autoPlay
           preload="auto"
-          // @ts-expect-error — non-standard iOS attribute
-          webkit-playsinline="true"
-          x5-playsinline="true"
           className="ls-video"
+          {...({
+            "webkit-playsinline": "true",
+            "x5-playsinline": "true",
+          } as Record<string, string>)}
         />
 
         <div className="ls-bar-track">
